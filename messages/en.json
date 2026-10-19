@@ -1,61 +1,128 @@
 {
   "Metadata": {
-    "title": "Makan | Modern Next.js Template with Cairo & Alexandria",
-    "description": "Enterprise-ready Next.js project with Tailwind CSS, next-intl translations, Cairo and Alexandria Arabic typography."
+    "title": "Makan Landscape | Developing Land into Value-Creating Destinations",
+    "description": "Accompanying owners and developers from land insight and planning to landscape design, execution, and operation, creating vibrant destinations that build enduring value."
   },
   "Navigation": {
-    "brand": "مكان",
-    "brandSub": "Makan",
+    "brand": "MAKAN",
+    "brandSub": "LANDSCAPE",
     "home": "Home",
-    "features": "Features",
-    "typography": "Typography",
-    "documentation": "Docs",
-    "getStarted": "Get Started"
+    "makan": "About Makan",
+    "projects": "Projects",
+    "services": "Services",
+    "team": "Our Team",
+    "contact": "Contact Us",
+    "langSwitch": "العربية"
   },
   "Hero": {
-    "badge": "Next.js 16 + Tailwind CSS v4 + next-intl",
-    "titlePrefix": "Modern Design with",
-    "titleHighlight": "Cairo & Alexandria",
-    "titleSuffix": "Fonts",
-    "description": "Experience first-class bilingual support with Arabic and English typography, fully optimized with next-intl, App Router, and Tailwind CSS best practices.",
-    "primaryCta": "Explore Components",
-    "secondaryCta": "Typography Guide",
-    "stars": "4.9/5 Developer Rating"
+    "titleLine1": "Developing Land into",
+    "titleLine2": "Value-Creating Destinations",
+    "description": "Accompanying owners and developers from land insight and planning to landscape design, execution, and operation, creating vibrant destinations that build enduring value.",
+    "cta": "Explore Our Work"
   },
-  "TypographyShowcase": {
-    "badge": "Typography Showcase",
-    "title": "Crafted with Cairo & Alexandria",
-    "subtitle": "Harmonious pairing of modern geometric headings and exceptionally legible body typography.",
-    "cairoTitle": "Cairo Font",
-    "cairoSubtitle": "Contemporary Arabic & Latin font engineered for high readability in UI, body text, and interactive elements.",
-    "alexandriaTitle": "Alexandria Font",
-    "alexandriaSubtitle": "Geometric, avant-garde Arabic display typeface with pristine weights ideal for hero titles and branding.",
-    "sampleHeadline": "The quick brown fox jumps over the lazy dog",
-    "sampleBody": "High performance web applications require typographic clarity, thoughtful internationalization, and optimized asset delivery.",
-    "weights": "Weights: 300 Light, 400 Regular, 600 SemiBold, 700 Bold, 900 Black"
+  "Metrics": {
+    "stat1Value": "+10",
+    "stat1Label": "Years of Experience",
+    "stat2Value": "+20",
+    "stat2Label": "Completed Projects",
+    "stat3Value": "4",
+    "stat3Label": "Major Cities",
+    "stat4Value": "1M+",
+    "stat4Label": "Community Beneficiaries"
   },
-  "Features": {
-    "badge": "Why This Setup?",
-    "title": "Built on Modern Web Standards",
-    "subtitle": "Everything configured according to modern Next.js App Router guidelines.",
-    "i18nTitle": "Type-Safe Internationalization",
-    "i18nDesc": "Full next-intl v4 integration with locale routing, static generation, asynchronous params, and automatic RTL/LTR handling.",
-    "tailwindTitle": "Tailwind CSS v4",
-    "tailwindDesc": "Zero-config lightning speed Turbopack engine with customized CSS font variables and theme tokens.",
-    "fontsTitle": "next/font Optimization",
-    "fontsDesc": "Zero layout shift with self-hosted Google Fonts for Cairo & Alexandria preloaded for Arabic and Latin subsets.",
-    "rtlTitle": "Seamless RTL / LTR",
-    "rtlDesc": "HTML dir attribute, flex ordering, margin/padding flow, and icon direction configured automatically per locale."
+  "FeaturedProjects": {
+    "title": "Selected Works",
+    "subtitle": "Signature projects that create tangible value for place and community.",
+    "ctaAll": "Explore All Projects",
+    "exploreProject": "Explore Project",
+    "project1": {
+      "category": "Residential",
+      "title": "El Wady Al Akhdar",
+      "location": "Riyadh, Kingdom of Saudi Arabia"
+    },
+    "project2": {
+      "category": "Public Spaces",
+      "title": "Rafed Project",
+      "location": "Khobar, Kingdom of Saudi Arabia"
+    },
+    "project3": {
+      "category": "Mixed-Use",
+      "title": "Estraha Retreat",
+      "location": "Jeddah, Kingdom of Saudi Arabia"
+    }
   },
-  "LanguageSwitcher": {
-    "ar": "العربية",
-    "en": "English",
-    "currentLanguage": "Language",
-    "switchPrompt": "Switch Language"
+  "WhyMakan": {
+    "eyebrow": "Why Makan?",
+    "heading": "Making a Difference in Quality of Life",
+    "description": "We believe every land holds an opportunity. We combine strategic vision with local expertise to design and execute inspiring destinations that add genuine value to communities and leave a lasting legacy.",
+    "cta": "Discover Makan",
+    "pillar1Title": "Sustainable Destinations",
+    "pillar1Desc": "For Generations to Come",
+    "pillar2Title": "Vibrant Communities",
+    "pillar2Desc": "Full of Life",
+    "pillar3Title": "Long-Term Value",
+    "pillar3Desc": "For Owners & Investors"
+  },
+  "Services": {
+    "eyebrow": "Our Services",
+    "heading": "From Planning to Operation",
+    "subtitle": "Integrated services crafting sustainable destinations and enduring value.",
+    "ctaAll": "Explore All Services",
+    "s1": {
+      "number": "01",
+      "title": "Master Planning",
+      "desc": "Comprehensive strategic planning for resilient, sustainable landscapes."
+    },
+    "s2": {
+      "number": "02",
+      "title": "Landscape Architecture",
+      "desc": "Designing immersive spatial experiences harmonized with nature and human touch."
+    },
+    "s3": {
+      "number": "03",
+      "title": "Placemaking",
+      "desc": "Transforming visionary concepts into iconic spaces with identity and purpose."
+    },
+    "s4": {
+      "number": "04",
+      "title": "Design & Execution",
+      "desc": "From concept to turnkey reality with rigorous quality and craftsmanship."
+    },
+    "s5": {
+      "number": "05",
+      "title": "Project Management",
+      "desc": "Executing high-value projects with precision schedule and budget governance."
+    },
+    "s6": {
+      "number": "06",
+      "title": "Operations & Maintenance",
+      "desc": "Sustained performance and timeless landscape beauty over generations."
+    }
+  },
+  "FeaturedVilla": {
+    "eyebrow": "Featured Project",
+    "title": "Villa El Wady",
+    "location": "Riyadh, Saudi Arabia",
+    "type": "Residential Villas",
+    "desc": "Since our establishment, we develop residential, tourism, and commercial projects that reflect a deep understanding of place and fulfill community aspirations.",
+    "cta": "Explore the Project"
+  },
+  "Partners": {
+    "title": "Our Partners in Impact",
+    "desc": "We collaborate with esteemed partners who share our singular ambition to create places that endure and leave a lasting mark."
+  },
+  "PreFooter": {
+    "heading": "Let's Build What Endures Together",
+    "desc": "Whether at the initial spark of an idea or with an existing development, dialogue starts with understanding the land and the opportunity it carries.",
+    "cta": "Explore Our Portfolio"
   },
   "Footer": {
-    "tagline": "Crafted with passion for Arabic digital experiences.",
-    "copyright": "© 2026 Makan. All rights reserved.",
-    "builtWith": "Built with Next.js, Tailwind CSS, & next-intl."
+    "statement": "A partner that builds impact.",
+    "quickLinks": "Quick Links",
+    "contactHeading": "Contact Us",
+    "email": "info@makanlandscape.sa",
+    "address": "Saud Bin Faisal Branch Rd, Al Sahafah, Riyadh 13321, Saudi Arabia",
+    "phone": "+966 11 000 0000",
+    "copyright": "All Rights Reserved © Makan 2026"
   }
 }

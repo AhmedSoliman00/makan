@@ -1,0 +1,1069 @@
+[
+  {
+    "path": "Home > Hero > Frame 15 > Frame 1 > Hero sample",
+    "text": "نطوّر الأرض إلى\nوجهات تصنع قيمة",
+    "font": "Alexandria 300 64px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Hero > Frame 15 > Frame 1 > Body sample",
+    "text": "نرافق الملاك والمطورين من فهم الأرض وتخطيطها، إلى تصميم المكان وتنفيذه وتشغيله، لنصنع وجهات تنبض بالحياة وتبني قيمة تدوم.",
+    "font": "Alexandria 300 20px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Hero > Frame 15 > Button > label",
+    "text": "اكتشف اعمالنا",
+    "font": "Cairo 400 16px",
+    "color": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Hero > Header > Navigation > nav-item-container > nav-item",
+    "text": "مكان",
+    "font": "Cairo 500 16px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Hero > Header > Navigation > nav-item-container > nav-item",
+    "text": "المشاريع",
+    "font": "Cairo 500 16px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Hero > Header > Navigation > nav-item-container > nav-item",
+    "text": "الخدمات",
+    "font": "Cairo 500 16px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Hero > Header > Navigation > nav-item-container > nav-item",
+    "text": "فريقنا",
+    "font": "Cairo 500 16px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Hero > Header > Navigation > nav-item-container > nav-item",
+    "text": "تواصل معنا",
+    "font": "Cairo 500 16px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Hero > Header > Navigation > nav-item-container > nav-item",
+    "text": "          EN",
+    "font": "Cairo 400 16px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 21 > Frame 20 > Metric value",
+    "text": "+10",
+    "font": "Alexandria 500 48px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 21 > Frame 20 > Metric label",
+    "text": "سنوات من الخبرة",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 21 > Frame 2 > Metric value",
+    "text": "+20",
+    "font": "Alexandria 500 48px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 21 > Frame 2 > Metric label",
+    "text": "مشروعاً مكتملاً",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 21 > Frame 1 > Metric value",
+    "text": "4",
+    "font": "Alexandria 500 48px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 21 > Frame 1 > Metric label",
+    "text": "مدن رئيسية",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 21 > Frame 3 > Metric value",
+    "text": "1M+",
+    "font": "Alexandria 500 48px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 21 > Frame 3 > Metric label",
+    "text": "مستفيد من مجتمعاتنا",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Frame 40 > Frame 4 > Hero sample",
+    "text": "أعمالنا المختارة",
+    "font": "Alexandria 400 48px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Frame 40 > Frame 4 > Description",
+    "text": "مشاريع نوعية تصنع قيمة حقيقية للمكان والمجتمع.",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Explore project > label",
+    "text": "اكتشف المشروع",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Project information > media > asset-status",
+    "text": "صورة المشروع — Footage معتمد",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Project information > number",
+    "text": "سكني",
+    "font": "Noto Sans Arabic 400 13px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Project information > title",
+    "text": "الوادى الأخضر",
+    "font": "Noto Sans Arabic 500 20px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Project information > meta",
+    "text": "الرياض، المملكة العربية السعودية",
+    "font": "Cairo 400 12px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Explore project > label",
+    "text": "اكتشف المشروع",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Explore project > +",
+    "text": "+",
+    "font": "Alexandria 300 30px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Explore project > +",
+    "text": "+",
+    "font": "Alexandria 300 30px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Project information > media > asset-status",
+    "text": "صورة المشروع — Footage معتمد",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Project information > number",
+    "text": "مساحات عامة",
+    "font": "Noto Sans Arabic 400 13px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Project information > title",
+    "text": "مشروع رافد",
+    "font": "Noto Sans Arabic 500 20px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Project information > meta",
+    "text": "الخبر، المملكة العربية السعودية",
+    "font": "Cairo 400 12px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Explore project > label",
+    "text": "اكتشف المشروع",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Explore project > +",
+    "text": "+",
+    "font": "Alexandria 300 30px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Explore project > +",
+    "text": "+",
+    "font": "Alexandria 300 28px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Project information > media > asset-status",
+    "text": "صورة المشروع — Footage معتمد",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Project information > number",
+    "text": "متعدد الاستخدامات",
+    "font": "Noto Sans Arabic 400 13px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Project information > title",
+    "text": "استراحة",
+    "font": "Noto Sans Arabic 500 20px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Project collection > Project > Project details > Project information > meta",
+    "text": "جدة، المملكة العربية السعودية",
+    "font": "Cairo 400 12px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Button > label",
+    "text": "استكشف جميع الاعمال",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Button > +",
+    "text": "+",
+    "font": "Alexandria 300 30px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 5 > Button > +",
+    "text": "+",
+    "font": "Alexandria 300 30px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 18 > Frame 17 > Section eyebrow > label",
+    "text": "لماذا مكان؟",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 18 > Frame 17 > Frame 16 > Heading",
+    "text": "نصنع فرقاً في جودة الحياة",
+    "font": "Alexandria 400 64px",
+    "color": {
+      "r": 0.0313725508749485,
+      "g": 0.14901961386203766,
+      "b": 0.12941177189350128,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 18 > Frame 17 > Frame 16 > Description",
+    "text": "نؤمن بأن كل أرض تحمل فرصة. ندمج الرؤية الاستراتيجية مع الخبرة المحلية\n لنصمم وننفذ وجهات ملهمة تضيف قيمة حقيقية للمجتمعات وتترك أثراً دائماً.",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 18 > Frame 17 > Frame 19 > Value > Title",
+    "text": "وجهات مستدامة",
+    "font": "Arimo 700 10px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 18 > Frame 17 > Frame 19 > Value > Description",
+    "text": "لأجيال قادمة",
+    "font": "Arimo 400 9px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 18 > Frame 17 > Frame 19 > Value > Title",
+    "text": "مجتمعات نابضة",
+    "font": "Arimo 700 10px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 18 > Frame 17 > Frame 19 > Value > Description",
+    "text": "بالحياة",
+    "font": "Arimo 400 9px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 18 > Frame 17 > Frame 19 > Value > Title",
+    "text": "قيمة طويلة الأمد",
+    "font": "Arimo 700 10px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 18 > Frame 17 > Frame 19 > Value > Description",
+    "text": "للملاك والمستثمرين",
+    "font": "Arimo 400 9px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 18 > Frame 17 > Button > label",
+    "text": "اكتشف مكان",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 40 > Button > label",
+    "text": "استكشف جميع الخدمات",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 40 > Button > +",
+    "text": "+",
+    "font": "Alexandria 300 30px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 40 > Button > +",
+    "text": "+",
+    "font": "Alexandria 300 30px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 40 > Frame 5 > Section eyebrow > label",
+    "text": "خدماننا",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 40 > Frame 5 > Hero sample",
+    "text": "من التخطيط إلى التشغيل",
+    "font": "Alexandria 400 48px",
+    "color": {
+      "r": 0.0313725508749485,
+      "g": 0.14901961386203766,
+      "b": 0.12941177189350128,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 40 > Frame 5 > Description",
+    "text": "خدمات متكاملة تصنع وجهات مستدامة وقيمة طويلة الأمد.",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 24 > Service Item > copy > number",
+    "text": "03",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 24 > Service Item > copy > Frame 1 > title",
+    "text": "صناعة المكان",
+    "font": "Alexandria 500 20px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 24 > Service Item > copy > Frame 1 > title",
+    "text": "من الفكرة إلى الواقع بجودة واحترافية.",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 24 > Service Item > copy > number",
+    "text": "02",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 24 > Service Item > copy > Frame 1 > title",
+    "text": "عمارة المشهد",
+    "font": "Alexandria 500 20px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 24 > Service Item > copy > Frame 1 > title",
+    "text": "تصميم تجارب مكانية  تنسجم مع الطبيعة والإنسان.",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 24 > Service Item > copy > number",
+    "text": "01",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 24 > Service Item > copy > Frame 1 > title",
+    "text": "التخطيط العام",
+    "font": "Alexandria 500 20px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 24 > Service Item > copy > Frame 1 > title",
+    "text": "تخطيط استراتيجي متكامل للأرض ومستدامة.",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 23 > Service Item > copy > number",
+    "text": "06",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 23 > Service Item > copy > Frame 1 > title",
+    "text": "التشغيل والصيانة",
+    "font": "Alexandria 500 20px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 23 > Service Item > copy > Frame 1 > title",
+    "text": "استدامة الأداء وجمال المكان على المدى الطويل.",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 23 > Service Item > copy > number",
+    "text": "05",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 23 > Service Item > copy > Frame 1 > title",
+    "text": "إدارة المشاريع",
+    "font": "Alexandria 500 20px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 23 > Service Item > copy > Frame 1 > title",
+    "text": "تحويل الرؤية إلى أماكن  ذات قيمة وهوية.",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 23 > Service Item > copy > number",
+    "text": "04",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 23 > Service Item > copy > Frame 1 > title",
+    "text": "التصميم والتنفيذ",
+    "font": "Alexandria 500 20px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 7 > Frame 11 > Frame 23 > Service Item > copy > Frame 1 > title",
+    "text": "من الفكرة إلى الواقع بجودة واحترافية.",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 22 > Frame 1 > Section eyebrow > label",
+    "text": "مشروع مميز",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 22 > Frame 1 > Hero title",
+    "text": "فيلا الوادى",
+    "font": "Alexandria 500 80px",
+    "color": {
+      "r": 0.062745101749897,
+      "g": 0.125490203499794,
+      "b": 0.11372549086809158,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 22 > Frame 1 > Frame 42 > Metric label",
+    "text": "فلل سكنية",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 22 > Frame 1 > Frame 42 > Metric label",
+    "text": "الرياض . السعودية",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 22 > Frame 1 > Story description",
+    "text": "منذ تأسيسنا، نعمل على تطوير مشاريع سكنية وسياحية \nوتجارية تعكس فهماً عميقاً للمكان وتلبي تطلعات المجتمعات.",
+    "font": "Cairo 400 16px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 41 > Frame 22 > Frame 1 > Button > label",
+    "text": "اكتشف المشروع",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 76 > Frame 40 > Frame 5 > Hero sample",
+    "text": "شركاؤنا في صناعة الأثر",
+    "font": "Alexandria 400 48px",
+    "color": {
+      "r": 0.0313725508749485,
+      "g": 0.14901961386203766,
+      "b": 0.12941177189350128,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 76 > Frame 40 > Frame 5 > Description",
+    "text": "نتعاون مع شركاء يجمعنا بهم طموح واحد لصناعة أماكن تدوم وتترك أثرًا.",
+    "font": "Cairo 400 14px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Frame 22 > Frame 17 > Frame 16 > Heading",
+    "text": "لنصنع معاً ما يدوم",
+    "font": "Alexandria 400 64px",
+    "color": {
+      "r": 0.0313725508749485,
+      "g": 0.14901961386203766,
+      "b": 0.12941177189350128,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Frame 22 > Frame 17 > Frame 16 > Story description",
+    "text": "سواء كنت في بداية الفكرة أو لديك مشروع قائم، يبدأ الحوار بفهم الأرض والفرصة التي تحملها.",
+    "font": "Cairo 400 16px",
+    "color": {
+      "r": 0.43529412150382996,
+      "g": 0.45490196347236633,
+      "b": 0.43529412150382996,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Frame 22 > Frame 17 > Button > label",
+    "text": "اكتشف أعمالنا",
+    "font": "Cairo 600 13px",
+    "color": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Makan footer > Frame 71 > Frame 67 > Frame 66 > Contact heading",
+    "text": "تواصل معنا",
+    "font": "Cairo 500 24px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Makan footer > Frame 71 > Frame 67 > Frame 66 > Contact information > Contact detail > Contact value",
+    "text": "info@makanlandscape.sa",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Makan footer > Frame 71 > Frame 67 > Frame 66 > Contact information > Contact detail > Contact value",
+    "text": "طريق سعود بن فيصل الفرعي، حي الصحافة، الرياض 13321، المملكة العربية السعودية",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Makan footer > Frame 71 > Frame 67 > Frame 66 > Contact information > Contact detail > Contact value",
+    "text": "+966 11 000 0000",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Makan footer > Frame 71 > Frame 67 > Frame 65 > Quick links heading",
+    "text": "روابط سريعة",
+    "font": "Cairo 500 24px",
+    "color": {
+      "r": 0.7607843279838562,
+      "g": 0.6000000238418579,
+      "b": 0.3490196168422699,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Makan footer > Frame 71 > Frame 67 > Frame 65 > Frame 64 > Quick link",
+    "text": "الرئيسية",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Makan footer > Frame 71 > Frame 67 > Frame 65 > Frame 64 > Quick link",
+    "text": "عن مكان",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Makan footer > Frame 71 > Frame 67 > Frame 65 > Frame 64 > Quick link",
+    "text": "المشاريع",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Makan footer > Frame 71 > Frame 67 > Frame 65 > Frame 64 > Quick link",
+    "text": "الخدمات",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Makan footer > Frame 71 > Frame 70 > Frame 68 > Brand statement",
+    "text": "شريك يبنى أثرًا.",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    }
+  },
+  {
+    "path": "Home > Frame 49 > Makan footer > Copyright",
+    "text": "جميع الحقوق محفوظة © مكان 2026",
+    "font": "Cairo 400 20px",
+    "color": {
+      "r": 0.7200000286102295,
+      "g": 0.7900000214576721,
+      "b": 0.7599999904632568,
+      "a": 1
+    }
+  }
+]
