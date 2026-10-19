@@ -1,0 +1,61 @@
+{
+  "Metadata": {
+    "title": "Makan | Modern Next.js Template with Cairo & Alexandria",
+    "description": "Enterprise-ready Next.js project with Tailwind CSS, next-intl translations, Cairo and Alexandria Arabic typography."
+  },
+  "Navigation": {
+    "brand": "مكان",
+    "brandSub": "Makan",
+    "home": "Home",
+    "features": "Features",
+    "typography": "Typography",
+    "documentation": "Docs",
+    "getStarted": "Get Started"
+  },
+  "Hero": {
+    "badge": "Next.js 16 + Tailwind CSS v4 + next-intl",
+    "titlePrefix": "Modern Design with",
+    "titleHighlight": "Cairo & Alexandria",
+    "titleSuffix": "Fonts",
+    "description": "Experience first-class bilingual support with Arabic and English typography, fully optimized with next-intl, App Router, and Tailwind CSS best practices.",
+    "primaryCta": "Explore Components",
+    "secondaryCta": "Typography Guide",
+    "stars": "4.9/5 Developer Rating"
+  },
+  "TypographyShowcase": {
+    "badge": "Typography Showcase",
+    "title": "Crafted with Cairo & Alexandria",
+    "subtitle": "Harmonious pairing of modern geometric headings and exceptionally legible body typography.",
+    "cairoTitle": "Cairo Font",
+    "cairoSubtitle": "Contemporary Arabic & Latin font engineered for high readability in UI, body text, and interactive elements.",
+    "alexandriaTitle": "Alexandria Font",
+    "alexandriaSubtitle": "Geometric, avant-garde Arabic display typeface with pristine weights ideal for hero titles and branding.",
+    "sampleHeadline": "The quick brown fox jumps over the lazy dog",
+    "sampleBody": "High performance web applications require typographic clarity, thoughtful internationalization, and optimized asset delivery.",
+    "weights": "Weights: 300 Light, 400 Regular, 600 SemiBold, 700 Bold, 900 Black"
+  },
+  "Features": {
+    "badge": "Why This Setup?",
+    "title": "Built on Modern Web Standards",
+    "subtitle": "Everything configured according to modern Next.js App Router guidelines.",
+    "i18nTitle": "Type-Safe Internationalization",
+    "i18nDesc": "Full next-intl v4 integration with locale routing, static generation, asynchronous params, and automatic RTL/LTR handling.",
+    "tailwindTitle": "Tailwind CSS v4",
+    "tailwindDesc": "Zero-config lightning speed Turbopack engine with customized CSS font variables and theme tokens.",
+    "fontsTitle": "next/font Optimization",
+    "fontsDesc": "Zero layout shift with self-hosted Google Fonts for Cairo & Alexandria preloaded for Arabic and Latin subsets.",
+    "rtlTitle": "Seamless RTL / LTR",
+    "rtlDesc": "HTML dir attribute, flex ordering, margin/padding flow, and icon direction configured automatically per locale."
+  },
+  "LanguageSwitcher": {
+    "ar": "العربية",
+    "en": "English",
+    "currentLanguage": "Language",
+    "switchPrompt": "Switch Language"
+  },
+  "Footer": {
+    "tagline": "Crafted with passion for Arabic digital experiences.",
+    "copyright": "© 2026 Makan. All rights reserved.",
+    "builtWith": "Built with Next.js, Tailwind CSS, & next-intl."
+  }
+}
