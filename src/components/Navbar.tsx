@@ -62,7 +62,7 @@ export default function Navbar({
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-9 font-cairo text-[16px] font-medium text-[#10201D] dark:text-[#10201D]">
+        <nav className="hidden md:flex items-center gap-7 font-cairo text-[16px] font-medium text-[#10201D] dark:text-[#10201D]">
           <Link href="/" className={navLinkClass('home')}>
             {t('makan')}
           </Link>

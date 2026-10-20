@@ -2,31 +2,92 @@ export type ProjectCategory =
   | 'residential'
   | 'publicSpaces'
   | 'mixedUse'
-  | 'hospitality';
+  | 'hospitality'
 
 export type CatalogueProject = {
-  id: string;
-  category: ProjectCategory;
-  image: string;
-};
+  id: string
+  slug: string
+  category: ProjectCategory
+  image: string
+}
 
 /** Twelve portfolio entries aligned with the Figma projects grid. */
 export const catalogueProjects: CatalogueProject[] = [
-  { id: 'el-wady-1', category: 'residential', image: '/home/images/elwady.webp' },
-  { id: 'rafed-1', category: 'publicSpaces', image: '/home/images/rafed.webp' },
-  { id: 'estraha-1', category: 'mixedUse', image: '/home/images/estraha.webp' },
-  { id: 'rafed-2', category: 'publicSpaces', image: '/home/images/rafed.webp' },
-  { id: 'estraha-2', category: 'mixedUse', image: '/home/images/estraha.webp' },
-  { id: 'el-wady-2', category: 'residential', image: '/home/images/elwady.webp' },
-  { id: 'estraha-3', category: 'mixedUse', image: '/home/images/estraha.webp' },
-  { id: 'el-wady-3', category: 'residential', image: '/home/images/elwady.webp' },
-  { id: 'rafed-3', category: 'publicSpaces', image: '/home/images/rafed.webp' },
-  { id: 'el-wady-4', category: 'residential', image: '/home/images/elwady.webp' },
-  { id: 'rafed-4', category: 'publicSpaces', image: '/home/images/rafed.webp' },
-  { id: 'estraha-4', category: 'mixedUse', image: '/home/images/estraha.webp' },
-];
+  {
+    id: 'king-khalid',
+    slug: 'king-khalid',
+    category: 'residential',
+    image: '/home/projects/king-khalid/hero.png',
+  },
+  {
+    id: 'rafed-project',
+    slug: 'rafed-project',
+    category: 'publicSpaces',
+    image: '/home/images/rafed.webp',
+  },
+  {
+    id: 'estraha-retreat',
+    slug: 'estraha-retreat',
+    category: 'mixedUse',
+    image: '/home/images/estraha.webp',
+  },
+  {
+    id: 'rafed-project-2',
+    slug: 'rafed-project',
+    category: 'publicSpaces',
+    image: '/home/images/rafed.webp',
+  },
+  {
+    id: 'estraha-retreat-2',
+    slug: 'estraha-retreat',
+    category: 'mixedUse',
+    image: '/home/images/estraha.webp',
+  },
+  {
+    id: 'el-wady-al-akhdar',
+    slug: 'el-wady-al-akhdar',
+    category: 'residential',
+    image: '/home/images/elwady.webp',
+  },
+  {
+    id: 'estraha-retreat-3',
+    slug: 'estraha-retreat',
+    category: 'mixedUse',
+    image: '/home/images/estraha.webp',
+  },
+  {
+    id: 'el-wady-al-akhdar-2',
+    slug: 'el-wady-al-akhdar',
+    category: 'residential',
+    image: '/home/images/elwady.webp',
+  },
+  {
+    id: 'rafed-project-3',
+    slug: 'rafed-project',
+    category: 'publicSpaces',
+    image: '/home/images/rafed.webp',
+  },
+  {
+    id: 'el-wady-al-akhdar-3',
+    slug: 'el-wady-al-akhdar',
+    category: 'residential',
+    image: '/home/images/elwady.webp',
+  },
+  {
+    id: 'rafed-project-4',
+    slug: 'rafed-project',
+    category: 'publicSpaces',
+    image: '/home/images/rafed.webp',
+  },
+  {
+    id: 'estraha-retreat-4',
+    slug: 'estraha-retreat',
+    category: 'mixedUse',
+    image: '/home/images/estraha.webp',
+  },
+]
 
-export type ProjectFilterId = 'all' | ProjectCategory;
+export type ProjectFilterId = 'all' | ProjectCategory
 
 export const projectFilterOrder: ProjectFilterId[] = [
   'all',
@@ -34,4 +95,4 @@ export const projectFilterOrder: ProjectFilterId[] = [
   'residential',
   'mixedUse',
   'publicSpaces',
-];
+]
