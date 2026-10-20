@@ -3,6 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
 
 export default function SelectedWorks() {
   const t = useTranslations('FeaturedProjects');
@@ -103,8 +104,8 @@ export default function SelectedWorks() {
 
         {/* View All Projects Button: 209px x 49px */}
         <div className="mt-10 sm:mt-[53px] flex justify-center">
-          <a
-            href="#projects"
+          <Link
+            href="/projects"
             className="group relative inline-flex h-[49px] w-[209px] items-center justify-center gap-3 border border-[#10201D] font-cairo text-[13px] font-semibold text-[#10201D] transition-all hover:bg-[#10201D] hover:text-white"
           >
             <span>{t('ctaAll')}</span>
@@ -113,7 +114,7 @@ export default function SelectedWorks() {
             ) : (
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             )}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

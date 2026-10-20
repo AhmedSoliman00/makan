@@ -116,6 +116,47 @@
     "desc": "Whether at the initial spark of an idea or with an existing development, dialogue starts with understanding the land and the opportunity it carries.",
     "cta": "Explore Our Portfolio"
   },
+  "ProjectsPage": {
+    "metadata": {
+      "title": "Projects",
+      "description": "Explore Makan Landscape portfolio — residential, hospitality, mixed-use, and public realm destinations across Saudi Arabia."
+    },
+    "projectCount": "{count} projects",
+    "filterAriaLabel": "Filter projects by category",
+    "exploreProject": "Explore project",
+    "emptyState": "No projects in this category yet.",
+    "filters": {
+      "all": "All",
+      "hospitality": "Hospitality",
+      "residential": "Residential",
+      "mixedUse": "Mixed-Use",
+      "publicSpaces": "Public Spaces"
+    },
+    "categories": {
+      "residential": "Residential",
+      "publicSpaces": "Public Spaces",
+      "mixedUse": "Mixed-Use",
+      "hospitality": "Hospitality"
+    },
+    "items": {
+      "residential": {
+        "title": "El Wady Al Akhdar",
+        "location": "Riyadh, Kingdom of Saudi Arabia"
+      },
+      "publicSpaces": {
+        "title": "Rafed Project",
+        "location": "Khobar, Kingdom of Saudi Arabia"
+      },
+      "mixedUse": {
+        "title": "Estraha Retreat",
+        "location": "Jeddah, Kingdom of Saudi Arabia"
+      },
+      "hospitality": {
+        "title": "Mountain Garden Arch",
+        "location": "Riyadh, Kingdom of Saudi Arabia"
+      }
+    }
+  },
   "Footer": {
     "statement": "A partner that builds impact.",
     "quickLinks": "Quick Links",

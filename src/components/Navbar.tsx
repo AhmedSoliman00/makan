@@ -6,11 +6,30 @@ import Image from 'next/image';
 import { useState, useTransition } from 'react';
 import { Menu, X } from 'lucide-react';
 
-export default function Navbar() {
+type NavbarProps = {
+  variant?: 'overlay' | 'solid';
+  activePath?: 'home' | 'projects';
+};
+
+export default function Navbar({
+  variant = 'overlay',
+  activePath,
+}: NavbarProps) {
   const t = useTranslations('Navigation');
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const isSolid = variant === 'solid';
+  const resolvedActive =
+    activePath ?? (pathname === '/projects' ? 'projects' : 'home');
+
+  const navLinkClass = (key: 'home' | 'projects' | 'default') =>
+    `transition-colors hover:text-[#C29959] ${
+      (key === 'home' && resolvedActive === 'home' && pathname === '/') ||
+      (key === 'projects' && resolvedActive === 'projects')
+        ? 'text-[#C29959]'
+        : ''
+    }`;
   const [isPending, startTransition] = useTransition();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -22,7 +41,13 @@ export default function Navbar() {
   };
 
   return (
-    <header className="absolute top-0 start-0 end-0 z-50 w-full transition-all duration-300">
+    <header
+      className={`z-50 w-full transition-all duration-300 ${
+        isSolid
+          ? 'relative border-b border-[#E4DFD7]/60 bg-[#fffdf8]'
+          : 'absolute top-0 start-0 end-0'
+      }`}
+    >
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-12">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center" aria-label="Makan Landscape">
@@ -38,34 +63,19 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-9 font-cairo text-[16px] font-medium text-[#10201D] dark:text-[#10201D]">
-          <Link
-            href="/"
-            className="transition-colors hover:text-[#C29959]"
-          >
+          <Link href="/" className={navLinkClass('home')}>
             {t('makan')}
           </Link>
-          <a
-            href="#projects"
-            className="transition-colors hover:text-[#C29959]"
-          >
+          <Link href="/projects" className={navLinkClass('projects')}>
             {t('projects')}
-          </a>
-          <a
-            href="#services"
-            className="transition-colors hover:text-[#C29959]"
-          >
+          </Link>
+          <a href="/#services" className={navLinkClass('default')}>
             {t('services')}
           </a>
-          <a
-            href="#why-makan"
-            className="transition-colors hover:text-[#C29959]"
-          >
+          <a href="/#why-makan" className={navLinkClass('default')}>
             {t('team')}
           </a>
-          <a
-            href="#contact"
-            className="transition-colors hover:text-[#C29959]"
-          >
+          <a href="/#contact" className={navLinkClass('default')}>
             {t('contact')}
           </a>
 
@@ -113,29 +123,29 @@ export default function Navbar() {
             >
               {t('makan')}
             </Link>
-            <a
-              href="#projects"
+            <Link
+              href="/projects"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 border-b border-zinc-100"
             >
               {t('projects')}
-            </a>
+            </Link>
             <a
-              href="#services"
+              href="/#services"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 border-b border-zinc-100"
             >
               {t('services')}
             </a>
             <a
-              href="#why-makan"
+              href="/#why-makan"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 border-b border-zinc-100"
             >
               {t('team')}
             </a>
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 border-b border-zinc-100"
             >
