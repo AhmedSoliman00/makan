@@ -17,7 +17,7 @@ export default function PartnersSection() {
     },
     {
       name: 'شركة الرمز',
-      src: '/home/partners/Al-Ramz-Logo 1.png',
+      src: '/home/svg/Al-Ramz-Logo 1.svg',
     },
     {
       name: 'مشراق',
@@ -32,8 +32,8 @@ export default function PartnersSection() {
   return (
     <section className="w-full bg-[#FCFBF7] py-20 border-t border-[#E4DFD7]/60">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Title */}
-        <div className="text-start md:text-end mb-16">
+        {/* Title: starts on the right in Arabic (RTL) and on the left in English (LTR) */}
+        <div className="text-start mb-16">
           <h2 className="font-alexandria text-3xl sm:text-5xl font-normal text-[#082621] tracking-tight">
             {t('title')}
           </h2>
@@ -47,14 +47,14 @@ export default function PartnersSection() {
           {partners.map((partner, idx) => (
             <div
               key={idx}
-              className="flex items-center justify-center p-4 transition-transform duration-300 hover:scale-105"
+              className="flex items-center justify-center p-2 sm:p-4"
             >
               <Image
                 src={partner.src}
                 alt={partner.name}
-                width={160}
+                width={175}
                 height={70}
-                className="max-h-14 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-80 hover:opacity-100"
+                className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105"
               />
             </div>
           ))}

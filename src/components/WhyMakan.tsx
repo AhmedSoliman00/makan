@@ -2,72 +2,63 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
-import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 export default function WhyMakan() {
   const t = useTranslations('WhyMakan');
   const locale = useLocale();
   const isRtl = locale === 'ar';
 
-  const pillars = [
-    { title: t('pillar1Title'), desc: t('pillar1Desc') },
-    { title: t('pillar2Title'), desc: t('pillar2Desc') },
-    { title: t('pillar3Title'), desc: t('pillar3Desc') },
-  ];
-
   return (
-    <section id="why-makan" className="relative w-full bg-[#FAF6F0] py-28 overflow-hidden isolate">
-      {/* Background with soft luxury texture/gradient fade */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
+    <section
+      id="why-makan"
+      className="relative w-full bg-[#FAF6F0] overflow-hidden min-h-[520px] lg:h-[551px] flex items-center isolate"
+    >
+      {/* Background Photography: /home/images/why-makan-bg.webp */}
+      <div className="absolute inset-0 z-0 select-none">
         <Image
-          src="/home/images/hero.webp"
-          alt="Luxury Landscape"
+          src="/home/images/why-makan-bg.webp"
+          alt="Makan Architecture"
           fill
-          className="object-cover object-center filter blur-xs"
+          priority={false}
+          className="object-cover object-left"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF6F0] via-[#FAF6F0]/90 to-[#FAF6F0]/70" />
+        {/* Soft directional gradient: text side is warm cream, photo side reveals architecture */}
+        <div
+          className={`absolute inset-0 ${
+            isRtl
+              ? 'bg-gradient-to-l from-[#FAF6F0] from-35% via-[#FAF6F0]/85 via-55% to-[#FAF6F0]/20'
+              : 'bg-gradient-to-r from-[#FAF6F0] from-35% via-[#FAF6F0]/85 via-55% to-[#FAF6F0]/20'
+          }`}
+        />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="max-w-3xl ms-auto text-end">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full">
+        {/* Frame 17: Content container */}
+        <div className="max-w-[641px] text-start">
           {/* Eyebrow */}
-          <div className="flex items-center justify-end gap-3 text-xs font-semibold text-[#C29959] uppercase tracking-wider mb-4 font-cairo">
+          <div className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-wider mb-5 font-cairo">
             <span className="h-px w-8 bg-[#C29959]" />
-            <span>{t('eyebrow')}</span>
+            <span className="text-[#6F746F] text-sm">{t('eyebrow')}</span>
             <span className="h-px w-8 bg-[#C29959]" />
           </div>
 
-          {/* Heading */}
-          <h2 className="font-alexandria text-4xl sm:text-6xl font-normal leading-[1.2] text-[#082621]">
+          {/* Heading (64px in Figma) */}
+          <h2 className="font-alexandria text-4xl sm:text-5xl lg:text-[64px] font-normal leading-[1.50] text-[#082621] tracking-tight">
             {t('heading')}
           </h2>
 
           {/* Paragraph */}
-          <p className="mt-6 font-cairo text-sm sm:text-base leading-relaxed text-[#082621]/80 max-w-2xl ms-auto">
+          <p className="mt-5 font-cairo text-sm sm:text-base leading-relaxed text-[#10201D]/80 max-w-xl">
             {t('description')}
           </p>
 
-          {/* Value Pillars */}
-          <div className="mt-10 grid grid-cols-3 gap-6 pt-8 border-t border-[#E4DFD7]/80">
-            {pillars.map((pillar, idx) => (
-              <div key={idx} className="flex flex-col items-center sm:items-end text-end">
-                <Sparkles className="h-4 w-4 text-[#C29959] mb-2" />
-                <h3 className="font-cairo text-sm font-bold text-[#082621]">
-                  {pillar.title}
-                </h3>
-                <p className="font-cairo text-xs text-[#6F746F] mt-1">
-                  {pillar.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Button */}
-          <div className="mt-12 flex justify-end">
+          {/* Button (177px x 49px in Figma) */}
+          <div className="mt-8 sm:mt-9 flex justify-start">
             <a
               href="#services"
-              className="group inline-flex items-center gap-3 rounded-md bg-[#082621] px-8 py-3.5 font-cairo text-sm font-semibold text-white shadow-md transition-all hover:bg-[#041a17]"
+              className="group inline-flex h-[49px] w-[177px] items-center justify-center gap-3 bg-[#082621] font-cairo text-[13px] font-semibold text-white shadow-md transition-all hover:bg-[#041a17]"
             >
               <span>{t('cta')}</span>
               {isRtl ? (
@@ -82,3 +73,5 @@ export default function WhyMakan() {
     </section>
   );
 }
+
+

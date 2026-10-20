@@ -37,28 +37,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom corner crosshair borders for buttons and cards */
-.corner-crosshair {
-  position: relative;
-}
-.corner-crosshair::before,
-.corner-crosshair::after {
-  content: "+";
-  position: absolute;
-  font-family: var(--font-alexandria);
-  font-size: 14px;
-  line-height: 1;
-  color: var(--gold);
-  pointer-events: none;
-}
-.corner-crosshair::before {
-  top: -7px;
-  inset-inline-start: -6px;
-}
-.corner-crosshair::after {
-  bottom: -7px;
-  inset-inline-end: -6px;
-}
 
 /* Arch mask for featured project */
 .arch-top {

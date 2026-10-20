@@ -85,25 +85,11 @@ export default function SelectedWorks() {
                   </p>
                 </div>
 
-                {/* Explore Project Crosshair Button (50px x 47px) */}
+                {/* Explore Project Button (50px x 47px) */}
                 <div
                   className="relative flex h-[47px] w-[50px] shrink-0 items-center justify-center border border-[#C29959] text-[#10201D] transition-colors group-hover:bg-[#C29959] group-hover:text-white cursor-pointer"
                   aria-label={t('exploreProject')}
                 >
-                  {/* Corner plus crosshairs */}
-                  <span className="absolute -top-2.5 -start-2 font-mono text-xs text-[#C29959] select-none pointer-events-none">
-                    +
-                  </span>
-                  <span className="absolute -top-2.5 -end-2 font-mono text-xs text-[#C29959] select-none pointer-events-none">
-                    +
-                  </span>
-                  <span className="absolute -bottom-2.5 -start-2 font-mono text-xs text-[#C29959] select-none pointer-events-none">
-                    +
-                  </span>
-                  <span className="absolute -bottom-2.5 -end-2 font-mono text-xs text-[#C29959] select-none pointer-events-none">
-                    +
-                  </span>
-
                   {isRtl ? (
                     <ArrowLeft className="h-4 w-4" />
                   ) : (

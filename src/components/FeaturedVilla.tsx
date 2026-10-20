@@ -13,25 +13,13 @@ export default function FeaturedVilla() {
     <section className="w-full bg-[#FAF6F0] py-24 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Arched Architectural Photo */}
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative w-full max-w-md aspect-[3/4] overflow-hidden rounded-t-[180px] shadow-xl">
-              <Image
-                src="/home/images/Mountain garden.webp"
-                alt="Mountain Garden Villa Patio"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-          </div>
-
-          {/* Villa Details */}
-          <div className="flex flex-col text-start lg:text-end items-start lg:items-end">
+          {/* Villa Details: First in DOM -> Start side (Right in RTL, Left in LTR) */}
+          <div className="flex flex-col text-start items-start">
             {/* Eyebrow */}
             <div className="flex items-center gap-3 text-xs font-semibold text-[#C29959] uppercase tracking-wider mb-4 font-cairo">
               <span className="h-px w-8 bg-[#C29959]" />
-              <span>{t('eyebrow')}</span>
+              <span className="text-[#6F746F] text-sm">{t('eyebrow')}</span>
+              <span className="h-px w-8 bg-[#C29959]" />
             </div>
 
             {/* Giant Title */}
@@ -66,8 +54,22 @@ export default function FeaturedVilla() {
               </a>
             </div>
           </div>
+
+          {/* Arched Architectural Photo: Second in DOM -> End side (Left in RTL, Right in LTR) */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-md aspect-[3/4] overflow-hidden rounded-t-[180px] shadow-xl">
+              <Image
+                src="/home/images/Mountain garden.webp"
+                alt="Mountain Garden Villa Patio"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+

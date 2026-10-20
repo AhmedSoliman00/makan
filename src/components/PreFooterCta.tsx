@@ -31,16 +31,16 @@ export default function PreFooterCta() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full">
-        <div className="max-w-2xl ms-auto text-end">
+        <div className="max-w-2xl text-start">
           <h2 className="font-alexandria text-4xl sm:text-6xl font-normal leading-[1.2] text-[#082621]">
             {t('heading')}
           </h2>
 
-          <p className="mt-5 font-cairo text-base sm:text-lg leading-relaxed text-[#082621]/80 max-w-xl ms-auto">
+          <p className="mt-5 font-cairo text-base sm:text-lg leading-relaxed text-[#082621]/80 max-w-xl">
             {t('desc')}
           </p>
 
-          <div className="mt-10 flex justify-end">
+          <div className="mt-10 flex justify-start">
             <a
               href="#projects"
               className="group inline-flex items-center gap-3 rounded-md bg-[#082621] px-8 py-3.5 font-cairo text-sm font-semibold text-white shadow-md transition-all hover:bg-[#041a17]"

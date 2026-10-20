@@ -51,20 +51,29 @@ export default function ServicesSection() {
   return (
     <section id="services" className="w-full bg-white py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Top Header Row with Title on right and Button on left */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 mb-20">
+        {/* Top Header Row with Title at start (right in RTL, left in LTR) and Button at end */}
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 mb-16 sm:mb-20">
+          {/* Heading */}
+          <div className="text-start">
+            <div className="flex items-center justify-start gap-3 text-xs font-semibold text-[#C29959] uppercase tracking-wider mb-3 font-cairo">
+              <span className="h-px w-8 bg-[#C29959]" />
+              <span className="text-[#6F746F] text-sm">{t('eyebrow')}</span>
+              <span className="h-px w-8 bg-[#C29959]" />
+            </div>
+            <h2 className="font-alexandria text-3xl sm:text-4xl lg:text-[48px] font-normal text-[#082621] tracking-tight leading-tight">
+              {t('heading')}
+            </h2>
+            <p className="mt-3 font-cairo text-sm sm:text-base text-[#6F746F]">
+              {t('subtitle')}
+            </p>
+          </div>
+
           {/* Button on opposite side */}
-          <div className="order-2 md:order-1">
+          <div className="shrink-0">
             <a
               href="#contact"
               className="group relative inline-flex items-center gap-3 border border-[#10201D] px-6 py-3 font-cairo text-sm font-semibold text-[#10201D] transition-colors hover:bg-[#10201D] hover:text-white"
             >
-              {/* Corner crosshairs */}
-              <span className="absolute -top-2.5 -start-2 font-mono text-xs text-[#10201D] select-none">+</span>
-              <span className="absolute -top-2.5 -end-2 font-mono text-xs text-[#10201D] select-none">+</span>
-              <span className="absolute -bottom-2.5 -start-2 font-mono text-xs text-[#10201D] select-none">+</span>
-              <span className="absolute -bottom-2.5 -end-2 font-mono text-xs text-[#10201D] select-none">+</span>
-
               {isRtl ? (
                 <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
               ) : (
@@ -73,80 +82,46 @@ export default function ServicesSection() {
               <span>{t('ctaAll')}</span>
             </a>
           </div>
-
-          {/* Heading */}
-          <div className="order-1 md:order-2 text-start md:text-end">
-            <div className="flex items-center justify-start md:justify-end gap-3 text-xs font-semibold text-[#C29959] uppercase tracking-wider mb-3 font-cairo">
-              <span className="h-px w-8 bg-[#C29959]" />
-              <span>{t('eyebrow')}</span>
-            </div>
-            <h2 className="font-alexandria text-3xl sm:text-5xl font-normal text-[#082621] tracking-tight">
-              {t('heading')}
-            </h2>
-            <p className="mt-3 font-cairo text-sm sm:text-base text-[#6F746F]">
-              {t('subtitle')}
-            </p>
-          </div>
         </div>
 
-        {/* 6 Services Grid with subtle dividing borders */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-b border-[#E4DFD7] divide-y md:divide-y-0 md:divide-x md:divide-x-reverse divide-[#E4DFD7]">
-          {services.slice(0, 3).map((item, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center text-center p-8 lg:p-12 transition-all duration-300 hover:bg-[#FAF6F0]/50"
-            >
-              <div className="relative h-16 w-16 mb-6 flex items-center justify-center">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={64}
-                  height={64}
-                  className="object-contain"
-                />
+        {/* 6 Services Grid with clean dividing borders */}
+        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-b border-[#E4DFD7]">
+          {services.map((item, idx) => {
+            const isLastInRow = (idx + 1) % 3 === 0;
+            const isFirstRow = idx < 3;
+            return (
+              <div
+                key={idx}
+                className={`flex flex-col items-center text-center p-8 lg:p-12 transition-all duration-300 hover:bg-[#FAF6F0]/50 ${
+                  !isLastInRow ? 'md:border-e border-[#E4DFD7]' : ''
+                } ${
+                  isFirstRow ? 'border-b md:border-b border-[#E4DFD7]' : 'border-b md:border-b-0 border-[#E4DFD7]'
+                }`}
+              >
+                <div className="relative h-16 w-16 mb-6 flex items-center justify-center">
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={64}
+                    height={64}
+                    className="object-contain"
+                  />
+                </div>
+                <span className="font-cairo text-xs font-semibold text-[#C29959]">
+                  {item.number}
+                </span>
+                <h3 className="font-alexandria text-xl font-medium text-[#10201D] mt-2 mb-2">
+                  {item.title}
+                </h3>
+                <p className="font-cairo text-sm text-[#6F746F] max-w-xs leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
-              <span className="font-cairo text-xs font-semibold text-[#C29959]">
-                {item.number}
-              </span>
-              <h3 className="font-alexandria text-xl font-medium text-[#10201D] mt-2 mb-2">
-                {item.title}
-              </h3>
-              <p className="font-cairo text-sm text-[#6F746F] max-w-xs leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Second Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border-b border-[#E4DFD7] divide-y md:divide-y-0 md:divide-x md:divide-x-reverse divide-[#E4DFD7]">
-          {services.slice(3, 6).map((item, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center text-center p-8 lg:p-12 transition-all duration-300 hover:bg-[#FAF6F0]/50"
-            >
-              <div className="relative h-16 w-16 mb-6 flex items-center justify-center">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={64}
-                  height={64}
-                  className="object-contain"
-                />
-              </div>
-              <span className="font-cairo text-xs font-semibold text-[#C29959]">
-                {item.number}
-              </span>
-              <h3 className="font-alexandria text-xl font-medium text-[#10201D] mt-2 mb-2">
-                {item.title}
-              </h3>
-              <p className="font-cairo text-sm text-[#6F746F] max-w-xs leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
+
