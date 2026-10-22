@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { Mail, MapPin, Phone } from 'lucide-react';
 
@@ -104,9 +105,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#why-makan" className="hover:text-white transition-colors">
+                <Link href="/team" className="hover:text-white transition-colors">
                   {tNav('team')}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

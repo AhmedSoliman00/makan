@@ -165,5 +165,36 @@
     "address": "Saud Bin Faisal Branch Rd, Al Sahafah, Riyadh 13321, Saudi Arabia",
     "phone": "+966 11 000 0000",
     "copyright": "All Rights Reserved © Makan 2026"
+  },
+  "TeamPage": {
+    "metadata": {
+      "title": "Our Team | Makan Landscape",
+      "description": "Meet the Makan team — planners, landscape architects, and engineers dedicated to placemaking and shaping enduring destinations."
+    },
+    "hero": {
+      "line1": "At Makan",
+      "line2": "Together We Shape The Place"
+    },
+    "philosophy": {
+      "eyebrow": "Our Services",
+      "headingPart1": "Diverse Expertise,",
+      "headingPart2": "Clear Vision"
+      ,
+      "description": "We integrate planning, design, placemaking, turnkey execution, and management into a unified journey, empowering owners and developers to create lasting, sustainable value.",
+      "plan": "We Plan",
+      "design": "We Design",
+      "execute": "We Build"
+    },
+    "team": {
+      "role": "Architectural Engineer",
+      "members": [
+        { "name": "Mohammed Abdullah", "role": "Architectural Engineer" },
+        { "name": "Mohammed Abdullah", "role": "Architectural Engineer" },
+        { "name": "Mohammed Abdullah", "role": "Architectural Engineer" },
+        { "name": "Mohammed Abdullah", "role": "Architectural Engineer" },
+        { "name": "Mohammed Abdullah", "role": "Architectural Engineer" },
+        { "name": "Mohammed Abdullah", "role": "Architectural Engineer" }
+      ]
+    }
   }
 }
