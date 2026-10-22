@@ -14,7 +14,7 @@ export default function MetricsSection() {
   ];
 
   return (
-    <section className="w-full bg-white border-b border-[#E4DFD7]/60">
+    <section className="w-full bg-white border-[#E4DFD7]/60">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Desktop View: Exact Figma specs: flex, w-[922px], h-[169px], px-[90px], justify-between, items-center, shrink-0 */}
         <div

@@ -85,7 +85,7 @@ export default function ServicesSection() {
         </div>
 
         {/* 6 Services Grid with clean dividing borders */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-b border-[#E4DFD7]">
+        <div className="grid grid-cols-1 md:grid-cols-3  border-[#E4DFD7]">
           {services.map((item, idx) => {
             const isLastInRow = (idx + 1) % 3 === 0;
             const isFirstRow = idx < 3;

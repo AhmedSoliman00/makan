@@ -9,7 +9,7 @@ import {
   projectFilterOrder,
   type ProjectFilterId,
 } from '@/lib/projects-catalogue'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 
 function ProjectCard({
   categoryLabel,

@@ -44,7 +44,7 @@ export default function Navbar({
     <header
       className={`z-50 w-full transition-all duration-300 ${
         isSolid
-          ? 'relative border-b border-[#E4DFD7]/60 bg-[#fffdf8]'
+          ? 'relative border-b border-[#E4DFD7]/60 bg-[#ffffff]'
           : 'absolute top-0 start-0 end-0'
       }`}
     >

@@ -17,7 +17,7 @@ export const catalogueProjects: CatalogueProject[] = [
     id: 'king-khalid',
     slug: 'king-khalid',
     category: 'residential',
-    image: '/home/projects/king-khalid/hero.png',
+    image: '/home/projects/king-khalid/hero.webp',
   },
   {
     id: 'rafed-project',

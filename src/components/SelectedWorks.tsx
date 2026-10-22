@@ -12,18 +12,21 @@ export default function SelectedWorks() {
 
   const projects = [
     {
+      slug: '/projects/el-wady-al-akhdar',
       image: '/home/images/elwady.webp',
       category: t('project1.category'),
       title: t('project1.title'),
       location: t('project1.location'),
     },
     {
+      slug: '/projects/rafed-project',
       image: '/home/images/rafed.webp',
       category: t('project2.category'),
       title: t('project2.title'),
       location: t('project2.location'),
     },
     {
+      slug: '/projects/estraha-retreat',
       image: '/home/images/estraha.webp',
       category: t('project3.category'),
       title: t('project3.title'),
@@ -55,49 +58,51 @@ export default function SelectedWorks() {
               dir={isRtl ? 'rtl' : 'ltr'}
               className="group flex flex-col justify-between overflow-hidden bg-white transition-all duration-300 w-full"
             >
-              {/* Image Container: 282px height with rounded top */}
-              <div className="relative h-[260px] sm:h-[282px] w-full overflow-hidden rounded-t-[5px] bg-zinc-100">
-                <Image
-                  src={proj.image}
-                  alt={proj.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes={
-                    idx === 0
-                      ? '(max-width: 768px) 100vw, 195px'
-                      : idx === 1
-                      ? '(max-width: 768px) 100vw, 528px'
-                      : '(max-width: 768px) 100vw, 343px'
-                  }
-                />
-              </div>
-
-              {/* Meta & Title Row: Project Details */}
-              <div className="mt-4 sm:mt-5 flex items-center justify-between gap-3">
-                <div className="min-w-0 flex-1">
-                  <span className="font-cairo text-[13px] font-semibold text-[#C29959] block">
-                    {proj.category}
-                  </span>
-                  <h3 className="font-alexandria text-lg sm:text-xl font-medium text-[#10201D] mt-0.5 truncate group-hover:text-[#C29959] transition-colors">
-                    {proj.title}
-                  </h3>
-                  <p className="font-cairo text-xs text-[#6F746F] mt-0.5 truncate">
-                    {proj.location}
-                  </p>
+              <Link href={proj.slug} className="block w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C29959]">
+                {/* Image Container: 282px height with rounded top */}
+                <div className="relative h-[260px] sm:h-[282px] w-full overflow-hidden rounded-t-[5px] bg-zinc-100">
+                  <Image
+                    src={proj.image}
+                    alt={proj.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes={
+                      idx === 0
+                        ? '(max-width: 768px) 100vw, 195px'
+                        : idx === 1
+                        ? '(max-width: 768px) 100vw, 528px'
+                        : '(max-width: 768px) 100vw, 343px'
+                    }
+                  />
                 </div>
 
-                {/* Explore Project Button (50px x 47px) */}
-                <div
-                  className="relative flex h-[47px] w-[50px] shrink-0 items-center justify-center border border-[#C29959] text-[#10201D] transition-colors group-hover:bg-[#C29959] group-hover:text-white cursor-pointer"
-                  aria-label={t('exploreProject')}
-                >
-                  {isRtl ? (
-                    <ArrowLeft className="h-4 w-4" />
-                  ) : (
-                    <ArrowRight className="h-4 w-4" />
-                  )}
+                {/* Meta & Title Row: Project Details */}
+                <div className="mt-4 sm:mt-5 flex items-center justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <span className="font-cairo text-[13px] font-semibold text-[#C29959] block">
+                      {proj.category}
+                    </span>
+                    <h3 className="font-alexandria text-lg sm:text-xl font-medium text-[#10201D] mt-0.5 truncate group-hover:text-[#C29959] transition-colors">
+                      {proj.title}
+                    </h3>
+                    <p className="font-cairo text-xs text-[#6F746F] mt-0.5 truncate">
+                      {proj.location}
+                    </p>
+                  </div>
+
+                  {/* Explore Project Button (50px x 47px) */}
+                  <div
+                    className="relative flex h-[47px] w-[50px] shrink-0 items-center justify-center border border-[#C29959] text-[#10201D] transition-colors group-hover:bg-[#C29959] group-hover:text-white"
+                    aria-label={t('exploreProject')}
+                  >
+                    {isRtl ? (
+                      <ArrowLeft className="h-4 w-4" />
+                    ) : (
+                      <ArrowRight className="h-4 w-4" />
+                    )}
+                  </div>
                 </div>
-              </div>
+              </Link>
             </article>
           ))}
         </div>
