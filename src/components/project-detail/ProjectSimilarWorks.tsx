@@ -19,7 +19,7 @@ export default function ProjectSimilarWorks({
   isRtl,
 }: ProjectSimilarWorksProps) {
   return (
-    <section className='w-full border-t border-[#EAE1D0] bg-white py-16 sm:py-24'>
+    <section className='w-full border-t border-[#EAE1D0]/70 bg-[#fffdf8] py-16 sm:py-24'>
       <div className='mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-[86px]'>
         {/* Header */}
         <div className='flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12'>
@@ -50,13 +50,13 @@ export default function ProjectSimilarWorks({
           {similarProjects.map((similar, idx) => (
             <article
               key={idx}
-              className='group flex flex-col overflow-hidden bg-white transition-all duration-300'
+              className='group flex flex-col overflow-hidden bg-[#fffdf8] transition-all duration-300'
             >
               <Link
                 href={`/projects/${similar.slug}`}
                 className='block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C29959]'
               >
-                <div className='relative h-[260px] sm:h-[280px] w-full overflow-hidden rounded-t-[8px] bg-zinc-100'>
+                <div className='relative h-[260px] sm:h-[280px] w-full overflow-hidden rounded-none bg-zinc-100'>
                   <Image
                     src={similar.image}
                     alt={similar.title}

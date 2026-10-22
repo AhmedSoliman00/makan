@@ -19,7 +19,7 @@ export default function ProjectGallery({
   onImageClick,
 }: ProjectGalleryProps) {
   return (
-    <section className='w-full bg-white py-16 sm:py-20 border-t border-[#EAE1D0]'>
+    <section className='w-full bg-[#fffdf8] py-16 sm:py-20 border-t border-[#EAE1D0]/70'>
       <div className='mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-[86px]'>
         <div className='mb-10 sm:mb-12'>
           <span className='font-cairo text-xs sm:text-sm font-semibold text-[#C29959] block mb-2'>
@@ -33,7 +33,7 @@ export default function ProjectGallery({
           </p>
         </div>
 
-        {/* Photo Layout: Row 1 has 2 photos, Row 2 has 1 wide panoramic photo - NO image borders */}
+        {/* Photo Layout: Row 1 has 2 photos, Row 2 has 1 wide panoramic photo - Sharp corners, NO borders */}
         <div className='space-y-6'>
           {/* Row 1 */}
           <div className='grid grid-cols-1 md:grid-cols-12 gap-6'>
@@ -42,7 +42,7 @@ export default function ProjectGallery({
                 onClick={() =>
                   onImageClick(images[0], `${projectTitle} - 1`)
                 }
-                className='md:col-span-7 group relative h-[300px] sm:h-[380px] w-full overflow-hidden rounded-[18px] bg-zinc-100 cursor-pointer'
+                className='md:col-span-7 group relative h-[300px] sm:h-[380px] w-full overflow-hidden rounded-none bg-zinc-100 cursor-pointer'
               >
                 <Image
                   src={images[0]}
@@ -64,7 +64,7 @@ export default function ProjectGallery({
                 onClick={() =>
                   onImageClick(images[1], `${projectTitle} - 2`)
                 }
-                className='md:col-span-5 group relative h-[300px] sm:h-[380px] w-full overflow-hidden rounded-[18px] bg-zinc-100 cursor-pointer'
+                className='md:col-span-5 group relative h-[300px] sm:h-[380px] w-full overflow-hidden rounded-none bg-zinc-100 cursor-pointer'
               >
                 <Image
                   src={images[1]}
@@ -88,7 +88,7 @@ export default function ProjectGallery({
               onClick={() =>
                 onImageClick(images[2], `${projectTitle} - 3`)
               }
-              className='group relative h-[320px] sm:h-[420px] w-full overflow-hidden rounded-[18px] bg-zinc-100 cursor-pointer'
+              className='group relative h-[320px] sm:h-[420px] w-full overflow-hidden rounded-none bg-zinc-100 cursor-pointer'
             >
               <Image
                 src={images[2]}

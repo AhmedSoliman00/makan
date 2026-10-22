@@ -29,7 +29,7 @@ export default function ProjectDetailView({
   } | null>(null)
 
   return (
-    <div className='w-full bg-[#FAF8F5] text-[#10201D]'>
+    <div className='w-full bg-[#fffdf8] text-[#10201D]'>
       <ProjectBreadcrumb
         breadcrumbTitle={project.breadcrumbTitle}
         locale={locale}

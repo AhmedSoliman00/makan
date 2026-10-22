@@ -81,7 +81,7 @@ export default async function ProjectDetailPage({
   const localized = locale === 'ar' ? project.ar : project.en
 
   return (
-    <div className='flex min-h-screen flex-col bg-[#FAF8F5]'>
+    <div className='flex min-h-screen flex-col bg-[#fffdf8]'>
       <Navbar variant='solid' activePath='projects' />
 
       <main className='flex-1'>

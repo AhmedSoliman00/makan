@@ -43,28 +43,30 @@ export default function ProjectHero({
       <div className='relative z-10 mx-auto flex h-full w-full max-w-[1440px] flex-col justify-between px-6 sm:px-10 lg:px-[86px] py-12 sm:py-16'>
         {/* Top/Upper section: Category badge & Title */}
         <div
+          dir={isRtl ? 'rtl' : 'ltr'}
           className={`flex flex-col mt-4 sm:mt-8 max-w-2xl ${
-            isRtl ? 'items-end text-end ms-auto' : 'items-start text-start me-auto'
+            isRtl ? 'items-start text-start' : 'items-start text-start'
           }`}
         >
           <span className='font-cairo text-sm sm:text-base font-normal text-white/90 mb-1 sm:mb-2 tracking-wide'>
             {categoryBadge}
           </span>
-          <h1 className='font-alexandria text-4xl sm:text-6xl lg:text-[76px] font-medium leading-[1.12] text-white tracking-tight drop-shadow-sm'>
+          <h1 className='font-alexandria text-4xl sm:text-6xl lg:text-[76px] font-medium leading-[1.15] text-white tracking-tight drop-shadow-sm'>
             {title}
           </h1>
         </div>
 
         {/* Bottom section: Caption */}
-        <div
-          className={`flex ${
-            isRtl ? 'justify-start text-start' : 'justify-end text-end'
-          }`}
-        >
-          <p className='font-cairo text-xs sm:text-sm text-white/85 drop-shadow-sm'>
-            {heroCaption}
-          </p>
-        </div>
+        {heroCaption && (
+          <div
+            dir={isRtl ? 'rtl' : 'ltr'}
+            className='flex justify-start text-start'
+          >
+            <p className='font-cairo text-xs sm:text-sm text-white/85 drop-shadow-sm'>
+              {heroCaption}
+            </p>
+          </div>
+        )}
       </div>
     </section>
   )

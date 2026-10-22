@@ -54,11 +54,11 @@ export default function ProjectMasterplan({
         </button>
       </div>
 
-      {/* Masterplan Drawing - NO borders on image */}
+      {/* Masterplan Drawing - Sharp corners, NO borders on image */}
       <div>
         <div
           onClick={onEnlargeClick}
-          className='group relative h-[360px] sm:h-[500px] lg:h-[620px] w-full overflow-hidden rounded-[18px] bg-[#FBF9F4] cursor-pointer'
+          className='group relative h-[360px] sm:h-[500px] lg:h-[620px] w-full overflow-hidden rounded-none bg-[#FBF9F4] cursor-pointer'
         >
           <Image
             src={image}

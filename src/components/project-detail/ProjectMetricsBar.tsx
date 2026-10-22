@@ -23,7 +23,7 @@ function MetricIcon({ icon }: { icon: string }) {
 
 export default function ProjectMetricsBar({ metrics }: ProjectMetricsBarProps) {
   return (
-    <section className='w-full  border-[#EAE1D0] bg-[#FAF8F5] py-10 sm:py-12'>
+    <section className='w-full border-b border-[#EAE1D0]/70 bg-[#fffdf8] py-10 sm:py-12'>
       <div className='mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-[86px]'>
         {/* Desktop View: 4 columns with fixed vertical dividers */}
         <div className='hidden md:flex items-center justify-between'>

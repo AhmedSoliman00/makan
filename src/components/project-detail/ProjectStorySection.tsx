@@ -162,78 +162,76 @@ export default function ProjectStorySection({
             </div>
           </div>
 
-          {/* Facts Grid: Exactly as in Figma - NO card box, integrated borders with outline icons */}
-          <div className='w-full border-t border-[#EAE1D0]'>
+          {/* Facts Grid: Exactly as in Figma - single horizontal divider between rows and vertical dividers between columns */}
+          <div className='w-full mt-6'>
             {/* Desktop / Tablet Grid: 2 rows x 3 columns */}
-            <div className='hidden sm:block'>
-              {/* Row 1 */}
-              <div className='grid grid-cols-3 divide-x divide-x-reverse divide-[#EAE1D0]'>
+            <div className='hidden sm:block' dir={isRtl ? 'rtl' : 'ltr'}>
+              {/* Row 1: No top border, internal vertical dividers only */}
+              <div className='grid grid-cols-3'>
                 {row1Facts.map((fact, idx) => (
                   <div
                     key={idx}
-                    className={`flex items-center justify-between py-5 px-4 lg:px-6 ${
-                      isRtl ? 'flex-row' : 'flex-row-reverse'
+                    className={`flex items-center gap-3.5 sm:gap-4 py-5 px-3 lg:px-6 ${
+                      idx < 2 ? 'border-inline-end border-[#EAE1D0]' : ''
                     }`}
                   >
-                    <div className={isRtl ? 'text-end' : 'text-start'}>
-                      <span className='font-cairo text-xs text-[#6F746F] block'>
-                        {fact.label}
-                      </span>
-                      <span className='font-cairo text-xs sm:text-sm font-semibold text-[#10201D] block mt-1'>
-                        {fact.value}
-                      </span>
-                    </div>
                     <div className='shrink-0 text-[#C29959]'>
                       <FactOutlineIcon icon={fact.icon} />
+                    </div>
+                    <div className='text-start min-w-0'>
+                      <span className='font-cairo text-xs text-[#6F746F] block leading-tight'>
+                        {fact.label}
+                      </span>
+                      <span className='font-cairo text-xs sm:text-sm font-semibold text-[#10201D] block mt-1 leading-snug'>
+                        {fact.value}
+                      </span>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Row 2 */}
-              <div className='grid grid-cols-3 divide-x divide-x-reverse divide-[#EAE1D0] border-t border-[#EAE1D0]'>
+              {/* Row 2: Horizontal divider on top, internal vertical dividers only */}
+              <div className='grid grid-cols-3 border-t border-[#EAE1D0]'>
                 {row2Facts.map((fact, idx) => (
                   <div
                     key={idx}
-                    className={`flex items-center justify-between py-5 px-4 lg:px-6 ${
-                      isRtl ? 'flex-row' : 'flex-row-reverse'
+                    className={`flex items-center gap-3.5 sm:gap-4 py-5 px-3 lg:px-6 ${
+                      idx < 2 ? 'border-inline-end border-[#EAE1D0]' : ''
                     }`}
                   >
-                    <div className={isRtl ? 'text-end' : 'text-start'}>
-                      <span className='font-cairo text-xs text-[#6F746F] block'>
-                        {fact.label}
-                      </span>
-                      <span className='font-cairo text-xs sm:text-sm font-semibold text-[#10201D] block mt-1'>
-                        {fact.value}
-                      </span>
-                    </div>
                     <div className='shrink-0 text-[#C29959]'>
                       <FactOutlineIcon icon={fact.icon} />
+                    </div>
+                    <div className='text-start min-w-0'>
+                      <span className='font-cairo text-xs text-[#6F746F] block leading-tight'>
+                        {fact.label}
+                      </span>
+                      <span className='font-cairo text-xs sm:text-sm font-semibold text-[#10201D] block mt-1 leading-snug'>
+                        {fact.value}
+                      </span>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Mobile Grid: 2 columns */}
-            <div className='grid grid-cols-1 sm:hidden divide-y divide-[#EAE1D0]'>
+            {/* Mobile Grid */}
+            <div className='grid grid-cols-1 sm:hidden divide-y divide-[#EAE1D0]' dir={isRtl ? 'rtl' : 'ltr'}>
               {facts.map((fact, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-center justify-between py-4 px-2 ${
-                    isRtl ? 'flex-row' : 'flex-row-reverse'
-                  }`}
+                  className='flex items-center gap-3.5 py-4 px-2'
                 >
-                  <div className={isRtl ? 'text-end' : 'text-start'}>
+                  <div className='shrink-0 text-[#C29959]'>
+                    <FactOutlineIcon icon={fact.icon} />
+                  </div>
+                  <div className='text-start min-w-0'>
                     <span className='font-cairo text-xs text-[#6F746F] block'>
                       {fact.label}
                     </span>
                     <span className='font-cairo text-xs sm:text-sm font-semibold text-[#10201D] block mt-0.5'>
                       {fact.value}
                     </span>
-                  </div>
-                  <div className='shrink-0 text-[#C29959]'>
-                    <FactOutlineIcon icon={fact.icon} />
                   </div>
                 </div>
               ))}
