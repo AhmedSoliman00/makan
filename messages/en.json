@@ -253,5 +253,58 @@
       "addressLine2": "Riyadh, Kingdom of Saudi Arabia",
       "directions": "Get Directions"
     }
+  },
+  "AboutPage": {
+    "metadata": {
+      "title": "About Makan | Makan Landscape",
+      "description": "We design vibrant, sustainable spaces with distinct identity, combining a deep understanding of place with real estate development expertise."
+    },
+    "hero": {
+      "title": "About Makan",
+      "subtitle": "We design vibrant, sustainable spaces with distinct identity."
+    },
+    "intro": {
+      "line1": "We blend a deep understanding of place with development expertise",
+      "line2": "to create destinations that thrive and leave an enduring impact."
+    },
+    "story": {
+      "eyebrow": "Our Story",
+      "title": "About Makan",
+      "subtitle": "An ongoing journey to craft destinations that inspire people.",
+      "description": "Since our founding, we have been developing residential, hospitality, and commercial projects that reflect a profound understanding of place and fulfill community aspirations."
+    },
+    "mission": {
+      "eyebrow": "Our Mission",
+      "title": "Our Mission",
+      "subtitle": "An ongoing journey to craft destinations that inspire people.",
+      "description": "Developing integrated communities that unite nature and humanity, achieving sustainable value for the land and for future generations."
+    },
+    "values": {
+      "eyebrow": "What We Believe",
+      "title": "What We Believe In",
+      "subtitle": "Integrated services shaping sustainable destinations and long-term value.",
+      "items": {
+        "nature": {
+          "number": "01",
+          "title": "Nature",
+          "desc": "Our Source of Inspiration"
+        },
+        "human": {
+          "number": "02",
+          "title": "Human",
+          "desc": "At the Core of What We Design"
+        },
+        "community": {
+          "number": "03",
+          "title": "Community",
+          "desc": "Building Lasting Relationships"
+        },
+        "sustainability": {
+          "number": "04",
+          "title": "Sustainability",
+          "desc": "Today's Resources for Tomorrow's Generations"
+        }
+      }
+    }
   }
 }

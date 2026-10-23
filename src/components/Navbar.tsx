@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react'
 
 type NavbarProps = {
   variant?: 'overlay' | 'solid'
-  activePath?: 'home' | 'projects' | 'team' | 'contact'
+  activePath?: 'home' | 'about' | 'projects' | 'team' | 'contact'
 }
 
 export default function Navbar({
@@ -22,17 +22,20 @@ export default function Navbar({
   const isSolid = variant === 'solid'
   const resolvedActive =
     activePath ??
-    (pathname.startsWith('/projects')
-      ? 'projects'
-      : pathname.startsWith('/team') || pathname.startsWith('/people')
-        ? 'team'
-        : pathname.startsWith('/contact')
-          ? 'contact'
-          : 'home')
+    (pathname.startsWith('/about')
+      ? 'about'
+      : pathname.startsWith('/projects')
+        ? 'projects'
+        : pathname.startsWith('/team') || pathname.startsWith('/people')
+          ? 'team'
+          : pathname.startsWith('/contact')
+            ? 'contact'
+            : 'home')
 
-  const navLinkClass = (key: 'home' | 'projects' | 'team' | 'contact' | 'default') =>
+  const navLinkClass = (key: 'home' | 'about' | 'projects' | 'team' | 'contact' | 'default') =>
     `transition-colors hover:text-[#C29959] ${
       (key === 'home' && resolvedActive === 'home' && pathname === '/') ||
+      (key === 'about' && resolvedActive === 'about') ||
       (key === 'projects' && resolvedActive === 'projects') ||
       (key === 'team' && resolvedActive === 'team') ||
       (key === 'contact' && resolvedActive === 'contact')
@@ -76,7 +79,7 @@ export default function Navbar({
 
         {/* Desktop Navigation */}
         <nav className='hidden md:flex items-center gap-7 font-cairo text-[16px] font-medium text-[#10201D] dark:text-[#10201D]'>
-          <Link href='/' className={navLinkClass('home')}>
+          <Link href='/about' className={navLinkClass('about')}>
             {t('makan')}
           </Link>
           <Link href='/projects' className={navLinkClass('projects')}>
@@ -134,9 +137,11 @@ export default function Navbar({
         <div className='md:hidden bg-white/95 backdrop-blur-md border-b border-[#E4DFD7] px-6 py-6 shadow-xl'>
           <nav className='flex flex-col gap-4 font-cairo text-base font-semibold text-[#10201D]'>
             <Link
-              href='/'
+              href='/about'
               onClick={() => setMobileMenuOpen(false)}
-              className='py-1 border-b border-zinc-100'
+              className={`py-1 border-b border-zinc-100 ${
+                resolvedActive === 'about' ? 'text-[#C29959]' : ''
+              }`}
             >
               {t('makan')}
             </Link>

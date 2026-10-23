@@ -90,9 +90,9 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 font-cairo text-base text-zinc-300">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link href="/about" className="hover:text-white transition-colors">
                   {tNav('makan')}
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#projects" className="hover:text-white transition-colors">
