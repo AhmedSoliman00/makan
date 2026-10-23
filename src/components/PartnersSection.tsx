@@ -33,7 +33,7 @@ export default function PartnersSection() {
     <section className='bg-[##FFFDF8] py-20 border-[#E4DFD7]/60 border-t w-full'>
       <div className='mx-auto px-6 lg:px-8 max-w-7xl'>
         {/* Title: starts on the right in Arabic (RTL) and on the left in English (LTR) */}
-        <div className='mb-16 text-start'>
+        <div className='mb-16 text-center'>
           <h2 className='font-alexandria font-normal text-[#082621] text-3xl sm:text-5xl leading-[1.3] tracking-tight'>
             {t('title')}
           </h2>

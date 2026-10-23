@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react'
 
 type NavbarProps = {
   variant?: 'overlay' | 'solid'
-  activePath?: 'home' | 'projects' | 'team'
+  activePath?: 'home' | 'projects' | 'team' | 'contact'
 }
 
 export default function Navbar({
@@ -26,13 +26,16 @@ export default function Navbar({
       ? 'projects'
       : pathname.startsWith('/team') || pathname.startsWith('/people')
         ? 'team'
-        : 'home')
+        : pathname.startsWith('/contact')
+          ? 'contact'
+          : 'home')
 
-  const navLinkClass = (key: 'home' | 'projects' | 'team' | 'default') =>
+  const navLinkClass = (key: 'home' | 'projects' | 'team' | 'contact' | 'default') =>
     `transition-colors hover:text-[#C29959] ${
       (key === 'home' && resolvedActive === 'home' && pathname === '/') ||
       (key === 'projects' && resolvedActive === 'projects') ||
-      (key === 'team' && resolvedActive === 'team')
+      (key === 'team' && resolvedActive === 'team') ||
+      (key === 'contact' && resolvedActive === 'contact')
         ? 'text-[#C29959]'
         : ''
     }`
@@ -85,9 +88,9 @@ export default function Navbar({
           <Link href='/team' className={navLinkClass('team')}>
             {t('team')}
           </Link>
-          <a href='/#contact' className={navLinkClass('default')}>
+          <Link href='/contact' className={navLinkClass('contact')}>
             {t('contact')}
-          </a>
+          </Link>
 
           {/* Language Switcher */}
           <button
@@ -160,13 +163,15 @@ export default function Navbar({
             >
               {t('team')}
             </Link>
-            <a
-              href='/#contact'
+            <Link
+              href='/contact'
               onClick={() => setMobileMenuOpen(false)}
-              className='py-1 border-b border-zinc-100'
+              className={`py-1 border-b border-zinc-100 ${
+                resolvedActive === 'contact' ? 'text-[#C29959]' : ''
+              }`}
             >
               {t('contact')}
-            </a>
+            </Link>
           </nav>
         </div>
       )}

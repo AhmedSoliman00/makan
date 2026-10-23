@@ -195,5 +195,62 @@
         { "name": "محمد عبدالله", "role": "مهندس معمارى" }
       ]
     }
+  },
+  "ContactPage": {
+    "metadata": {
+      "title": "تواصل معنا | مكان لاندسكيب",
+      "description": "تواصل مع فريق مكان لمناقشة أفكاركم ومشاريعكم القادمة في عمارة المشهد وصناعة المكان."
+    },
+    "hero": {
+      "line1": "لنصنع معًا مساحات",
+      "line2": "تلهم الحياة"
+    },
+    "formSection": {
+      "title": "تواصل معنا",
+      "subtitle": "سواء كانت لديك استفسارات، أو فكرة لمشروع قادم، فريقنا هنا للاستماع ومساعدتك في كل خطوة.",
+      "nameLabel": "الاسم الكامل",
+      "namePlaceholder": "مثال: أحمد محمد",
+      "emailLabel": "البريد الإلكتروني",
+      "emailPlaceholder": "example@makan.com",
+      "projectTypeLabel": "نوع المشروع",
+      "projectTypePlaceholder": "اختر نوع المشروع",
+      "types": {
+        "residential": "سكني",
+        "commercial": "تجاري",
+        "hospitality": "ضيافة",
+        "publicSpaces": "مساحات عامة",
+        "mixedUse": "متعدد الاستخدامات",
+        "masterplan": "تخطيط عام",
+        "other": "أخرى"
+      },
+      "locationLabel": "المدينة / الموقع",
+      "locationPlaceholder": "مثال: الرياض، المملكة العربية السعودية",
+      "messageLabel": "رسالتك",
+      "messagePlaceholder": "أخبرنا المزيد عن مشروعك أو استفساراتك ...",
+      "submit": "أرسل رسالة",
+      "submitting": "جارٍ الإرسال...",
+      "success": "تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.",
+      "error": "حدث خطأ أثناء إرسال الرسالة، يرجى المحاولة مرة أخرى."
+    },
+    "infoSection": {
+      "title": "معلومات التواصل",
+      "emailLabel": "البريد الإلكتروني",
+      "emailValue": "hello@makan.com",
+      "phoneLabel": "الهاتف",
+      "phoneValue": "+966 50 123 4567",
+      "locationLabel": "الموقع",
+      "locationValue": "الرياض، المملكة العربية السعودية",
+      "hoursLabel": "ساعات العمل",
+      "hoursDays": "الأحد – الخميس",
+      "hoursTime": "9:00 صباحاً – 6:00 مساءً",
+      "socialTitle": "تابعنا"
+    },
+    "officeSection": {
+      "title": "زورونا في مقرنا",
+      "subtitle": "نرحب بكم في مكتبنا لمناقشة أفكاركم والتعرف على فريقنا.",
+      "addressLine1": "طريق الملك فهد، حي العليا",
+      "addressLine2": "الرياض، المملكة العربية السعودية",
+      "directions": "عرض الاتجاهات"
+    }
   }
 }

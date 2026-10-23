@@ -196,5 +196,62 @@
         { "name": "Mohammed Abdullah", "role": "Architectural Engineer" }
       ]
     }
+  },
+  "ContactPage": {
+    "metadata": {
+      "title": "Contact Us | Makan Landscape",
+      "description": "Get in touch with the Makan team to discuss your upcoming landscape architecture and placemaking projects."
+    },
+    "hero": {
+      "line1": "Together We Create Spaces",
+      "line2": "That Inspire Life"
+    },
+    "formSection": {
+      "title": "Contact Us",
+      "subtitle": "Whether you have questions or an idea for an upcoming project, our team is here to listen and assist you at every step.",
+      "nameLabel": "Full Name",
+      "namePlaceholder": "e.g. Ahmed Mohammed",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "example@makan.com",
+      "projectTypeLabel": "Project Type",
+      "projectTypePlaceholder": "Select project type",
+      "types": {
+        "residential": "Residential",
+        "commercial": "Commercial",
+        "hospitality": "Hospitality",
+        "publicSpaces": "Public Spaces",
+        "mixedUse": "Mixed-Use",
+        "masterplan": "Master Planning",
+        "other": "Other"
+      },
+      "locationLabel": "City / Location",
+      "locationPlaceholder": "e.g. Riyadh, Saudi Arabia",
+      "messageLabel": "Your Message",
+      "messagePlaceholder": "Tell us more about your project or inquiry...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Your message has been sent successfully! We will get back to you soon.",
+      "error": "An error occurred while sending your message. Please try again."
+    },
+    "infoSection": {
+      "title": "Contact Information",
+      "emailLabel": "Email Address",
+      "emailValue": "hello@makan.com",
+      "phoneLabel": "Phone Number",
+      "phoneValue": "+966 50 123 4567",
+      "locationLabel": "Location",
+      "locationValue": "Riyadh, Saudi Arabia",
+      "hoursLabel": "Working Hours",
+      "hoursDays": "Sunday – Thursday",
+      "hoursTime": "9:00 AM – 6:00 PM",
+      "socialTitle": "Follow Us"
+    },
+    "officeSection": {
+      "title": "Visit Our Office",
+      "subtitle": "We welcome you to our office to discuss your ideas and meet our team.",
+      "addressLine1": "King Fahd Road, Al Olaya District",
+      "addressLine2": "Riyadh, Kingdom of Saudi Arabia",
+      "directions": "Get Directions"
+    }
   }
 }
