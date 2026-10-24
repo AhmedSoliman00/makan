@@ -186,11 +186,15 @@
   "Footer": {
     "statement": "A partner that builds impact.",
     "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About Makan",
     "contactHeading": "Contact Us",
     "email": "info@makanlandscape.sa",
     "address": "Saud Bin Faisal Branch Rd, Al Sahafah, Riyadh 13321, Saudi Arabia",
     "phone": "+966 11 000 0000",
-    "copyright": "All Rights Reserved © Makan 2026"
+    "copyright": "All Rights Reserved © Makan 2026",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
   },
   "TeamPage": {
     "metadata": {
