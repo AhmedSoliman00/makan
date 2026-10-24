@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react'
 
 type NavbarProps = {
   variant?: 'overlay' | 'solid'
-  activePath?: 'home' | 'about' | 'projects' | 'team' | 'contact'
+  activePath?: 'home' | 'about' | 'projects' | 'services' | 'team' | 'contact'
 }
 
 export default function Navbar({
@@ -26,17 +26,20 @@ export default function Navbar({
       ? 'about'
       : pathname.startsWith('/projects')
         ? 'projects'
-        : pathname.startsWith('/team') || pathname.startsWith('/people')
-          ? 'team'
-          : pathname.startsWith('/contact')
-            ? 'contact'
-            : 'home')
+        : pathname.startsWith('/services')
+          ? 'services'
+          : pathname.startsWith('/team') || pathname.startsWith('/people')
+            ? 'team'
+            : pathname.startsWith('/contact')
+              ? 'contact'
+              : 'home')
 
-  const navLinkClass = (key: 'home' | 'about' | 'projects' | 'team' | 'contact' | 'default') =>
+  const navLinkClass = (key: 'home' | 'about' | 'projects' | 'services' | 'team' | 'contact' | 'default') =>
     `transition-colors hover:text-[#C29959] ${
       (key === 'home' && resolvedActive === 'home' && pathname === '/') ||
       (key === 'about' && resolvedActive === 'about') ||
       (key === 'projects' && resolvedActive === 'projects') ||
+      (key === 'services' && resolvedActive === 'services') ||
       (key === 'team' && resolvedActive === 'team') ||
       (key === 'contact' && resolvedActive === 'contact')
         ? 'text-[#C29959]'
@@ -85,9 +88,9 @@ export default function Navbar({
           <Link href='/projects' className={navLinkClass('projects')}>
             {t('projects')}
           </Link>
-          <a href='/#services' className={navLinkClass('default')}>
+          <Link href='/services' className={navLinkClass('services')}>
             {t('services')}
-          </a>
+          </Link>
           <Link href='/team' className={navLinkClass('team')}>
             {t('team')}
           </Link>
@@ -152,13 +155,15 @@ export default function Navbar({
             >
               {t('projects')}
             </Link>
-            <a
-              href='/#services'
+            <Link
+              href='/services'
               onClick={() => setMobileMenuOpen(false)}
-              className='py-1 border-b border-zinc-100'
+              className={`py-1 border-b border-zinc-100 ${
+                resolvedActive === 'services' ? 'text-[#C29959]' : ''
+              }`}
             >
               {t('services')}
-            </a>
+            </Link>
             <Link
               href='/team'
               onClick={() => setMobileMenuOpen(false)}

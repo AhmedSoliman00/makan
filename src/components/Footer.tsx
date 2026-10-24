@@ -100,9 +100,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors">
+                <Link href="/services" className="hover:text-white transition-colors">
                   {tNav('services')}
-                </a>
+                </Link>
               </li>
               <li>
                 <Link href="/team" className="hover:text-white transition-colors">

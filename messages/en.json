@@ -306,5 +306,81 @@
         }
       }
     }
+  },
+  "ServicesPage": {
+    "metadata": {
+      "title": "Services | Makan Landscape",
+      "description": "Integrated services creating enduring value. We combine master planning, landscape architecture, placemaking, design & build, project management, and operations into a unified journey."
+    },
+    "hero": {
+      "titleLine1": "Integrated Services",
+      "titleLine2": "Creating Enduring Value"
+    },
+    "ecosystem": {
+      "eyebrow": "Our Services",
+      "title": "Six Services, One Ecosystem",
+      "description": "We combine master planning, landscape architecture, placemaking, design & build, project management, and operations within an interconnected journey, helping owners and developers build places of higher quality, sustainability, and value.",
+      "items": {
+        "s1": {
+          "number": "01",
+          "title": "Master Planning",
+          "subtitle": "Starting with the Bigger Picture",
+          "description": "We read the potential of the land and transform project goals into an integrated vision that defines development direction and relationships between elements, ensuring subsequent decisions are grounded on clarity."
+        },
+        "s2": {
+          "number": "02",
+          "title": "Landscape Architecture",
+          "subtitle": "Designing Through the Lens of People and Nature",
+          "description": "We create outdoor spaces combining aesthetic beauty, function, and nature, cultivating a more comfortable and meaningful connection with place."
+        },
+        "s3": {
+          "number": "03",
+          "title": "Placemaking",
+          "subtitle": "Transforming Spaces into Destinations",
+          "description": "Beauty alone is not enough. We craft experiences and spatial identities that invite people to use, interact with, and belong to the place."
+        },
+        "s4": {
+          "number": "04",
+          "title": "Design & Build",
+          "subtitle": "From Blueprint to Reality",
+          "description": "We bridge design with execution to maintain vision clarity and detail quality when transforming ideas into tangible, functional environments."
+        },
+        "s5": {
+          "number": "05",
+          "title": "Project Management",
+          "subtitle": "A Single Vision Through Delivery",
+          "description": "We coordinate project phases and milestones within an integrated process that preserves quality and transparency throughout the execution journey."
+        },
+        "s6": {
+          "number": "06",
+          "title": "Operations & Maintenance",
+          "subtitle": "Value That Outlasts the Opening",
+          "description": "We uphold the quality and performance of the landscape post-delivery, ensuring the environment continues its purpose and preserves enduring value over time."
+        }
+      }
+    },
+    "philosophy": {
+      "eyebrow": "Our Approach",
+      "title": "We Don't Just Design Spaces",
+      "description": "We combine master planning, landscape architecture, placemaking, execution, project management, and operations in an interconnected journey, helping owners and developers build places of higher quality, sustainability, and value.",
+      "items": {
+        "p1": {
+          "number": "01",
+          "title": "Contextual Design",
+          "description": "Every land possesses distinct characteristics, and every project holds a unique opportunity."
+        },
+        "p2": {
+          "number": "02",
+          "title": "Integrated Design to Execution",
+          "description": "A single vision that bridges the divide between conceptual thought and physical reality."
+        },
+        "p3": {
+          "number": "03",
+          "title": "Practical Sustainability",
+          "description": "Conscious decisions that deliver tangible long-term value for the place and environment."
+        }
+      }
+    }
   }
 }
+
