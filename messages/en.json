@@ -125,6 +125,32 @@
     "filterAriaLabel": "Filter projects by category",
     "exploreProject": "Explore project",
     "emptyState": "No projects in this category yet.",
+    "viewToggleAriaLabel": "Toggle view mode",
+    "viewGrid": "Grid view",
+    "viewList": "List view",
+    "viewProject": "View Project",
+    "metadataLabels": {
+      "type": "Type",
+      "location": "Location",
+      "status": "Status"
+    },
+    "metadataValues": {
+      "types": {
+        "residential": "Residential Community",
+        "publicSpaces": "Public Realm",
+        "mixedUse": "Mixed-Use",
+        "hospitality": "Hospitality"
+      },
+      "cities": {
+        "riyadh": "Riyadh",
+        "khobar": "Khobar",
+        "jeddah": "Jeddah"
+      },
+      "statuses": {
+        "completed": "Completed",
+        "inProgress": "In Progress"
+      }
+    },
     "filters": {
       "all": "All",
       "hospitality": "Hospitality",

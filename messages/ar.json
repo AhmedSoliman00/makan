@@ -125,6 +125,32 @@
     "filterAriaLabel": "تصفية المشاريع حسب الفئة",
     "exploreProject": "اكتشف المشروع",
     "emptyState": "لا توجد مشاريع في هذه الفئة حالياً.",
+    "viewToggleAriaLabel": "تبديل طريقة العرض",
+    "viewGrid": "عرض شبكي",
+    "viewList": "عرض قائمة",
+    "viewProject": "مشاهدة المشروع",
+    "metadataLabels": {
+      "type": "النوع",
+      "location": "الموقع",
+      "status": "الحالة"
+    },
+    "metadataValues": {
+      "types": {
+        "residential": "مجتمع سكني",
+        "publicSpaces": "مساحات عامة",
+        "mixedUse": "متعدد الاستخدامات",
+        "hospitality": "ضيافة"
+      },
+      "cities": {
+        "riyadh": "الرياض",
+        "khobar": "الخبر",
+        "jeddah": "جدة"
+      },
+      "statuses": {
+        "completed": "مكتمل",
+        "inProgress": "قيد التنفيذ"
+      }
+    },
     "filters": {
       "all": "الكل",
       "hospitality": "ضيافة",
