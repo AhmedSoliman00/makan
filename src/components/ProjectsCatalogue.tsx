@@ -185,28 +185,45 @@ function ProjectListItem({
   )
 }
 
-export default function ProjectsCatalogue() {
+import type { LocalizedProjectSummary } from '@/lib/data/projects'
+
+type ProjectsCatalogueProps = {
+  projects?: LocalizedProjectSummary[]
+  initialCategory?: string
+  initialView?: 'grid' | 'list'
+}
+
+export default function ProjectsCatalogue({
+  projects = [],
+  initialCategory = 'all',
+  initialView = 'grid',
+}: ProjectsCatalogueProps) {
   const t = useTranslations('ProjectsPage')
   const locale = useLocale()
   const isRtl = locale === 'ar'
-  const [activeFilter, setActiveFilter] = useState<ProjectFilterId>('all')
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
+  const [activeFilter, setActiveFilter] = useState<ProjectFilterId>(
+    (initialCategory as ProjectFilterId) || 'all'
+  )
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>(initialView)
+
+  const items = projects.length > 0 ? projects : catalogueProjects
 
   const filteredProjects = useMemo(() => {
-    if (activeFilter === 'all') return catalogueProjects
-    return catalogueProjects.filter((p) => p.category === activeFilter)
-  }, [activeFilter])
+    if (activeFilter === 'all') return items
+    return items.filter((p) => p.category === activeFilter)
+  }, [activeFilter, items])
 
-  const getProjectCopy = (project: (typeof catalogueProjects)[number]) => {
+  const getProjectCopy = (project: (typeof items)[number]) => {
     const baseKey = project.category
     const cityKey = project.cityKey || 'riyadh'
     const statusKey = project.statusKey || 'completed'
-    const typeKey = project.typeKey || baseKey
+    const typeKey = (project as any).typeKey || baseKey
 
     return {
-      categoryLabel: t(`categories.${baseKey}`),
-      title: t(`items.${baseKey}.title`),
-      location: t(`items.${baseKey}.location`),
+      categoryLabel:
+        (project as any).categoryLabel || t(`categories.${baseKey}`),
+      title: (project as any).title || t(`items.${baseKey}.title`),
+      location: (project as any).location || t(`items.${baseKey}.location`),
       cityValue: t(`metadataValues.cities.${cityKey}`),
       typeValue: t(`metadataValues.types.${typeKey}`),
       statusValue: t(`metadataValues.statuses.${statusKey}`),

@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing, type Locale } from '@/i18n/routing'
 import PeoplePageView from '@/components/people/PeoplePageView'
+import { getTeamMembers } from '@/lib/data/team'
 
 export async function generateMetadata({
   params,
@@ -50,5 +51,8 @@ export default async function TeamPage({
 
   setRequestLocale(locale)
 
-  return <PeoplePageView />
+  // Fetch dynamic team members with individual descriptions from database
+  const members = await getTeamMembers(locale)
+
+  return <PeoplePageView members={members} />
 }

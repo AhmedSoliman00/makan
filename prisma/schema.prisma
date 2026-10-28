@@ -1,0 +1,95 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  category    String   // residential, publicSpaces, mixedUse, hospitality
+  cityKey     String   @default("riyadh") // riyadh, khobar, jeddah
+  statusKey   String   @default("completed") // completed, inProgress
+  heroImage   String
+  order       Int      @default(0)
+  isFeatured  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  translations ProjectTranslation[]
+}
+
+model ProjectTranslation {
+  id                    String   @id @default(cuid())
+  locale                String   // "ar" | "en"
+  project               Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  projectId             String
+
+  breadcrumbTitle       String
+  title                 String
+  categoryBadge         String
+  heroCaption           String
+  summary               String
+  description           String
+  
+  metrics               String   @default("[]") // JSON Array: [{ value, label, icon }]
+  highlightsTitle       String   @default("")
+  highlightsCtaText     String   @default("")
+  highlights            String   @default("[]") // JSON Array: [{ title, description, icon }]
+  overviewEyebrow       String   @default("")
+  overviewHeading       String   @default("")
+  overviewDescription   String   @default("")
+  facts                 String   @default("[]") // JSON Array: [{ label, value, icon }]
+  galleryEyebrow        String   @default("")
+  galleryHeading        String   @default("")
+  galleryDescription    String   @default("")
+  galleryImages         String   @default("[]") // JSON Array: string[]
+  masterplanEyebrow     String   @default("")
+  masterplanHeading     String   @default("")
+  masterplanDescription String   @default("")
+  masterplanCtaText     String   @default("")
+  masterplanCaption     String   @default("")
+  masterplanEnlargeText String   @default("")
+  masterplanImage       String   @default("")
+  similarTitle          String   @default("")
+  similarSubtitle       String   @default("")
+  similarCtaText        String   @default("")
+  similarProjects       String   @default("[]") // JSON Array: [{ slug, category, title, location, image }]
+
+  @@unique([projectId, locale])
+}
+
+model TeamMember {
+  id          String   @id @default(cuid())
+  image       String   @default("/home/people/team-member.webp")
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  translations TeamMemberTranslation[]
+}
+
+model TeamMemberTranslation {
+  id           String     @id @default(cuid())
+  locale       String     // "ar" | "en"
+  teamMember   TeamMember @relation(fields: [teamMemberId], references: [id], onDelete: Cascade)
+  teamMemberId String
+  
+  name         String
+  role         String
+  description  String     // Individual bio / summary
+
+  @@unique([teamMemberId, locale])
+}

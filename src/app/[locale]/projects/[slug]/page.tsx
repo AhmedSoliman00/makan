@@ -5,14 +5,9 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PreFooterCta from '@/components/PreFooterCta'
 import ProjectDetailView from '@/components/ProjectDetailView'
-import { getProjectBySlug, getProjectSlugs } from '@/lib/project-details'
+import { getProjectBySlug as getDbProjectBySlug } from '@/lib/data/projects'
+import { getProjectBySlug as getStaticProjectBySlug } from '@/lib/project-details'
 import { routing, type Locale } from '@/i18n/routing'
-
-export function generateStaticParams() {
-  return routing.locales.flatMap((locale) =>
-    getProjectSlugs().map((project) => ({ locale, slug: project.slug }))
-  )
-}
 
 export async function generateMetadata({
   params,
@@ -25,37 +20,43 @@ export async function generateMetadata({
     notFound()
   }
 
-  const project = getProjectBySlug(slug)
-
-  if (!project) {
-    notFound()
-  }
-
-  const localized = locale === 'ar' ? project.ar : project.en
+  // Try DB first, fallback to static
+  const dbProject = await getDbProjectBySlug(slug, locale)
   const isRtl = locale === 'ar'
 
+  if (dbProject) {
+    return {
+      title: `${dbProject.title} | ${isRtl ? 'مكان لاندسكيب' : 'Makan Landscape'}`,
+      description: dbProject.summary,
+      alternates: {
+        canonical: `/${locale}/projects/${slug}`,
+        languages: {
+          ar: `/ar/projects/${slug}`,
+          en: `/en/projects/${slug}`,
+        },
+      },
+      openGraph: {
+        title: `${dbProject.title} | ${isRtl ? 'مكان لاندسكيب' : 'Makan Landscape'}`,
+        description: dbProject.summary,
+        url: `/${locale}/projects/${slug}`,
+        locale: isRtl ? 'ar_SA' : 'en_US',
+        images: [
+          {
+            url: dbProject.heroImage,
+            alt: dbProject.title,
+          },
+        ],
+      },
+    }
+  }
+
+  const staticProj = getStaticProjectBySlug(slug)
+  if (!staticProj) notFound()
+
+  const localized = locale === 'ar' ? staticProj.ar : staticProj.en
   return {
     title: `${localized.title} | ${isRtl ? 'مكان لاندسكيب' : 'Makan Landscape'}`,
     description: localized.summary,
-    alternates: {
-      canonical: `/${locale}/projects/${slug}`,
-      languages: {
-        ar: `/ar/projects/${slug}`,
-        en: `/en/projects/${slug}`,
-      },
-    },
-    openGraph: {
-      title: `${localized.title} | ${isRtl ? 'مكان لاندسكيب' : 'Makan Landscape'}`,
-      description: localized.summary,
-      url: `/${locale}/projects/${slug}`,
-      locale: isRtl ? 'ar_SA' : 'en_US',
-      images: [
-        {
-          url: project.heroImage,
-          alt: localized.title,
-        },
-      ],
-    },
   }
 }
 
@@ -72,22 +73,44 @@ export default async function ProjectDetailPage({
 
   setRequestLocale(locale)
 
-  const project = getProjectBySlug(slug)
+  // 1. Fetch dynamic project from DB
+  const project = await getDbProjectBySlug(slug, locale)
 
-  if (!project) {
+  if (project) {
+    return (
+      <div className="flex min-h-screen flex-col bg-[#fffdf8]">
+        <Navbar variant="solid" activePath="projects" />
+
+        <main className="flex-1">
+          <ProjectDetailView
+            project={project as any}
+            heroImage={project.heroImage}
+            locale={locale}
+          />
+          <PreFooterCta />
+        </main>
+
+        <Footer />
+      </div>
+    )
+  }
+
+  // 2. Fallback to static if DB doesn't have it
+  const staticProject = getStaticProjectBySlug(slug)
+  if (!staticProject) {
     notFound()
   }
 
-  const localized = locale === 'ar' ? project.ar : project.en
+  const localized = locale === 'ar' ? staticProject.ar : staticProject.en
 
   return (
-    <div className='flex min-h-screen flex-col bg-[#fffdf8]'>
-      <Navbar variant='solid' activePath='projects' />
+    <div className="flex min-h-screen flex-col bg-[#fffdf8]">
+      <Navbar variant="solid" activePath="projects" />
 
-      <main className='flex-1'>
+      <main className="flex-1">
         <ProjectDetailView
           project={localized}
-          heroImage={project.heroImage}
+          heroImage={staticProject.heroImage}
           locale={locale}
         />
         <PreFooterCta />

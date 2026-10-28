@@ -411,6 +411,117 @@
         }
       }
     }
+  },
+  "Admin": {
+    "login": {
+      "title": "Admin Portal Login",
+      "subtitle": "Content management system for Makan Landscape",
+      "email": "Email Address",
+      "emailPlaceholder": "admin@makan.sa",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "submit": "Sign In",
+      "submitting": "Authenticating...",
+      "invalidCredentials": "The email or password you entered is incorrect.",
+      "requiredFields": "Please provide both email and password.",
+      "serverError": "A server error occurred. Please try again."
+    },
+    "nav": {
+      "dashboard": "Overview",
+      "projects": "Projects",
+      "team": "Our Team",
+      "liveSite": "View Live Site",
+      "logout": "Sign Out",
+      "welcome": "Welcome back"
+    },
+    "overview": {
+      "title": "Executive Dashboard",
+      "subtitle": "Overview of portfolio projects, active services, and team structure.",
+      "totalProjects": "Total Projects",
+      "completedProjects": "Completed Projects",
+      "inProgressProjects": "In-Progress Projects",
+      "teamMembers": "Team Members",
+      "quickActions": "Quick Management",
+      "addNewProject": "Add New Project",
+      "manageTeam": "Manage Team",
+      "recentProjects": "Recent Projects",
+      "viewAll": "View All"
+    },
+    "projects": {
+      "title": "Projects Management",
+      "subtitle": "Create, edit, and organize Makan portfolio projects across Saudi Arabia.",
+      "addNew": "New Project",
+      "editProject": "Edit Project",
+      "createProject": "Create Project",
+      "table": {
+        "thumbnail": "Photo",
+        "title": "Project Title",
+        "category": "Category",
+        "city": "City",
+        "status": "Status",
+        "order": "Order",
+        "actions": "Actions"
+      },
+      "form": {
+        "createProject": "Create Project",
+        "editProject": "Edit Project",
+        "slug": "URL Slug",
+        "slugHint": "Used in the URL (e.g. king-khalid)",
+        "category": "Category",
+        "city": "City",
+        "status": "Status",
+        "heroImage": "Hero Image URL",
+        "order": "Display Order",
+        "featured": "Featured on Homepage",
+        "arabicTab": "Arabic Content",
+        "englishTab": "English Content",
+        "title": "Project Title",
+        "breadcrumbTitle": "Breadcrumb Title",
+        "categoryBadge": "Category Badge Label",
+        "heroCaption": "Hero Caption",
+        "summary": "Short Summary",
+        "description": "Comprehensive Description",
+        "galleryImages": "Gallery Images (one URL per line)",
+        "masterplanImage": "Masterplan Image URL",
+        "save": "Save Project",
+        "saving": "Saving...",
+        "cancel": "Cancel",
+        "delete": "Delete Project",
+        "deleteConfirm": "Are you sure you want to delete this project? This action cannot be undone."
+      }
+    },
+    "team": {
+      "title": "Our Team Management",
+      "subtitle": "Manage team member portraits, credentials, roles, and personalized descriptions.",
+      "addNew": "Add Team Member",
+      "editMember": "Edit Team Member",
+      "createMember": "Create Team Member",
+      "table": {
+        "avatar": "Portrait",
+        "name": "Name",
+        "role": "Role",
+        "description": "Bio / Description",
+        "order": "Order",
+        "actions": "Actions"
+      },
+      "form": {
+        "createMember": "Create Team Member",
+        "editMember": "Edit Team Member",
+        "image": "Portrait Image URL",
+        "order": "Display Order",
+        "arabicTab": "Arabic Profile",
+        "englishTab": "English Profile",
+        "name": "Full Name",
+        "role": "Professional Role",
+        "description": "Personal Bio & Description",
+        "save": "Save Member",
+        "saving": "Saving...",
+        "cancel": "Cancel",
+        "delete": "Delete Member",
+        "deleteConfirm": "Are you sure you want to remove this team member?"
+      }
+    }
   }
 }
+
 

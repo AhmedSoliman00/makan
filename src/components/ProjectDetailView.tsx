@@ -43,7 +43,9 @@ export default function ProjectDetailView({
         isRtl={isRtl}
       />
 
-      <ProjectMetricsBar metrics={project.metrics} />
+      {project.metrics && project.metrics.length > 0 && (
+        <ProjectMetricsBar metrics={project.metrics} />
+      )}
 
       <ProjectStorySection
         highlightsTitle={project.highlightsTitle}
@@ -56,39 +58,45 @@ export default function ProjectDetailView({
         isRtl={isRtl}
       />
 
-      <ProjectGallery
-        eyebrow={project.galleryEyebrow}
-        heading={project.galleryHeading}
-        description={project.galleryDescription}
-        images={project.galleryImages}
-        projectTitle={project.title}
-        onImageClick={(src, alt) => setLightboxImage({ src, alt })}
-      />
+      {project.galleryImages && project.galleryImages.length > 0 && (
+        <ProjectGallery
+          eyebrow={project.galleryEyebrow}
+          heading={project.galleryHeading}
+          description={project.galleryDescription}
+          images={project.galleryImages}
+          projectTitle={project.title}
+          onImageClick={(src, alt) => setLightboxImage({ src, alt })}
+        />
+      )}
 
-      <ProjectMasterplan
-        eyebrow={project.masterplanEyebrow}
-        heading={project.masterplanHeading}
-        description={project.masterplanDescription}
-        ctaText={project.masterplanCtaText}
-        image={project.masterplanImage}
-        caption={project.masterplanCaption}
-        enlargeText={project.masterplanEnlargeText}
-        isRtl={isRtl}
-        onEnlargeClick={() =>
-          setLightboxImage({
-            src: project.masterplanImage,
-            alt: project.masterplanCaption,
-          })
-        }
-      />
+      {project.masterplanImage && project.masterplanImage.trim() !== '' && (
+        <ProjectMasterplan
+          eyebrow={project.masterplanEyebrow}
+          heading={project.masterplanHeading}
+          description={project.masterplanDescription}
+          ctaText={project.masterplanCtaText}
+          image={project.masterplanImage}
+          caption={project.masterplanCaption}
+          enlargeText={project.masterplanEnlargeText}
+          isRtl={isRtl}
+          onEnlargeClick={() =>
+            setLightboxImage({
+              src: project.masterplanImage,
+              alt: project.masterplanCaption,
+            })
+          }
+        />
+      )}
 
-      <ProjectSimilarWorks
-        title={project.similarTitle}
-        subtitle={project.similarSubtitle}
-        ctaText={project.similarCtaText}
-        similarProjects={project.similarProjects}
-        isRtl={isRtl}
-      />
+      {project.similarProjects && project.similarProjects.length > 0 && (
+        <ProjectSimilarWorks
+          title={project.similarTitle}
+          subtitle={project.similarSubtitle}
+          ctaText={project.similarCtaText}
+          similarProjects={project.similarProjects}
+          isRtl={isRtl}
+        />
+      )}
 
       <ImageLightboxModal
         isOpen={Boolean(lightboxImage)}

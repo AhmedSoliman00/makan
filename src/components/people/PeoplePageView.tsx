@@ -8,26 +8,32 @@ import Footer from '@/components/Footer'
 import PeopleHero from './PeopleHero'
 import PeoplePhilosophy from './PeoplePhilosophy'
 import PeopleTeamGrid, { type TeamMember } from './PeopleTeamGrid'
+import type { LocalizedTeamMember } from '@/lib/data/team'
 
-export default function PeoplePageView() {
+export default function PeoplePageView({
+  members: propMembers,
+}: {
+  members?: LocalizedTeamMember[]
+}) {
   const t = useTranslations('TeamPage')
   const locale = useLocale()
   const isRtl = locale === 'ar'
 
-  // Extract team members from translations
-  const members = t.raw('team.members') as TeamMember[]
+  // Use dynamic members from DB if available, fallback to static translation
+  const fallbackMembers = t.raw('team.members') as TeamMember[]
+  const members = propMembers && propMembers.length > 0 ? propMembers : fallbackMembers
 
   return (
-    <div className='flex min-h-screen flex-col bg-white'>
+    <div className="flex min-h-screen flex-col bg-white">
       {/* 1. Header with active team path */}
-      <Navbar variant='solid' activePath='team' />
+      <Navbar variant="solid" activePath="team" />
 
-      <main className='flex-1'>
+      <main className="flex-1">
         {/* 2. Hero Section */}
         <PeopleHero
           line1={t('hero.line1')}
           line2={t('hero.line2')}
-          imageSrc='/home/people/people-hero.webp'
+          imageSrc="/home/people/people-hero.webp"
         />
 
         {/* 3. Philosophy & 3D Isometric Service Blocks */}
@@ -42,10 +48,10 @@ export default function PeoplePageView() {
           isRtl={isRtl}
         />
 
-        {/* 4. Team Members 6-Card Grid */}
+        {/* 4. Team Members Dynamic Grid with Individual Descriptions */}
         <PeopleTeamGrid members={members} />
 
-        {/* 5. Partners Section ("شركاؤنا في صناعة الأثر") */}
+        {/* 5. Partners Section */}
         <PartnersSection />
 
         {/* 6. Pre-Footer CTA */}
