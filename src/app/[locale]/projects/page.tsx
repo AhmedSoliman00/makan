@@ -8,6 +8,13 @@ import PreFooterCta from '@/components/PreFooterCta'
 import Footer from '@/components/Footer'
 import { getProjects } from '@/lib/data/projects'
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
+}
+
+// SSG with ISR: pre-render projects catalogue at build time, revalidate hourly or on-demand
+export const revalidate = 3600
+
 export async function generateMetadata({
   params,
 }: {
@@ -21,6 +28,7 @@ export async function generateMetadata({
   const messagesModule = await import(`../../../../messages/${locale}.json`)
   const meta = messagesModule.default.ProjectsPage.metadata
   const isRtl = locale === 'ar'
+  const siteName = isRtl ? 'مكان لاندسكيب' : 'Makan Landscape'
 
   return {
     title: meta.title,
@@ -33,10 +41,26 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: meta.title,
+      title: `${meta.title} | ${siteName}`,
       description: meta.description,
       url: `/${locale}/projects`,
+      siteName,
       locale: isRtl ? 'ar_SA' : 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: '/home/images/Mountain garden.webp',
+          width: 1200,
+          height: 630,
+          alt: `${meta.title} - ${siteName}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${meta.title} | ${siteName}`,
+      description: meta.description,
+      images: ['/home/images/Mountain garden.webp'],
     },
   }
 }

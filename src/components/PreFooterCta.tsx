@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations, useLocale } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 
@@ -51,8 +52,8 @@ export default function PreFooterCta() {
             </p>
 
             <div className='flex justify-center md:justify-start mt-8 sm:mt-10 w-full md:w-auto'>
-              <a
-                href='#projects'
+              <Link
+                href='/projects'
                 className='group inline-flex items-center justify-center gap-3 bg-[#082621] hover:bg-[#041a17] shadow-md px-8 py-3.5 rounded-md font-cairo font-semibold text-white text-sm transition-all'
               >
                 <span>{t('cta')}</span>
@@ -61,7 +62,7 @@ export default function PreFooterCta() {
                 ) : (
                   <ArrowRight className='w-4 h-4 transition-transform group-hover:translate-x-1' />
                 )}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

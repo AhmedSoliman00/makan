@@ -112,7 +112,7 @@ export default function ProjectStorySection({
 
           <div className='mt-6 pt-4'>
             <Link
-              href='/#contact'
+              href='/contact'
               className='group flex w-full items-center justify-center gap-2.5 bg-[#10201D] hover:bg-[#C29959] text-white py-3.5 px-6 font-cairo text-sm font-semibold transition-all duration-300'
             >
               <span>{highlightsCtaText}</span>

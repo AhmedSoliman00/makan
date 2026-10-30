@@ -14,14 +14,14 @@ export default function ServicesHero({
   imageSrc = '/home/services/services-hero.webp',
 }: ServicesHeroProps) {
   return (
-    <section className='relative w-full h-[380px] sm:h-[430px] md:h-[475px] flex items-center justify-center overflow-hidden'>
+    <section className='relative w-full h-[380px] sm:h-[430px] md:h-[475px] flex items-center justify-center overflow-hidden bg-[#10201D]'>
       {/* Background Architectural Photography */}
       <Image
         src={imageSrc}
         alt='Makan Landscape Services'
         fill
         priority
-        className='object-cover object-center scale-[1.02]'
+        className='object-cover object-center scale-[1.02] transition-opacity duration-300'
         sizes='100vw'
       />
 

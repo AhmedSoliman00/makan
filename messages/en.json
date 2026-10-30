@@ -198,7 +198,7 @@
   },
   "TeamPage": {
     "metadata": {
-      "title": "Our Team | Makan Landscape",
+      "title": "Our Team",
       "description": "Meet the Makan team — planners, landscape architects, and engineers dedicated to placemaking and shaping enduring destinations."
     },
     "hero": {
@@ -208,8 +208,7 @@
     "philosophy": {
       "eyebrow": "Our Services",
       "headingPart1": "Diverse Expertise,",
-      "headingPart2": "Clear Vision"
-      ,
+      "headingPart2": "Clear Vision",
       "description": "We integrate planning, design, placemaking, turnkey execution, and management into a unified journey, empowering owners and developers to create lasting, sustainable value.",
       "plan": "We Plan",
       "design": "We Design",
@@ -218,18 +217,36 @@
     "team": {
       "role": "Architectural Engineer",
       "members": [
-        { "name": "Mohammed Abdullah", "role": "Architectural Engineer" },
-        { "name": "Mohammed Abdullah", "role": "Architectural Engineer" },
-        { "name": "Mohammed Abdullah", "role": "Architectural Engineer" },
-        { "name": "Mohammed Abdullah", "role": "Architectural Engineer" },
-        { "name": "Mohammed Abdullah", "role": "Architectural Engineer" },
-        { "name": "Mohammed Abdullah", "role": "Architectural Engineer" }
+        {
+          "name": "Mohammed Abdullah",
+          "role": "Architectural Engineer"
+        },
+        {
+          "name": "Mohammed Abdullah",
+          "role": "Architectural Engineer"
+        },
+        {
+          "name": "Mohammed Abdullah",
+          "role": "Architectural Engineer"
+        },
+        {
+          "name": "Mohammed Abdullah",
+          "role": "Architectural Engineer"
+        },
+        {
+          "name": "Mohammed Abdullah",
+          "role": "Architectural Engineer"
+        },
+        {
+          "name": "Mohammed Abdullah",
+          "role": "Architectural Engineer"
+        }
       ]
     }
   },
   "ContactPage": {
     "metadata": {
-      "title": "Contact Us | Makan Landscape",
+      "title": "Contact Us",
       "description": "Get in touch with the Makan team to discuss your upcoming landscape architecture and placemaking projects."
     },
     "hero": {
@@ -286,7 +303,7 @@
   },
   "AboutPage": {
     "metadata": {
-      "title": "About Makan | Makan Landscape",
+      "title": "About Makan",
       "description": "We design vibrant, sustainable spaces with distinct identity, combining a deep understanding of place with real estate development expertise."
     },
     "hero": {
@@ -339,7 +356,7 @@
   },
   "ServicesPage": {
     "metadata": {
-      "title": "Services | Makan Landscape",
+      "title": "Services",
       "description": "Integrated services creating enduring value. We combine master planning, landscape architecture, placemaking, design & build, project management, and operations into a unified journey."
     },
     "hero": {
@@ -523,5 +540,3 @@
     }
   }
 }
-
-

@@ -1,6 +1,19 @@
+import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import { getAdminSession } from '@/lib/auth'
 import AdminNav from '@/components/admin/AdminNav'
+
+// Admin panel must always be dynamically evaluated (SSR) — never cached
+export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+  title: 'Admin Dashboard | Makan Landscape',
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
+}
 
 async function AdminNavWrapper({ locale }: { locale: string }) {
   const session = await getAdminSession()

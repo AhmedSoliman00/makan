@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
@@ -70,8 +71,8 @@ export default function ServicesSection() {
 
           {/* Button on opposite side */}
           <div className="shrink-0 flex justify-center md:justify-end w-full md:w-auto">
-            <a
-              href="#contact"
+            <Link
+              href="/services"
               className="group relative inline-flex items-center justify-center gap-3 border border-[#10201D] px-6 py-3 font-cairo text-sm font-semibold text-[#10201D] transition-colors hover:bg-[#10201D] hover:text-white"
             >
               {isRtl ? (
@@ -80,7 +81,7 @@ export default function ServicesSection() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               )}
               <span>{t('ctaAll')}</span>
-            </a>
+            </Link>
           </div>
         </div>
 

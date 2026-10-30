@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
@@ -41,8 +42,8 @@ export default function FeaturedVilla() {
 
             {/* Gold Button */}
             <div className="mt-10">
-              <a
-                href="#projects"
+              <Link
+                href="/projects"
                 className="group inline-flex items-center gap-3 bg-[#B98E4B] hover:bg-[#a67d3d] px-8 py-3.5 font-cairo text-sm font-semibold text-white shadow-md transition-all rounded-sm"
               >
                 <span>{t('cta')}</span>
@@ -51,7 +52,7 @@ export default function FeaturedVilla() {
                 ) : (
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 )}
-              </a>
+              </Link>
             </div>
           </div>
 

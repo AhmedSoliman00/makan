@@ -6,8 +6,39 @@ import Footer from '@/components/Footer'
 import PreFooterCta from '@/components/PreFooterCta'
 import ProjectDetailView from '@/components/ProjectDetailView'
 import { getProjectBySlug as getDbProjectBySlug } from '@/lib/data/projects'
-import { getProjectBySlug as getStaticProjectBySlug } from '@/lib/project-details'
+import { getProjectBySlug as getStaticProjectBySlug, getProjectSlugs } from '@/lib/project-details'
 import { routing, type Locale } from '@/i18n/routing'
+import { prisma } from '@/lib/prisma'
+
+export async function generateStaticParams() {
+  const staticSlugs = getProjectSlugs().map((s) => s.slug)
+  let dbSlugs: string[] = []
+
+  try {
+    const dbProjects = await prisma.project.findMany({
+      select: { slug: true },
+    })
+    dbSlugs = dbProjects.map((p) => p.slug)
+  } catch (error) {
+    // Database might not be reachable at build time; fallback to static slugs
+    console.warn('[projects/[slug]] Could not fetch DB slugs for static pre-rendering:', error)
+  }
+
+  const uniqueSlugs = Array.from(new Set([...staticSlugs, ...dbSlugs]))
+
+  return routing.locales.flatMap((locale) =>
+    uniqueSlugs.map((slug) => ({
+      locale,
+      slug,
+    }))
+  )
+}
+
+// Allow new projects added in Admin to be generated on demand (ISR)
+export const dynamicParams = true
+
+// Revalidate static project pages every hour or on-demand via revalidatePath
+export const revalidate = 3600
 
 export async function generateMetadata({
   params,
@@ -20,13 +51,15 @@ export async function generateMetadata({
     notFound()
   }
 
+  const isRtl = locale === 'ar'
+  const siteName = isRtl ? 'مكان لاندسكيب' : 'Makan Landscape'
+
   // Try DB first, fallback to static
   const dbProject = await getDbProjectBySlug(slug, locale)
-  const isRtl = locale === 'ar'
 
   if (dbProject) {
     return {
-      title: `${dbProject.title} | ${isRtl ? 'مكان لاندسكيب' : 'Makan Landscape'}`,
+      title: dbProject.title,
       description: dbProject.summary,
       alternates: {
         canonical: `/${locale}/projects/${slug}`,
@@ -36,16 +69,24 @@ export async function generateMetadata({
         },
       },
       openGraph: {
-        title: `${dbProject.title} | ${isRtl ? 'مكان لاندسكيب' : 'Makan Landscape'}`,
+        title: `${dbProject.title} | ${siteName}`,
         description: dbProject.summary,
         url: `/${locale}/projects/${slug}`,
+        siteName,
         locale: isRtl ? 'ar_SA' : 'en_US',
+        type: 'article',
         images: [
           {
             url: dbProject.heroImage,
-            alt: dbProject.title,
+            alt: `${dbProject.title} - ${siteName}`,
           },
         ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: `${dbProject.title} | ${siteName}`,
+        description: dbProject.summary,
+        images: [dbProject.heroImage],
       },
     }
   }
@@ -54,9 +95,38 @@ export async function generateMetadata({
   if (!staticProj) notFound()
 
   const localized = locale === 'ar' ? staticProj.ar : staticProj.en
+  const heroImage = staticProj.heroImage || '/home/images/Mountain garden.webp'
+
   return {
-    title: `${localized.title} | ${isRtl ? 'مكان لاندسكيب' : 'Makan Landscape'}`,
+    title: localized.title,
     description: localized.summary,
+    alternates: {
+      canonical: `/${locale}/projects/${slug}`,
+      languages: {
+        ar: `/ar/projects/${slug}`,
+        en: `/en/projects/${slug}`,
+      },
+    },
+    openGraph: {
+      title: `${localized.title} | ${siteName}`,
+      description: localized.summary,
+      url: `/${locale}/projects/${slug}`,
+      siteName,
+      locale: isRtl ? 'ar_SA' : 'en_US',
+      type: 'article',
+      images: [
+        {
+          url: heroImage,
+          alt: `${localized.title} - ${siteName}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${localized.title} | ${siteName}`,
+      description: localized.summary,
+      images: [heroImage],
+    },
   }
 }
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
@@ -56,8 +57,8 @@ export default function WhyMakan() {
 
           {/* Button (177px x 49px in Figma) */}
           <div className="mt-8 sm:mt-9 flex justify-center md:justify-start w-full md:w-auto">
-            <a
-              href="#services"
+            <Link
+              href="/about"
               className="group inline-flex h-[49px] w-[177px] items-center justify-center gap-3 bg-[#082621] font-cairo text-[13px] font-semibold text-white shadow-md transition-all hover:bg-[#041a17]"
             >
               <span>{t('cta')}</span>
@@ -66,7 +67,7 @@ export default function WhyMakan() {
               ) : (
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               )}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

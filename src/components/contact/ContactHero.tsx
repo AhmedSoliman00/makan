@@ -14,14 +14,14 @@ export default function ContactHero({
   imageSrc = '/home/contact/contact-hero.webp',
 }: ContactHeroProps) {
   return (
-    <section className='relative w-full h-[380px] sm:h-[440px] md:h-[475px] flex items-center justify-center overflow-hidden'>
+    <section className='relative w-full h-[380px] sm:h-[440px] md:h-[475px] flex items-center justify-center overflow-hidden bg-[#10201D]'>
       {/* Background Photography */}
       <Image
         src={imageSrc}
         alt='Makan Landscape Architecture'
         fill
         priority
-        className='object-cover object-center scale-[1.02]'
+        className='object-cover object-center scale-[1.02] transition-opacity duration-300'
         sizes='100vw'
       />
 

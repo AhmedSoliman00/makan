@@ -1,1 +1,5 @@
-export { default, generateMetadata } from '../team/page'
+export { default, generateMetadata, generateStaticParams } from '../team/page'
+
+export const revalidate = 3600
+
+

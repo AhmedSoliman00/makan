@@ -14,7 +14,7 @@ export default function ServicesPillars() {
   const pillars: PillarItem[] = [
     {
       key: 'p1',
-      image: '/home/services/pillar-01-context..svg',
+      image: '/home/services/pillar-01-context.svg',
     },
     {
       key: 'p2',

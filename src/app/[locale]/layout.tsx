@@ -1,10 +1,14 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { routing, type Locale } from '@/i18n/routing';
 import { cairo, alexandria } from '@/lib/fonts';
 import '../globals.css';
+
+export const viewport: Viewport = {
+  themeColor: '#082621',
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -69,8 +73,31 @@ export async function generateMetadata({
       images: ['/home/images/hero.webp'],
     },
     icons: {
-      icon: '/favicon.ico',
+      icon: [
+        { url: '/favicon.ico', sizes: 'any' },
+        { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      ],
+      apple: [
+        { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      ],
+      other: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '192x192',
+          url: '/android-chrome-192x192.png',
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '512x512',
+          url: '/android-chrome-512x512.png',
+        },
+      ],
     },
+    manifest: '/site.webmanifest',
   };
 }
 

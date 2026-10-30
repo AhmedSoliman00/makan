@@ -1,16 +1,16 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
   --foreground: #082621;
-  --cream: #FAF6F0;
-  --sand: #F7F3EB;
+  --cream: #faf6f0;
+  --sand: #f7f3eb;
   --primary-green: #082621;
   --primary-green-hover: #041a17;
-  --gold: #C29959;
-  --gold-hover: #AB8446;
-  --muted-text: #6F746F;
-  --divider: #E4DFD7;
+  --gold: #c29959;
+  --gold-hover: #ab8446;
+  --muted-text: #6f746f;
+  --divider: #e4dfd7;
 }
 
 @theme inline {
@@ -26,7 +26,8 @@
   --color-divider: var(--divider);
 
   --font-cairo: var(--font-cairo), system-ui, -apple-system, sans-serif;
-  --font-alexandria: var(--font-alexandria), system-ui, -apple-system, sans-serif;
+  --font-alexandria:
+    var(--font-alexandria), system-ui, -apple-system, sans-serif;
   --font-sans: var(--font-cairo), system-ui, -apple-system, sans-serif;
 }
 
@@ -75,7 +76,6 @@ body {
   box-shadow: 0 12px 16px rgba(0, 0, 0, 0.1);
 }
 
-
 /* Hero Image Entrance Animation - Figma 2.79s duration, scale 1.2 to 1, opacity 0 to 1 */
 @keyframes heroImageEntrance {
   0% {
@@ -84,7 +84,7 @@ body {
   }
   100% {
     opacity: 1;
-    transform: scale(1.0);
+    transform: scale(1);
   }
 }
 
