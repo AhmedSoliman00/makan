@@ -138,6 +138,74 @@ export async function getProjects(params: {
 }
 
 /**
+ * Fetch featured projects for homepage (limited to 3 projects)
+ */
+export async function getFeaturedProjects(params: {
+  locale: string
+  limit?: number
+}): Promise<LocalizedProjectSummary[]> {
+  const { locale, limit = 3 } = params
+
+  let projects = await prisma.project.findMany({
+    where: { isFeatured: true },
+    orderBy: { order: 'asc' },
+    take: limit,
+    include: {
+      translations: true,
+    },
+  })
+
+  // If fewer than limit featured projects exist, complement with remaining projects based on arrangement
+  if (projects.length < limit) {
+    const existingIds = projects.map((p) => p.id)
+    const needed = limit - projects.length
+
+    const additionalProjects = await prisma.project.findMany({
+      where: existingIds.length > 0 ? { id: { notIn: existingIds } } : {},
+      orderBy: { order: 'asc' },
+      take: needed,
+      include: {
+        translations: true,
+      },
+    })
+
+    projects = [...projects, ...additionalProjects]
+  }
+
+  const isAr = locale === 'ar'
+
+  return projects.map((p) => {
+    const translation = p.translations.find((t) => t.locale === locale)
+    const fallback = p.translations[0]
+    const activeTrans = translation || fallback
+
+    return {
+      id: p.id,
+      slug: p.slug,
+      category: p.category as ProjectCategory,
+      image: p.heroImage,
+      cityKey: p.cityKey as CityKey,
+      statusKey: p.statusKey as StatusKey,
+      title: activeTrans?.title || p.slug,
+      categoryLabel: activeTrans?.categoryBadge || p.category,
+      location:
+        p.cityKey === 'riyadh'
+          ? isAr
+            ? 'الرياض، المملكة العربية السعودية'
+            : 'Riyadh, Saudi Arabia'
+          : p.cityKey === 'khobar'
+          ? isAr
+            ? 'الخبر، المملكة العربية السعودية'
+            : 'Khobar, Saudi Arabia'
+          : isAr
+          ? 'جدة، المملكة العربية السعودية'
+          : 'Jeddah, Saudi Arabia',
+      summary: activeTrans?.summary || '',
+    }
+  })
+}
+
+/**
  * Fetch single project by slug for project detail page
  */
 export async function getProjectBySlug(

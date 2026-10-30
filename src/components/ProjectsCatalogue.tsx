@@ -31,38 +31,36 @@ function ProjectCard({
   const href = `/projects/${projectSlug}`
 
   return (
-    <article className='group flex flex-col overflow-hidden bg-white transition-all duration-300'>
+    <article className='group flex flex-col overflow-hidden bg-transparent transition-all duration-300'>
       <Link
         href={href}
         className='block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C29959]'
       >
-        <div className='relative h-[260px] sm:h-[282px] w-full overflow-hidden rounded-t-[5px] bg-zinc-100'>
+        <div className='relative aspect-[16/11] sm:aspect-[4/3] w-full overflow-hidden rounded-[2px] bg-zinc-100'>
           <Image
             src={image}
             alt={title}
             fill
             className='object-cover transition-transform duration-500 group-hover:scale-105'
-            sizes='(max-width: 768px) 100vw, 33vw'
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
           />
         </div>
 
-        <div className='flex h-auto min-h-[95px] items-center justify-between gap-[18px] px-4 sm:px-[23px] py-3 sm:py-0'>
-          <div
-            className={`min-w-0 flex-1 ${isRtl ? 'text-end' : 'text-start'}`}
-          >
-            <span className='font-cairo text-[13px] font-normal text-[#C29959] block'>
+        <div className='mt-4 flex items-center justify-between gap-4'>
+          <div className='min-w-0 flex-1 text-start'>
+            <span className='font-cairo text-xs sm:text-[13px] font-normal text-[#C29959] block'>
               {categoryLabel}
             </span>
-            <h3 className='font-alexandria text-lg sm:text-[20px] font-medium leading-snug text-[#10201D] mt-0.5 group-hover:text-[#C29959] transition-colors'>
+            <h3 className='font-alexandria text-xl sm:text-[22px] font-normal leading-snug text-[#10201D] mt-1 group-hover:text-[#C29959] transition-colors'>
               {title}
             </h3>
-            <p className='font-cairo text-xs text-[#6F746F] mt-0.5'>
+            <p className='font-cairo text-xs sm:text-[13px] text-[#6F746F] mt-1'>
               {location}
             </p>
           </div>
 
           <div
-            className='relative flex h-[47px] w-[50px] shrink-0 items-center justify-center border border-[#C29959] text-[#10201D] transition-colors group-hover:bg-[#C29959] group-hover:text-white'
+            className='relative flex h-[46px] w-[46px] sm:h-[48px] sm:w-[48px] shrink-0 items-center justify-center border border-[#C29959] text-[#C29959] rounded-[2px] transition-colors group-hover:bg-[#C29959] group-hover:text-white'
             aria-label={exploreLabel}
           >
             {isRtl ? (
@@ -235,9 +233,9 @@ export default function ProjectsCatalogue({
       <div className='mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-[86px]'>
         {/* Filters & count + View toggle */}
         <div className='flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between py-6 lg:py-8 px-0 sm:px-2.5'>
-          {/* Category filter pills */}
+          {/* Category filter buttons */}
           <div
-            className='flex flex-wrap gap-3 sm:gap-[18px] justify-start order-1 min-w-0 lg:flex-1'
+            className='flex flex-wrap gap-2.5 sm:gap-3.5 justify-start order-1 min-w-0 lg:flex-1'
             role='tablist'
             aria-label={t('filterAriaLabel')}
             dir={isRtl ? 'rtl' : 'ltr'}
@@ -251,10 +249,10 @@ export default function ProjectsCatalogue({
                   role='tab'
                   aria-selected={isActive}
                   onClick={() => setActiveFilter(filterId)}
-                  className={`inline-flex h-[49px] min-w-[90px] items-center justify-center rounded-xl px-4 font-cairo text-[13px] font-semibold transition-colors ${
+                  className={`inline-flex h-[46px] sm:h-[48px] items-center justify-center rounded-[2px] px-5 sm:px-7 md:px-8 font-cairo text-sm sm:text-base font-normal transition-colors border ${
                     isActive
-                      ? 'bg-[#10201D] text-white'
-                      : 'border border-[#DBC9AD] text-[#10201D] hover:border-[#C29959]'
+                      ? 'bg-[#10201D] text-white border-[#10201D]'
+                      : 'bg-white text-[#10201D] border-[#10201D]/70 hover:border-[#10201D] hover:bg-[#FAF6F0]'
                   }`}
                 >
                   {t(`filters.${filterId}`)}
@@ -264,34 +262,26 @@ export default function ProjectsCatalogue({
           </div>
 
           {/* Project count and view mode toggle */}
-          <div className='flex items-center gap-3 sm:gap-5 order-2 shrink-0'>
-            <p
-              className={`font-cairo text-sm text-[#6F746F] ${
-                isRtl ? 'text-start' : 'text-end'
-              }`}
-            >
+          <div className='flex items-center gap-4 sm:gap-6 order-2 shrink-0'>
+            <p className='font-cairo text-sm sm:text-base text-[#6F746F] select-none'>
               {t('projectCount', { count: filteredProjects.length })}
             </p>
 
-            {/* View Mode Toggle: Grid & List */}
-            <div
-              className='inline-flex items-center rounded-xl border border-[#DBC9AD] bg-white/70 p-1 shadow-xs'
-              role='group'
-              aria-label={t('viewToggleAriaLabel')}
-            >
+            {/* Separate View Mode Buttons matching Figma 88-2511 */}
+            <div className='flex items-center gap-2 sm:gap-2.5'>
               <button
                 type='button'
                 onClick={() => setViewMode('grid')}
                 aria-pressed={viewMode === 'grid'}
                 aria-label={t('viewGrid')}
                 title={t('viewGrid')}
-                className={`flex h-[39px] w-[39px] items-center justify-center rounded-lg transition-all ${
+                className={`flex h-[46px] w-[46px] sm:h-[48px] sm:w-[48px] items-center justify-center rounded-[2px] border transition-colors ${
                   viewMode === 'grid'
-                    ? 'bg-[#10201D] text-white shadow-sm'
-                    : 'text-[#6F746F] hover:text-[#10201D] hover:bg-[#F5F2EB]'
+                    ? 'bg-[#10201D] text-white border-[#10201D]'
+                    : 'bg-white text-[#10201D] border-[#10201D]/70 hover:border-[#10201D] hover:bg-[#FAF6F0]'
                 }`}
               >
-                <LayoutGrid className='h-4 w-4' />
+                <LayoutGrid className='h-5 w-5' />
               </button>
               <button
                 type='button'
@@ -299,13 +289,13 @@ export default function ProjectsCatalogue({
                 aria-pressed={viewMode === 'list'}
                 aria-label={t('viewList')}
                 title={t('viewList')}
-                className={`flex h-[39px] w-[39px] items-center justify-center rounded-lg transition-all ${
+                className={`flex h-[46px] w-[46px] sm:h-[48px] sm:w-[48px] items-center justify-center rounded-[2px] border transition-colors ${
                   viewMode === 'list'
-                    ? 'bg-[#10201D] text-white shadow-sm'
-                    : 'text-[#6F746F] hover:text-[#10201D] hover:bg-[#F5F2EB]'
+                    ? 'bg-[#10201D] text-white border-[#10201D]'
+                    : 'bg-white text-[#10201D] border-[#10201D]/70 hover:border-[#10201D] hover:bg-[#FAF6F0]'
                 }`}
               >
-                <List className='h-4 w-4' />
+                <List className='h-5 w-5' />
               </button>
             </div>
           </div>

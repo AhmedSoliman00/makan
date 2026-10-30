@@ -27,5 +27,19 @@ export default async function EditProjectPage({
     en,
   }
 
-  return <ProjectForm locale={locale} initialData={initialData} projectId={id} />
+  const featuredCount = await prisma.project.count({
+    where: {
+      isFeatured: true,
+      id: { not: id },
+    },
+  })
+
+  return (
+    <ProjectForm
+      locale={locale}
+      initialData={initialData}
+      projectId={id}
+      featuredCount={featuredCount}
+    />
+  )
 }

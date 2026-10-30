@@ -1,3 +1,4 @@
+import { prisma } from '@/lib/prisma'
 import ProjectForm from '@/components/admin/ProjectForm'
 
 export default async function NewProjectPage({
@@ -6,5 +7,9 @@ export default async function NewProjectPage({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  return <ProjectForm locale={locale} />
+  const featuredCount = await prisma.project.count({
+    where: { isFeatured: true },
+  })
+
+  return <ProjectForm locale={locale} featuredCount={featuredCount} />
 }

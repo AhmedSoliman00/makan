@@ -22,6 +22,7 @@ type ProjectFormProps = {
   locale: string
   initialData?: any
   projectId?: string
+  featuredCount?: number
 }
 
 const parseJsonField = (val: any, fallback: any) => {
@@ -113,7 +114,12 @@ const defaultEnFacts = [
   { label: 'Status', value: 'Completed', icon: 'units' },
 ]
 
-export default function ProjectForm({ locale, initialData, projectId }: ProjectFormProps) {
+export default function ProjectForm({
+  locale,
+  initialData,
+  projectId,
+  featuredCount = 0,
+}: ProjectFormProps) {
   const t = useTranslations('Admin.projects.form')
   const router = useRouter()
   const isEditing = Boolean(projectId)
@@ -331,7 +337,15 @@ export default function ProjectForm({ locale, initialData, projectId }: ProjectF
         router.push(`/${locale}/admin/projects`)
         router.refresh()
       } else {
-        setError(res.error || 'Failed to save project.')
+        if (res.error === 'maxFeaturedReached') {
+          setError(
+            locale === 'ar'
+              ? 'الحد الأقصى للمشاريع المميزة في الصفحة الرئيسية هو 3 مشاريع فقط. يرجى إلغاء تمييز مشروع آخر أولاً.'
+              : 'A maximum of 3 projects can be featured on the homepage. Please unfeature another project first.'
+          )
+        } else {
+          setError(res.error || 'Failed to save project.')
+        }
       }
     })
   }
@@ -464,17 +478,42 @@ export default function ProjectForm({ locale, initialData, projectId }: ProjectF
                 />
               </div>
 
-              <div className="flex items-center gap-2 pt-6">
-                <input
-                  type="checkbox"
-                  id="featured"
-                  checked={isFeatured}
-                  onChange={(e) => setIsFeatured(e.target.checked)}
-                  className="w-4 h-4 text-[#C29959] rounded border-zinc-300 focus:ring-[#C29959]"
-                />
-                <label htmlFor="featured" className="text-xs font-medium text-[#10201D] cursor-pointer">
-                  {t('featured')}
-                </label>
+              <div className="flex flex-col gap-1.5 pt-4">
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="featured"
+                    checked={isFeatured}
+                    onChange={(e) => {
+                      if (e.target.checked && featuredCount >= 3) {
+                        setError(
+                          locale === 'ar'
+                            ? 'الحد الأقصى للمشاريع المميزة في الصفحة الرئيسية هو 3 مشاريع فقط. يرجى إلغاء تمييز مشروع آخر أولاً.'
+                            : 'A maximum of 3 projects can be featured on the homepage. Please unfeature another project first.'
+                        )
+                        return
+                      }
+                      setError(null)
+                      setIsFeatured(e.target.checked)
+                    }}
+                    className="w-4 h-4 text-[#C29959] rounded border-zinc-300 focus:ring-[#C29959]"
+                  />
+                  <label htmlFor="featured" className="text-xs font-medium text-[#10201D] cursor-pointer">
+                    {t('featured')}
+                  </label>
+                </div>
+                <p className="text-[11px] text-[#6F746F]">
+                  {locale === 'ar'
+                    ? `المشاريع المميزة حالياً بالرئيسية: ${featuredCount + (isFeatured ? 1 : 0)} / 3`
+                    : `Currently featured on homepage: ${featuredCount + (isFeatured ? 1 : 0)} / 3`}
+                  {!isFeatured && featuredCount >= 3 && (
+                    <span className="text-amber-600 block mt-0.5 font-medium">
+                      {locale === 'ar'
+                        ? ' (تم استيفاء الحد الأقصى 3 مشاريع)'
+                        : ' (Maximum 3 projects reached)'}
+                    </span>
+                  )}
+                </p>
               </div>
             </div>
           </div>

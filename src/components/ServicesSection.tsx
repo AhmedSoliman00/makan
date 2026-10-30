@@ -52,10 +52,10 @@ export default function ServicesSection() {
     <section id="services" className="w-full bg-white py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Top Header Row with Title at start (right in RTL, left in LTR) and Button at end */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 mb-16 sm:mb-20">
+        <div className="flex flex-col md:flex-row items-center md:items-end justify-between gap-8 mb-16 sm:mb-20 text-center md:text-start">
           {/* Heading */}
-          <div className="text-start">
-            <div className="flex items-center justify-start gap-3 text-xs font-semibold text-[#C29959] uppercase tracking-wider mb-3 font-cairo">
+          <div className="text-center md:text-start flex flex-col items-center md:items-start">
+            <div className="flex items-center justify-center md:justify-start gap-3 text-xs font-semibold text-[#C29959] uppercase tracking-wider mb-3 font-cairo">
               <span className="h-px w-8 bg-[#C29959]" />
               <span className="text-[#6F746F] text-sm">{t('eyebrow')}</span>
               <span className="h-px w-8 bg-[#C29959]" />
@@ -63,16 +63,16 @@ export default function ServicesSection() {
             <h2 className="font-alexandria text-3xl sm:text-4xl lg:text-[48px] font-normal text-[#082621] tracking-tight leading-tight">
               {t('heading')}
             </h2>
-            <p className="mt-3 font-cairo text-sm sm:text-base text-[#6F746F]">
+            <p className="mt-3 font-cairo text-sm sm:text-base text-[#6F746F] max-w-xl mx-auto md:mx-0">
               {t('subtitle')}
             </p>
           </div>
 
           {/* Button on opposite side */}
-          <div className="shrink-0">
+          <div className="shrink-0 flex justify-center md:justify-end w-full md:w-auto">
             <a
               href="#contact"
-              className="group relative inline-flex items-center gap-3 border border-[#10201D] px-6 py-3 font-cairo text-sm font-semibold text-[#10201D] transition-colors hover:bg-[#10201D] hover:text-white"
+              className="group relative inline-flex items-center justify-center gap-3 border border-[#10201D] px-6 py-3 font-cairo text-sm font-semibold text-[#10201D] transition-colors hover:bg-[#10201D] hover:text-white"
             >
               {isRtl ? (
                 <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />

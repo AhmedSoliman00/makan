@@ -1,6 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing, type Locale } from '@/i18n/routing';
+import { getFeaturedProjects } from '@/lib/data/projects';
 import HeroSection from '@/components/HeroSection';
 import MetricsSection from '@/components/MetricsSection';
 import SelectedWorks from '@/components/SelectedWorks';
@@ -25,6 +26,9 @@ export default async function HomePage({
   // Enable static rendering
   setRequestLocale(locale);
 
+  // Fetch up to 3 featured projects dynamically from the database
+  const featuredProjects = await getFeaturedProjects({ locale, limit: 3 });
+
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <main className="flex-1">
@@ -41,7 +45,7 @@ export default async function HomePage({
             <MetricsSection />
 
             {/* Selected Works Grid */}
-            <SelectedWorks />
+            <SelectedWorks projects={featuredProjects} />
 
             {/* Why Makan / Philosophy Section */}
             <WhyMakan />

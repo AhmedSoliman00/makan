@@ -5,12 +5,18 @@ import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 
-export default function SelectedWorks() {
+import type { LocalizedProjectSummary } from '@/lib/data/projects';
+
+type SelectedWorksProps = {
+  projects?: LocalizedProjectSummary[];
+};
+
+export default function SelectedWorks({ projects: initialProjects }: SelectedWorksProps) {
   const t = useTranslations('FeaturedProjects');
   const locale = useLocale();
   const isRtl = locale === 'ar';
 
-  const projects = [
+  const defaultProjects = [
     {
       slug: '/projects/el-wady-al-akhdar',
       image: '/home/images/elwady.webp',
@@ -34,6 +40,22 @@ export default function SelectedWorks() {
     },
   ];
 
+  let projects = initialProjects && initialProjects.length > 0
+    ? initialProjects.slice(0, 3).map((p) => ({
+        slug: `/projects/${p.slug}`,
+        image: p.image,
+        category: p.categoryLabel,
+        title: p.title,
+        location: p.location,
+      }))
+    : defaultProjects;
+
+  if (projects.length < 3) {
+    const existingSlugs = new Set(projects.map((p) => p.slug));
+    const complements = defaultProjects.filter((d) => !existingSlugs.has(d.slug));
+    projects = [...projects, ...complements].slice(0, 3);
+  }
+
   return (
     <section id="projects" className="w-full bg-white py-20 lg:py-24">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-[90px]">
@@ -56,19 +78,19 @@ export default function SelectedWorks() {
             <article
               key={idx}
               dir={isRtl ? 'rtl' : 'ltr'}
-              className="group flex flex-col justify-between overflow-hidden bg-white w-full cursor-pointer"
+              className="group flex flex-col justify-between overflow-hidden bg-transparent w-full cursor-pointer transition-all duration-300"
             >
               <Link
                 href={proj.slug}
-                className="block w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#DEA348]"
+                className="block w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C29959]"
               >
                 {/* Image Container: 282px height matching Figma Project photography */}
-                <div className="relative h-[260px] sm:h-[282px] w-full overflow-hidden rounded-t-[5px] bg-zinc-100">
+                <div className="relative h-[260px] sm:h-[282px] w-full overflow-hidden rounded-[2px] bg-zinc-100">
                   <Image
                     src={proj.image}
                     alt={proj.title}
                     fill
-                    className="object-cover smart-animate-image group-hover:scale-110"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes={
                       idx === 0
                         ? '(max-width: 768px) 100vw, 195px'
@@ -77,18 +99,15 @@ export default function SelectedWorks() {
                         : '(max-width: 768px) 100vw, 343px'
                     }
                   />
-
-                  {/* Subtle darkening overlay on hover for luxury feel */}
-                  <div className="absolute inset-0 bg-black/0 transition-colors duration-[800ms] ease-out group-hover:bg-black/10 pointer-events-none" />
                 </div>
 
                 {/* Meta & Title Row: Project Details */}
                 <div className="mt-4 sm:mt-5 flex items-center justify-between gap-3">
                   <div className="min-w-0 flex-1">
-                    <span className="font-cairo text-[13px] font-semibold text-[#DEA348] block transition-colors">
+                    <span className="font-cairo text-xs sm:text-[13px] font-normal text-[#C29959] block">
                       {proj.category}
                     </span>
-                    <h3 className="font-alexandria text-lg sm:text-xl font-medium text-[#10201D] mt-0.5 truncate group-hover:text-[#DEA348] transition-colors duration-300">
+                    <h3 className="font-alexandria text-lg sm:text-xl font-medium text-[#10201D] mt-0.5 truncate group-hover:text-[#C29959] transition-colors duration-300">
                       {proj.title}
                     </h3>
                     <p className="font-cairo text-xs text-[#6F746F] mt-0.5 truncate">
@@ -96,15 +115,15 @@ export default function SelectedWorks() {
                     </p>
                   </div>
 
-                  {/* Explore Project Button (50px x 47px) with 800ms Smart Animate */}
+                  {/* Explore Project Button matching card project style */}
                   <div
-                    className="relative flex h-[47px] w-[50px] shrink-0 items-center justify-center border border-[#DEA348] text-[#10201D] smart-animate-btn group-hover:bg-[#DEA348] group-hover:text-white group-hover:shadow-md"
+                    className="relative flex h-[46px] w-[46px] sm:h-[48px] sm:w-[48px] shrink-0 items-center justify-center border border-[#C29959] text-[#C29959] rounded-[2px] transition-colors duration-300 group-hover:bg-[#C29959] group-hover:text-white"
                     aria-label={t('exploreProject')}
                   >
                     {isRtl ? (
-                      <ArrowLeft className="h-4 w-4 smart-animate-btn group-hover:-translate-x-1" />
+                      <ArrowLeft className="h-4 w-4" />
                     ) : (
-                      <ArrowRight className="h-4 w-4 smart-animate-btn group-hover:translate-x-1" />
+                      <ArrowRight className="h-4 w-4" />
                     )}
                   </div>
                 </div>

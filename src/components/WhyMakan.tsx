@@ -36,9 +36,9 @@ export default function WhyMakan() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full">
         {/* Frame 17: Content container */}
-        <div className="max-w-[641px] text-start">
+        <div className="max-w-[641px] text-center md:text-start mx-auto md:mx-0 flex flex-col items-center md:items-start">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-wider mb-5 font-cairo">
+          <div className="inline-flex items-center justify-center md:justify-start gap-3 text-xs font-semibold uppercase tracking-wider mb-5 font-cairo">
             <span className="h-px w-8 bg-[#C29959]" />
             <span className="text-[#6F746F] text-sm">{t('eyebrow')}</span>
             <span className="h-px w-8 bg-[#C29959]" />
@@ -50,12 +50,12 @@ export default function WhyMakan() {
           </h2>
 
           {/* Paragraph */}
-          <p className="mt-5 font-cairo text-sm sm:text-base leading-relaxed text-[#10201D]/80 max-w-xl">
+          <p className="mt-5 font-cairo text-sm sm:text-base leading-relaxed text-[#10201D]/80 max-w-xl mx-auto md:mx-0">
             {t('description')}
           </p>
 
           {/* Button (177px x 49px in Figma) */}
-          <div className="mt-8 sm:mt-9 flex justify-start">
+          <div className="mt-8 sm:mt-9 flex justify-center md:justify-start w-full md:w-auto">
             <a
               href="#services"
               className="group inline-flex h-[49px] w-[177px] items-center justify-center gap-3 bg-[#082621] font-cairo text-[13px] font-semibold text-white shadow-md transition-all hover:bg-[#041a17]"

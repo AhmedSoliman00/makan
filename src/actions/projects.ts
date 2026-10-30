@@ -91,6 +91,15 @@ export async function createProjectAction(data: ProjectInput) {
       return { success: false, error: 'slugAlreadyExists' }
     }
 
+    if (Boolean(data.isFeatured)) {
+      const featuredCount = await prisma.project.count({
+        where: { isFeatured: true },
+      })
+      if (featuredCount >= 3) {
+        return { success: false, error: 'maxFeaturedReached' }
+      }
+    }
+
     const created = await prisma.project.create({
       data: {
         slug: data.slug.trim().toLowerCase(),
@@ -187,6 +196,18 @@ export async function updateProjectAction(id: string, data: ProjectInput) {
   }
 
   try {
+    if (Boolean(data.isFeatured)) {
+      const featuredCount = await prisma.project.count({
+        where: {
+          isFeatured: true,
+          id: { not: id },
+        },
+      })
+      if (featuredCount >= 3) {
+        return { success: false, error: 'maxFeaturedReached' }
+      }
+    }
+
     await prisma.project.update({
       where: { id },
       data: {

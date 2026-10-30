@@ -27,7 +27,7 @@ export default function ContactLocationMap() {
       </div>
 
       {/* Floating Pin On The Map (Centered-offset to match Figma 58% x, 36% y) */}
-      <div className='hidden sm:flex absolute left-[58%] top-[38%] -translate-x-1/2 -translate-y-1/2 z-10 flex-col items-center pointer-events-none select-none animate-fade-in'>
+      <div className='hidden sm:flex absolute left-[48%] top-[38%] -translate-x-1/2 -translate-y-1/2 z-10 flex-col items-center pointer-events-none select-none animate-fade-in'>
         <div className='relative flex items-center justify-center filter drop-shadow-md'>
           <svg
             className='w-11 h-14 text-[#C29959]'

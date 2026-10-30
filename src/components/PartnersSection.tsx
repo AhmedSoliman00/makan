@@ -47,7 +47,9 @@ export default function PartnersSection() {
           {partners.map((partner, idx) => (
             <div
               key={idx}
-              className='flex justify-center items-center p-2 sm:p-4'
+              className={`flex justify-center items-center p-2 sm:p-4 ${
+                idx === 4 ? 'col-span-2 sm:col-span-1' : ''
+              }`}
             >
               <Image
                 src={partner.src}

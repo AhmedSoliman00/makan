@@ -40,20 +40,20 @@ export default function PreFooterCta() {
 
       {/* Content Container: Aligned to inline-start (Right in RTL, Left in LTR) */}
       <div className='z-10 relative mx-auto px-6 lg:px-8 w-full max-w-7xl'>
-        <div className='flex justify-start'>
-          <div className='max-w-xl lg:max-w-2xl text-start'>
+        <div className='flex justify-center md:justify-start'>
+          <div className='max-w-xl lg:max-w-2xl text-center md:text-start flex flex-col items-center md:items-start'>
             <h2 className='font-alexandria font-normal text-[#082621] text-3xl sm:text-5xl lg:text-6xl leading-[1.2]'>
               {t('heading')}
             </h2>
 
-            <p className='mt-5 max-w-xl font-cairo text-[#082621]/80 text-sm sm:text-base lg:text-lg leading-relaxed'>
+            <p className='mt-5 max-w-xl font-cairo text-[#082621]/80 text-sm sm:text-base lg:text-lg leading-relaxed mx-auto md:mx-0'>
               {t('desc')}
             </p>
 
-            <div className='flex justify-start mt-8 sm:mt-10'>
+            <div className='flex justify-center md:justify-start mt-8 sm:mt-10 w-full md:w-auto'>
               <a
                 href='#projects'
-                className='group inline-flex items-center gap-3 bg-[#082621] hover:bg-[#041a17] shadow-md px-8 py-3.5 rounded-md font-cairo font-semibold text-white text-sm transition-all'
+                className='group inline-flex items-center justify-center gap-3 bg-[#082621] hover:bg-[#041a17] shadow-md px-8 py-3.5 rounded-md font-cairo font-semibold text-white text-sm transition-all'
               >
                 <span>{t('cta')}</span>
                 {isRtl ? (

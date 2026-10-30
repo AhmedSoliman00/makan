@@ -52,9 +52,14 @@ export default async function AdminProjectsPage({
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="font-alexandria text-2xl font-semibold text-[#082621]">
-            {t('title')}
-          </h1>
+          <div className="flex items-center gap-3">
+            <h1 className="font-alexandria text-2xl font-semibold text-[#082621]">
+              {t('title')}
+            </h1>
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-800 border border-amber-200">
+              ★ {isRtl ? `المميز بالرئيسية: ${projects.filter((p) => p.isFeatured).length}/3` : `Featured on Home: ${projects.filter((p) => p.isFeatured).length}/3`}
+            </span>
+          </div>
           <p className="mt-1 text-sm text-[#6F746F]">
             {t('subtitle')}
           </p>
@@ -127,7 +132,7 @@ export default async function AdminProjectsPage({
 
                     {/* Title */}
                     <td className="px-6 py-4">
-                      <div className="flex flex-col">
+                      <div className="flex flex-col items-start">
                         <span className="font-medium text-[#082621]">
                           {displayTitle}
                         </span>
@@ -139,6 +144,11 @@ export default async function AdminProjectsPage({
                         <span className="font-mono text-[11px] text-[#C29959] mt-0.5">
                           /{p.slug}
                         </span>
+                        {p.isFeatured && (
+                          <span className="inline-flex items-center gap-1 text-[11px] font-medium text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded mt-1.5">
+                            ★ {isRtl ? 'مميز بالرئيسية' : 'Featured on Home'}
+                          </span>
+                        )}
                       </div>
                     </td>
 
