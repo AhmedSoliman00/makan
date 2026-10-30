@@ -49,13 +49,13 @@ export default function PeoplePhilosophy({
         <div className='grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center'>
           {/* Philosophy Heading & Description (Column 1 in DOM: start side -> Right in RTL, Left in LTR) */}
           <div className='lg:col-span-6 text-start'>
-            {eyebrow && (
+            {/* {eyebrow && (
               <div className='flex items-center justify-start gap-3 text-xs font-semibold uppercase tracking-wider mb-4 font-cairo'>
                 <span className='h-px w-8 bg-[#C29959]' />
                 <span className='text-[#6F746F] text-sm'>{eyebrow}</span>
                 <span className='h-px w-8 bg-[#C29959]' />
               </div>
-            )}
+            )} */}
 
             <h2 className='font-alexandria text-3xl sm:text-4xl lg:text-[46px] font-normal leading-[1.3] tracking-tight'>
               <span className='text-[#082621]'>{headingPart1}</span>{' '}
@@ -68,7 +68,7 @@ export default function PeoplePhilosophy({
           </div>
 
           {/* 3D Isometric Service Blocks (Column 2 in DOM: end side -> Left in RTL, Right in LTR) */}
-          <div className='lg:col-span-6'>
+          {/* <div className='lg:col-span-6'>
             <div className='flex items-center justify-between sm:justify-around gap-2 sm:gap-4'>
               {steps.map((step, idx) => (
                 <div key={idx} className='contents'>
@@ -95,7 +95,7 @@ export default function PeoplePhilosophy({
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

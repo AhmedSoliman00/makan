@@ -17,32 +17,32 @@ export default function ServicesEcosystem() {
   const services: ServiceItem[] = [
     {
       key: 's1',
-      image: '/home/services/service-01-masterplanning.webp',
+      image: '/home/services/Mountain garden-0.webp',
       alt: 'Makan Landscape Master Planning',
     },
     {
       key: 's2',
-      image: '/home/services/service-02-landscape-architecture.webp',
+      image: '/home/services/Mountain garden-01.webp',
       alt: 'Makan Landscape Architecture',
     },
     {
       key: 's3',
-      image: '/home/services/service-03-placemaking.webp',
+      image: '/home/services/Mountain garden-02.webp',
       alt: 'Makan Placemaking',
     },
     {
       key: 's4',
-      image: '/home/services/service-04-design-build.webp',
+      image: '/home/services/Mountain garden-03.webp',
       alt: 'Makan Design and Build',
     },
     {
       key: 's5',
-      image: '/home/services/service-05-project-management.webp',
+      image: '/home/services/Mountain garden-04.webp',
       alt: 'Makan Project Management',
     },
     {
       key: 's6',
-      image: '/home/services/service-06-operation-maintenance.webp',
+      image: '/home/services/Mountain garden-05.webp',
       alt: 'Makan Operation and Maintenance',
     },
   ]

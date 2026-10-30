@@ -14,15 +14,15 @@ export default function ServicesPillars() {
   const pillars: PillarItem[] = [
     {
       key: 'p1',
-      image: '/home/services/pillar-01-context.webp',
+      image: '/home/services/pillar-01-context..svg',
     },
     {
       key: 'p2',
-      image: '/home/services/pillar-02-integration.webp',
+      image: '/home/services/pillar-02-integration.svg',
     },
     {
       key: 'p3',
-      image: '/home/services/pillar-03-sustainability.webp',
+      image: '/home/services/pillar-03-sustainability.svg',
     },
   ]
 
@@ -63,13 +63,13 @@ export default function ServicesPillars() {
                   !isLast ? 'md:border-e md:border-[#E4DFD7]/80' : ''
                 }`}
               >
-                {/* 3D Illustration directly on #FFFDF8 without card background */}
-                <div className='relative w-[130px] h-[130px] sm:w-[149px] sm:h-[149px] mb-6 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-105 select-none'>
+                {/* Pillar Icon directly on #FFFDF8 without card background */}
+                <div className='relative w-[72px] h-[72px] sm:w-[80px] sm:h-[80px] mb-6 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110 select-none'>
                   <Image
                     src={item.image}
                     alt={title}
-                    width={149}
-                    height={149}
+                    width={72}
+                    height={72}
                     className='object-contain w-full h-full'
                   />
                 </div>
