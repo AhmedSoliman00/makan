@@ -1,17 +1,25 @@
 'use client'
 
-import { useActionState } from 'react'
-import { useTranslations } from 'next-intl'
-import { Lock, Mail, ShieldAlert, ArrowLeft, ArrowRight } from 'lucide-react'
+import { useActionState, useState, useEffect } from 'react'
+import { useTranslations, useLocale } from 'next-intl'
+import { Lock, Mail, ShieldAlert, Eye, EyeOff } from 'lucide-react'
 import { loginAdminAction } from '@/actions/auth'
 
-export default function AdminLoginPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
+export default function AdminLoginPage() {
   const [state, formAction, isPending] = useActionState(loginAdminAction, null)
   const t = useTranslations('Admin.login')
+  const locale = useLocale()
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+
+  // Clear password when authentication fails
+  useEffect(() => {
+    if (state?.error) {
+      setPassword('')
+    }
+  }, [state])
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -45,6 +53,8 @@ export default function AdminLoginPage({
 
         {/* Form */}
         <form action={formAction} className="mt-8 space-y-5">
+          <input type="hidden" name="locale" value={locale} />
+
           <div>
             <label className="block text-xs font-semibold text-[#10201D] uppercase tracking-wider mb-2">
               {t('email')}
@@ -57,7 +67,9 @@ export default function AdminLoginPage({
                 type="email"
                 name="email"
                 required
-                defaultValue="admin@makan.sa"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autoComplete="email"
                 placeholder={t('emailPlaceholder')}
                 className="w-full ps-10 pe-4 py-3 bg-[#FAF8F5] border border-[#DBC9AD]/60 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#C29959] focus:border-transparent transition-all"
               />
@@ -73,13 +85,27 @@ export default function AdminLoginPage({
                 <Lock className="w-4 h-4" />
               </div>
               <input
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 name="password"
                 required
-                defaultValue="Admin123!@#"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete="current-password"
                 placeholder={t('passwordPlaceholder')}
-                className="w-full ps-10 pe-4 py-3 bg-[#FAF8F5] border border-[#DBC9AD]/60 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#C29959] focus:border-transparent transition-all"
+                className="w-full ps-10 pe-11 py-3 bg-[#FAF8F5] border border-[#DBC9AD]/60 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#C29959] focus:border-transparent transition-all"
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute inset-y-0 end-0 pe-3.5 flex items-center text-zinc-400 hover:text-zinc-600 transition-colors"
+                aria-label="Toggle password visibility"
+              >
+                {showPassword ? (
+                  <EyeOff className="w-4 h-4" />
+                ) : (
+                  <Eye className="w-4 h-4" />
+                )}
+              </button>
             </div>
           </div>
 

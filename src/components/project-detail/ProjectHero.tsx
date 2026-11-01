@@ -48,7 +48,7 @@ export default function ProjectHero({
             isRtl ? 'items-start text-start' : 'items-start text-start'
           }`}
         >
-          <span className='font-cairo text-sm sm:text-base font-normal text-white/90 mb-1 sm:mb-2 tracking-wide'>
+          <span className='font-cairo text-sm sm:text-lg font-normal text-white/90 mb-10 sm:mb-20  tracking-wide'>
             {categoryBadge}
           </span>
           <h1 className='font-alexandria text-4xl sm:text-6xl lg:text-[76px] font-medium leading-[1.15] text-white tracking-tight drop-shadow-sm'>
@@ -62,7 +62,7 @@ export default function ProjectHero({
             dir={isRtl ? 'rtl' : 'ltr'}
             className='flex justify-start text-start'
           >
-            <p className='font-cairo text-xs sm:text-sm text-white/85 drop-shadow-sm'>
+            <p className='font-cairo text-sm sm:text-lg text-white/85 drop-shadow-sm'>
               {heroCaption}
             </p>
           </div>

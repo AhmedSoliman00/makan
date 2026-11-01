@@ -532,7 +532,7 @@ export default function ProjectForm({
               onChange={setHeroImage}
               type="hero"
               aspectRatio="landscape"
-              hint="Optimized with Sharp to 1920px WebP, 80% quality"
+              hint="Optimized Image Parsing"
             />
 
             {/* Masterplan Image */}

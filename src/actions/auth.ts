@@ -14,9 +14,10 @@ export async function loginAdminAction(
   prevState: AuthActionResult | null,
   formData: FormData
 ): Promise<AuthActionResult> {
-  const email = formData.get('email') as string
+  const email = (formData.get('email') as string)?.trim()
   const password = formData.get('password') as string
-  const locale = (formData.get('locale') as string) || 'ar'
+  const rawLocale = formData.get('locale') as string
+  const locale = rawLocale === 'en' ? 'en' : 'ar'
 
   if (!email || !password) {
     return { error: 'requiredFields' }
