@@ -5,11 +5,20 @@ import { UploadCloud, Trash2, Loader2, Plus, Code, Eye, AlertCircle } from 'luci
 import { uploadImageAction } from '@/actions/upload'
 
 type GalleryUploadProps = {
+  label?: string
   images: string[]
   onChange: (images: string[]) => void
+  uploadType?: string
+  hint?: string
 }
 
-export default function GalleryUpload({ images, onChange }: GalleryUploadProps) {
+export default function GalleryUpload({
+  label = 'Project Gallery Photography',
+  images,
+  onChange,
+  uploadType = 'gallery',
+  hint = 'Click to select multiple photos (auto-converts to WebP)',
+}: GalleryUploadProps) {
   const [isPending, startTransition] = useTransition()
   const [showRawText, setShowRawText] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -31,7 +40,7 @@ export default function GalleryUpload({ images, onChange }: GalleryUploadProps) 
         const uploadPromises = files.map(async (file) => {
           const formData = new FormData()
           formData.append('file', file)
-          formData.append('type', 'gallery')
+          formData.append('type', uploadType)
           const res = await uploadImageAction(formData)
           return res.success && res.url ? res.url : null
         })
@@ -61,7 +70,7 @@ export default function GalleryUpload({ images, onChange }: GalleryUploadProps) 
     <div className="space-y-3">
       <div className="flex items-center justify-between">
         <label className="block text-xs font-semibold text-[#10201D] uppercase tracking-wider">
-          Project Gallery Photography ({images.length} images)
+          {label} ({images.length})
         </label>
         <button
           type="button"
@@ -148,7 +157,7 @@ export default function GalleryUpload({ images, onChange }: GalleryUploadProps) 
             ) : (
               <div className="flex items-center gap-2 text-xs font-medium text-[#082621]">
                 <Plus className="w-4 h-4 text-[#C29959]" />
-                <span>Click to select multiple gallery photos (auto-converts to WebP)</span>
+                <span>{hint}</span>
               </div>
             )}
           </div>

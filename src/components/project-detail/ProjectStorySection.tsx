@@ -47,7 +47,7 @@ function HighlightIcon({ icon }: { icon: string }) {
 }
 
 function FactOutlineIcon({ icon }: { icon: string }) {
-  const className = 'h-6 w-6 text-[#C29959]'
+  const className = 'h-7 w-7 text-[#C29959]'
   switch (icon) {
     case 'units':
       return <Home className={className} strokeWidth={1.5} />
@@ -81,28 +81,28 @@ export default function ProjectStorySection({
   const row2Facts = facts.slice(3, 6)
 
   return (
-    <section className='mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-[86px] py-16 sm:py-20'>
+    <section className='mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-[86px] py-16 sm:py-24'>
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start'>
         {/* Left: Highlights Card */}
-        <div className='lg:col-span-4 rounded-[16px] border border-[#EAE1D0] bg-[#FCFCF9] p-6 sm:p-7 shadow-[0_4px_24px_rgba(8,38,33,0.02)]'>
-          <h2 className='font-alexandria text-xl sm:text-2xl font-normal text-[#10201D] mb-6'>
+        <div className='lg:col-span-4 rounded-[16px] border border-[#EAE1D0] bg-[#FCFCF9] p-6 sm:p-8 shadow-[0_4px_24px_rgba(8,38,33,0.02)]'>
+          <h2 className='font-alexandria text-2xl sm:text-3xl font-normal text-[#10201D] mb-7'>
             {highlightsTitle}
           </h2>
 
-          <div className='space-y-4'>
+          <div className='space-y-5'>
             {highlights.map((item, idx) => (
               <div
                 key={idx}
-                className='flex items-start gap-3.5 pb-4 border-b border-[#EAE1D0]/70 last:border-b-0 last:pb-0'
+                className='flex items-start gap-4 pb-5 border-b border-[#EAE1D0]/70 last:border-b-0 last:pb-0'
               >
-                <div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F4EDE2] text-[#C29959]'>
+                <div className='flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F4EDE2] text-[#C29959]'>
                   <HighlightIcon icon={item.icon} />
                 </div>
                 <div>
-                  <h3 className='font-cairo text-sm font-semibold text-[#10201D]'>
+                  <h3 className='font-cairo text-base sm:text-[17px] font-semibold text-[#10201D] leading-snug'>
                     {item.title}
                   </h3>
-                  <p className='mt-0.5 font-cairo text-xs text-[#6F746F] leading-relaxed'>
+                  <p className='mt-1 font-cairo text-sm sm:text-[15px] text-[#6F746F] leading-relaxed'>
                     {item.description}
                   </p>
                 </div>
@@ -110,10 +110,10 @@ export default function ProjectStorySection({
             ))}
           </div>
 
-          <div className='mt-6 pt-4'>
+          <div className='mt-8 pt-4'>
             <Link
               href='/contact'
-              className='group flex w-full items-center justify-center gap-2.5 bg-[#10201D] hover:bg-[#C29959] text-white py-3.5 px-6 font-cairo text-sm font-semibold transition-all duration-300'
+              className='group flex w-full items-center justify-center gap-3 bg-[#10201D] hover:bg-[#C29959] text-white py-4 px-7 font-cairo text-base font-semibold transition-all duration-300'
             >
               <span>{highlightsCtaText}</span>
               {isRtl ? (
@@ -130,32 +130,32 @@ export default function ProjectStorySection({
           <div>
             {/* Eyebrow with gold accent line */}
             <div
-              className={`flex items-center gap-2.5 mb-3 ${
+              className={`flex items-center gap-3 mb-3.5 ${
                 isRtl ? 'justify-start' : 'justify-start'
               }`}
             >
               {isRtl ? (
                 <>
-                  <span className='font-cairo text-xs text-[#6F746F]'>
+                  <span className='font-cairo text-sm sm:text-[15px] font-medium text-[#6F746F]'>
                     {overviewEyebrow}
                   </span>
-                  <div className='w-12 h-px bg-[#C29959]' />
+                  <div className='w-14 h-px bg-[#C29959]' />
                 </>
               ) : (
                 <>
-                  <div className='w-12 h-px bg-[#C29959]' />
-                  <span className='font-cairo text-xs text-[#6F746F]'>
+                  <div className='w-14 h-px bg-[#C29959]' />
+                  <span className='font-cairo text-sm sm:text-[15px] font-medium text-[#6F746F]'>
                     {overviewEyebrow}
                   </span>
                 </>
               )}
             </div>
 
-            <h2 className='font-alexandria text-2xl sm:text-[32px] font-normal leading-snug text-[#10201D] mb-4'>
+            <h2 className='font-alexandria text-3xl sm:text-4xl lg:text-[44px] font-normal leading-tight text-[#10201D] mb-6'>
               {overviewHeading}
             </h2>
 
-            <div className='space-y-3 font-cairo text-xs sm:text-[13px] leading-relaxed text-[#6F746F] mb-10 max-w-3xl'>
+            <div className='space-y-4 font-cairo text-base sm:text-lg lg:text-[19px] leading-relaxed sm:leading-loose text-[#6F746F] mb-12 max-w-3xl'>
               {overviewDescription.split('\n\n').map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
@@ -171,7 +171,7 @@ export default function ProjectStorySection({
                 {row1Facts.map((fact, idx) => (
                   <div
                     key={idx}
-                    className={`flex items-center gap-3.5 sm:gap-4 py-5 px-3 lg:px-6 ${
+                    className={`flex items-center gap-4 py-6 px-3 lg:px-6 ${
                       idx < 2 ? 'border-inline-end border-[#EAE1D0]' : ''
                     }`}
                   >
@@ -179,10 +179,10 @@ export default function ProjectStorySection({
                       <FactOutlineIcon icon={fact.icon} />
                     </div>
                     <div className='text-start min-w-0'>
-                      <span className='font-cairo text-xs text-[#6F746F] block leading-tight'>
+                      <span className='font-alexandria text-base sm:text-[15px] text-[#10201D] block leading-tight'>
                         {fact.label}
                       </span>
-                      <span className='font-cairo text-xs sm:text-sm font-semibold text-[#10201D] block mt-1 leading-snug'>
+                      <span className='font-cairo text-sm sm:text-xl font-light text-[#6F746F] block mt-1 leading-snug'>
                         {fact.value}
                       </span>
                     </div>
@@ -195,7 +195,7 @@ export default function ProjectStorySection({
                 {row2Facts.map((fact, idx) => (
                   <div
                     key={idx}
-                    className={`flex items-center gap-3.5 sm:gap-4 py-5 px-3 lg:px-6 ${
+                    className={`flex items-center gap-4 py-6 px-3 lg:px-6 ${
                       idx < 2 ? 'border-inline-end border-[#EAE1D0]' : ''
                     }`}
                   >
@@ -203,10 +203,10 @@ export default function ProjectStorySection({
                       <FactOutlineIcon icon={fact.icon} />
                     </div>
                     <div className='text-start min-w-0'>
-                      <span className='font-cairo text-xs text-[#6F746F] block leading-tight'>
+                      <span className='font-alexandria text-sm sm:text-[15px] text-[#10201D] block leading-tight'>
                         {fact.label}
                       </span>
-                      <span className='font-cairo text-xs sm:text-sm font-semibold text-[#10201D] block mt-1 leading-snug'>
+                      <span className='font-cairo text-base sm:text-xl font-light text-[#6F746F] block mt-1 leading-snug'>
                         {fact.value}
                       </span>
                     </div>
@@ -226,10 +226,10 @@ export default function ProjectStorySection({
                     <FactOutlineIcon icon={fact.icon} />
                   </div>
                   <div className='text-start min-w-0'>
-                    <span className='font-cairo text-xs text-[#6F746F] block'>
+                    <span className='font-cairo text-xs sm:text-sm text-[#6F746F] block'>
                       {fact.label}
                     </span>
-                    <span className='font-cairo text-xs sm:text-sm font-semibold text-[#10201D] block mt-0.5'>
+                    <span className='font-alexandria text-base font-light text-[#10201D] block mt-0.5'>
                       {fact.value}
                     </span>
                   </div>

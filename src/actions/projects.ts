@@ -104,7 +104,7 @@ export async function createProjectAction(data: ProjectInput) {
       data: {
         slug: data.slug.trim().toLowerCase(),
         category: data.category,
-        cityKey: data.cityKey || 'riyadh',
+        cityKey: data.cityKey?.trim() || 'riyadh',
         statusKey: data.statusKey || 'completed',
         heroImage: data.heroImage || '/home/images/hero.webp',
         order: Number(data.order) || 0,
@@ -213,7 +213,7 @@ export async function updateProjectAction(id: string, data: ProjectInput) {
       data: {
         slug: data.slug.trim().toLowerCase(),
         category: data.category,
-        cityKey: data.cityKey || 'riyadh',
+        cityKey: data.cityKey?.trim() || 'riyadh',
         statusKey: data.statusKey || 'completed',
         heroImage: data.heroImage,
         order: Number(data.order) || 0,

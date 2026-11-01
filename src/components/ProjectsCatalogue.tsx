@@ -304,7 +304,7 @@ export default function ProjectsCatalogue({
         {/* Catalogue Content: Grid vs List */}
         {filteredProjects.length > 0 ? (
           viewMode === 'grid' ? (
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-[23px]'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-[50px]'>
               {filteredProjects.map((project) => {
                 const copy = getProjectCopy(project)
                 return (
@@ -322,7 +322,7 @@ export default function ProjectsCatalogue({
               })}
             </div>
           ) : (
-            <div className='flex flex-col gap-6 lg:gap-[24px]'>
+            <div className='flex flex-col gap-8 lg:gap-10'>
               {filteredProjects.map((project) => {
                 const copy = getProjectCopy(project)
                 return (

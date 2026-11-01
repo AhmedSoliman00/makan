@@ -32,7 +32,7 @@ export default function MetricsSection() {
               <div className="flex flex-col items-center justify-center text-center">
                 <span
                   dir="auto"
-                  className="font-alexandria text-4xl lg:text-[48px] font-medium tracking-tight text-[#10201D] leading-none"
+                  className="font-alexandria text-4xl lg:text-[48px] font-light tracking-tight text-[#10201D] leading-none"
                 >
                   {stat.value}
                 </span>
@@ -56,7 +56,7 @@ export default function MetricsSection() {
             >
               <span
                 dir="auto"
-                className="font-alexandria text-3xl sm:text-4xl font-medium tracking-tight text-[#10201D] leading-none"
+                className="font-alexandria text-3xl sm:text-4xl font-light tracking-tight text-[#10201D] leading-none"
               >
                 {stat.value}
               </span>

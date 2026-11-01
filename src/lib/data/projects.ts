@@ -46,6 +46,7 @@ export type LocalizedFullProject = {
   masterplanCaption: string
   masterplanEnlargeText: string
   masterplanImage: string
+  masterplanImages?: string[]
   similarTitle: string
   similarSubtitle: string
   similarCtaText: string
@@ -56,6 +57,18 @@ export type LocalizedFullProject = {
     location: string
     image: string
   }>
+}
+
+export function resolveLocation(cityKey: string, isAr: boolean): string {
+  if (!cityKey) return isAr ? 'المملكة العربية السعودية' : 'Kingdom of Saudi Arabia'
+  const key = cityKey.trim().toLowerCase()
+  if (key === 'riyadh') return isAr ? 'الرياض، المملكة العربية السعودية' : 'Riyadh, Saudi Arabia'
+  if (key === 'khobar') return isAr ? 'الخبر، المملكة العربية السعودية' : 'Khobar, Saudi Arabia'
+  if (key === 'jeddah') return isAr ? 'جدة، المملكة العربية السعودية' : 'Jeddah, Saudi Arabia'
+  if (key === 'dammam') return isAr ? 'الدمام، المملكة العربية السعودية' : 'Dammam, Saudi Arabia'
+  if (key === 'mecca' || key === 'makkah') return isAr ? 'مكة المكرمة، المملكة العربية السعودية' : 'Makkah, Saudi Arabia'
+  if (key === 'medina' || key === 'madinah') return isAr ? 'المدينة المنورة، المملكة العربية السعودية' : 'Madinah, Saudi Arabia'
+  return cityKey
 }
 
 /**
@@ -108,18 +121,7 @@ export async function getProjects(params: {
       statusKey: p.statusKey as StatusKey,
       title: activeTrans?.title || p.slug,
       categoryLabel: activeTrans?.categoryBadge || p.category,
-      location:
-        p.cityKey === 'riyadh'
-          ? isAr
-            ? 'الرياض، المملكة العربية السعودية'
-            : 'Riyadh, Saudi Arabia'
-          : p.cityKey === 'khobar'
-          ? isAr
-            ? 'الخبر، المملكة العربية السعودية'
-            : 'Khobar, Saudi Arabia'
-          : isAr
-          ? 'جدة، المملكة العربية السعودية'
-          : 'Jeddah, Saudi Arabia',
+      location: resolveLocation(p.cityKey, isAr),
       summary: activeTrans?.summary || '',
     }
   })
@@ -188,18 +190,7 @@ export async function getFeaturedProjects(params: {
       statusKey: p.statusKey as StatusKey,
       title: activeTrans?.title || p.slug,
       categoryLabel: activeTrans?.categoryBadge || p.category,
-      location:
-        p.cityKey === 'riyadh'
-          ? isAr
-            ? 'الرياض، المملكة العربية السعودية'
-            : 'Riyadh, Saudi Arabia'
-          : p.cityKey === 'khobar'
-          ? isAr
-            ? 'الخبر، المملكة العربية السعودية'
-            : 'Khobar, Saudi Arabia'
-          : isAr
-          ? 'جدة، المملكة العربية السعودية'
-          : 'Jeddah, Saudi Arabia',
+      location: resolveLocation(p.cityKey, isAr),
       summary: activeTrans?.summary || '',
     }
   })
@@ -266,18 +257,7 @@ export async function getProjectBySlug(
     similarPool = [...similarPool, ...additionalProjects]
   }
 
-  const formatLocation = (cityKey: string) => {
-    switch (cityKey) {
-      case 'riyadh':
-        return isAr ? 'الرياض، المملكة العربية السعودية' : 'Riyadh, Saudi Arabia'
-      case 'khobar':
-        return isAr ? 'الخبر، المملكة العربية السعودية' : 'Khobar, Saudi Arabia'
-      case 'jeddah':
-        return isAr ? 'جدة، المملكة العربية السعودية' : 'Jeddah, Saudi Arabia'
-      default:
-        return isAr ? 'المملكة العربية السعودية' : 'Kingdom of Saudi Arabia'
-    }
-  }
+  const formatLocation = (cityKey: string) => resolveLocation(cityKey, isAr)
 
   const formatCategoryBadge = (cat: string, customBadge?: string) => {
     if (customBadge && customBadge.trim() !== '') return customBadge
@@ -467,6 +447,25 @@ export async function getProjectBySlug(
         ? 'مجموعة مختارة من الصور تجسد تفاصيل المشروع والبيئة المعمارية'
         : 'Curated photography capturing spatial harmony, material craftsmanship, and greenery'),
     galleryImages,
+    // Parse masterplan images (supports JSON array, newlines, or single URL string)
+    ...(() => {
+      const raw = activeTrans.masterplanImage || ''
+      let images: string[] = []
+      if (raw.startsWith('[') || raw.startsWith('{')) {
+        const parsed = parseJson(raw, [])
+        if (Array.isArray(parsed)) {
+          images = parsed.filter((s): s is string => typeof s === 'string' && s.trim() !== '')
+        }
+      } else if (raw.includes('\n')) {
+        images = raw.split('\n').map((s) => s.trim()).filter(Boolean)
+      } else if (raw.trim() !== '') {
+        images = [raw.trim()]
+      }
+      return {
+        masterplanImage: images[0] || '',
+        masterplanImages: images,
+      }
+    })(),
     masterplanEyebrow:
       activeTrans.masterplanEyebrow || (isAr ? 'المخطط العام' : 'Master Planning'),
     masterplanHeading:
@@ -484,7 +483,6 @@ export async function getProjectBySlug(
       `${activeTrans.title} · ${isAr ? 'المخطط التوجيهي وهندسة الموقع' : 'Master Circulation & Landscape Layout'}`,
     masterplanEnlargeText:
       activeTrans.masterplanEnlargeText || (isAr ? 'تكبير المخطط' : 'Click to enlarge'),
-    masterplanImage: activeTrans.masterplanImage || '',
     similarTitle:
       activeTrans.similarTitle || (isAr ? 'مشاريع مشابهة' : 'Similar Projects'),
     similarSubtitle:

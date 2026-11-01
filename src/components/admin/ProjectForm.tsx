@@ -210,9 +210,23 @@ export default function ProjectForm({
     }
     return []
   })
-  const [masterplanImage, setMasterplanImage] = useState(
-    initialData?.ar?.masterplanImage || initialData?.en?.masterplanImage || ''
-  )
+  const [masterplanImages, setMasterplanImages] = useState<string[]>(() => {
+    const raw = initialData?.ar?.masterplanImage || initialData?.en?.masterplanImage
+    if (Array.isArray(raw)) return raw
+    if (typeof raw === 'string' && raw.trim() !== '') {
+      try {
+        const parsed = JSON.parse(raw)
+        if (Array.isArray(parsed)) return parsed
+      } catch {
+        // Not JSON
+      }
+      if (raw.includes('\n')) {
+        return raw.split('\n').map((s: string) => s.trim()).filter(Boolean)
+      }
+      return [raw.trim()]
+    }
+    return []
+  })
 
   // Handlers for dynamic list items
   const updateMetric = (
@@ -303,7 +317,10 @@ export default function ProjectForm({
         overviewDescription: arOverviewDescription.trim(),
         facts: arFacts,
         galleryImages,
-        masterplanImage,
+        masterplanImage:
+          masterplanImages.length > 1
+            ? JSON.stringify(masterplanImages)
+            : masterplanImages[0] || '',
       },
       en: {
         title: enTitle.trim(),
@@ -321,7 +338,10 @@ export default function ProjectForm({
         overviewDescription: enOverviewDescription.trim(),
         facts: enFacts,
         galleryImages,
-        masterplanImage,
+        masterplanImage:
+          masterplanImages.length > 1
+            ? JSON.stringify(masterplanImages)
+            : masterplanImages[0] || '',
       },
     }
 
@@ -438,15 +458,23 @@ export default function ProjectForm({
               <label className="block text-xs font-semibold text-[#10201D] uppercase tracking-wider mb-1.5">
                 {t('city')}
               </label>
-              <select
+              <input
+                type="text"
+                list="city-options"
                 value={cityKey}
                 onChange={(e) => setCityKey(e.target.value)}
+                placeholder="e.g. Riyadh, Khobar, Jeddah, Dammam (الرياض، الخبر...)"
                 className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#DBC9AD]/60 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#C29959]"
-              >
+              />
+              <datalist id="city-options">
                 <option value="riyadh">Riyadh (الرياض)</option>
                 <option value="khobar">Khobar (الخبر)</option>
                 <option value="jeddah">Jeddah (جدة)</option>
-              </select>
+                <option value="dammam">Dammam (الدمام)</option>
+                <option value="mecca">Mecca (مكة)</option>
+                <option value="medina">Medina (المدينة)</option>
+                <option value="dubai">Dubai (دبي)</option>
+              </datalist>
             </div>
 
             {/* Status */}
@@ -535,14 +563,13 @@ export default function ProjectForm({
               hint="Optimized Image Parsing"
             />
 
-            {/* Masterplan Image */}
-            <ImageUpload
+            {/* Masterplan Images (Supports 1 or more drawings) */}
+            <GalleryUpload
               label={t('masterplanImage')}
-              value={masterplanImage}
-              onChange={setMasterplanImage}
-              type="general"
-              aspectRatio="landscape"
-              hint="Optional masterplan / site layout diagram"
+              images={masterplanImages}
+              onChange={setMasterplanImages}
+              uploadType="general"
+              hint="Click to select masterplan drawings / site layouts"
             />
 
             {/* Gallery Images */}

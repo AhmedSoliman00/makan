@@ -52,6 +52,7 @@ export type LocalizedProjectDetail = {
   masterplanCaption: string
   masterplanEnlargeText: string
   masterplanImage: string
+  masterplanImages?: string[]
   similarTitle: string
   similarSubtitle: string
   similarCtaText: string

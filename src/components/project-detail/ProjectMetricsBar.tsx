@@ -39,7 +39,7 @@ export default function ProjectMetricsBar({ metrics }: ProjectMetricsBarProps) {
                 <div className='mb-3 flex items-center justify-center'>
                   <MetricIcon icon={metric.icon} />
                 </div>
-                <span className='font-alexandria text-4xl lg:text-[52px] font-normal leading-tight text-[#10201D]'>
+                <span className='font-alexandria text-4xl lg:text-[52px] font-light leading-tight text-[#10201D]'>
                   {metric.value}
                 </span>
                 <span className='mt-2 font-cairo text-xs sm:text-sm text-[#6F746F]'>
@@ -67,7 +67,7 @@ export default function ProjectMetricsBar({ metrics }: ProjectMetricsBarProps) {
                 <div className='mb-2 flex items-center justify-center'>
                   <MetricIcon icon={metric.icon} />
                 </div>
-                <span className='font-alexandria text-3xl font-normal leading-tight text-[#10201D]'>
+                <span className='font-alexandria text-3xl font-light leading-tight text-[#10201D]'>
                   {metric.value}
                 </span>
                 <span className='mt-1 font-cairo text-xs text-[#6F746F]'>

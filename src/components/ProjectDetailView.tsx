@@ -69,19 +69,25 @@ export default function ProjectDetailView({
         />
       )}
 
-      {project.masterplanImage && project.masterplanImage.trim() !== '' && (
+      {((project.masterplanImages && project.masterplanImages.length > 0) ||
+        (project.masterplanImage && project.masterplanImage.trim() !== '')) && (
         <ProjectMasterplan
           eyebrow={project.masterplanEyebrow}
           heading={project.masterplanHeading}
           description={project.masterplanDescription}
           ctaText={project.masterplanCtaText}
+          images={
+            project.masterplanImages && project.masterplanImages.length > 0
+              ? project.masterplanImages
+              : [project.masterplanImage]
+          }
           image={project.masterplanImage}
           caption={project.masterplanCaption}
           enlargeText={project.masterplanEnlargeText}
           isRtl={isRtl}
-          onEnlargeClick={() =>
+          onEnlargeClick={(src) =>
             setLightboxImage({
-              src: project.masterplanImage,
+              src: src || project.masterplanImage,
               alt: project.masterplanCaption,
             })
           }

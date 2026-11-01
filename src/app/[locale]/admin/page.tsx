@@ -108,7 +108,7 @@ export default async function AdminOverviewPage({
                 <p className="text-xs font-medium text-[#6F746F] uppercase tracking-wider">
                   {s.label}
                 </p>
-                <p className="mt-2 text-3xl font-semibold font-alexandria text-[#082621]">
+                <p className="mt-2 text-3xl font-light font-alexandria text-[#082621]">
                   {s.value}
                 </p>
               </div>
