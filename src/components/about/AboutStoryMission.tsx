@@ -29,7 +29,7 @@ export default function AboutStoryMission() {
             {/* Story Copy Column */}
             <div className='w-full lg:w-1/2 order-1 lg:order-2 text-start max-w-xl'>
               {/* Heading */}
-              <h2 className='font-cairo text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#10201D] tracking-tight leading-tight'>
+              <h2 className='font-alexandria text-3xl sm:text-4xl lg:text-[44px] font-normal text-[#10201D] tracking-tight leading-tight'>
                 {t('story.title')}
               </h2>
 
@@ -63,7 +63,7 @@ export default function AboutStoryMission() {
               </div>
 
               {/* Heading */}
-              <h2 className='font-cairo text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#10201D] tracking-tight leading-tight'>
+              <h2 className='font-alexandria text-3xl sm:text-4xl lg:text-[44px] font-normal text-[#10201D] tracking-tight leading-tight'>
                 {t('mission.title')}
               </h2>
 

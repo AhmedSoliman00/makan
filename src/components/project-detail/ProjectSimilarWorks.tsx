@@ -34,13 +34,13 @@ export default function ProjectSimilarWorks({
 
           <Link
             href='/projects'
-            className='group inline-flex items-center gap-3 border border-[#10201D] px-6 py-3 font-cairo text-[13px] font-semibold text-[#10201D] transition-all hover:bg-[#10201D] hover:text-white self-start sm:self-auto'
+            className='group inline-flex items-center gap-3 border border-[#10201D] px-6 hover:px-9 py-3 font-cairo text-[13px] font-semibold text-[#10201D] rounded-none transition-all duration-300 hover:bg-[#10201D] hover:text-white self-start sm:self-auto'
           >
             <span>{ctaText}</span>
             {isRtl ? (
-              <ArrowLeft className='h-4 w-4 transition-transform group-hover:-translate-x-1' />
+              <ArrowLeft className='h-4 w-4 transition-transform duration-300 group-hover:scale-115 group-hover:-translate-x-1' />
             ) : (
-              <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+              <ArrowRight className='h-4 w-4 transition-transform duration-300 group-hover:scale-115 group-hover:translate-x-1' />
             )}
           </Link>
         </div>
@@ -50,45 +50,51 @@ export default function ProjectSimilarWorks({
           {similarProjects.map((similar, idx) => (
             <article
               key={idx}
-              className='group flex flex-col overflow-hidden bg-[#fffdf8] transition-all duration-300'
+              className='flex flex-col overflow-hidden bg-[#fffdf8] transition-all duration-300'
             >
+              {/* 1. Image: Hovering here scales ONLY the image */}
               <Link
                 href={`/projects/${similar.slug}`}
-                className='block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C29959]'
+                className='group/img block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C29959]'
+                aria-label={similar.title}
               >
                 <div className='relative h-[260px] sm:h-[280px] w-full overflow-hidden rounded-none bg-zinc-100'>
                   <Image
                     src={similar.image}
                     alt={similar.title}
                     fill
-                    className='object-cover transition-transform duration-500 group-hover:scale-105'
+                    className='object-cover transition-transform duration-500 ease-out group-hover/img:scale-105'
                     sizes='(max-width: 768px) 100vw, 33vw'
                   />
                 </div>
+              </Link>
 
-                <div className='flex items-center justify-between gap-4 pt-4 sm:pt-5'>
-                  <div className='min-w-0 flex-1'>
-                    <span className='font-cairo text-[13px] font-semibold text-[#C29959] block'>
-                      {similar.category}
-                    </span>
-                    <h3 className='font-alexandria text-lg sm:text-xl font-medium text-[#10201D] mt-0.5 truncate group-hover:text-[#C29959] transition-colors'>
-                      {similar.title}
-                    </h3>
-                    <p className='font-cairo text-xs text-[#6F746F] mt-0.5 truncate'>
-                      {similar.location}
-                    </p>
-                  </div>
+              {/* 2. Text & Button together: Hovering here highlights title, expands button, scales icon */}
+              <Link
+                href={`/projects/${similar.slug}`}
+                className='group/btn flex items-center justify-between gap-4 pt-4 sm:pt-5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C29959]'
+              >
+                <div className='min-w-0 flex-1'>
+                  <span className='font-cairo text-[13px] font-semibold text-[#C29959] block'>
+                    {similar.category}
+                  </span>
+                  <h3 className='font-alexandria text-lg sm:text-xl font-medium text-[#10201D] mt-0.5 truncate transition-colors duration-300 group-hover/btn:text-[#C29959]'>
+                    {similar.title}
+                  </h3>
+                  <p className='font-cairo text-xs text-[#6F746F] mt-0.5 truncate'>
+                    {similar.location}
+                  </p>
+                </div>
 
-                  <div
-                    className='relative flex h-[47px] w-[50px] shrink-0 items-center justify-center border border-[#C29959] text-[#10201D] transition-colors group-hover:bg-[#C29959] group-hover:text-white'
-                    aria-label={similar.title}
-                  >
-                    {isRtl ? (
-                      <ArrowLeft className='h-4 w-4' />
-                    ) : (
-                      <ArrowRight className='h-4 w-4' />
-                    )}
-                  </div>
+                <div
+                  className='relative flex h-[47px] w-[50px] group-hover/btn:w-[70px] shrink-0 items-center justify-center border border-[#C29959] text-[#10201D] rounded-none transition-all duration-300 group-hover/btn:bg-[#C29959] group-hover/btn:text-white'
+                  aria-label={similar.title}
+                >
+                  {isRtl ? (
+                    <ArrowLeft className='h-4 w-4 transition-transform duration-300 group-hover/btn:scale-115 group-hover/btn:-translate-x-0.5' />
+                  ) : (
+                    <ArrowRight className='h-4 w-4 transition-transform duration-300 group-hover/btn:scale-115 group-hover/btn:translate-x-0.5' />
+                  )}
                 </div>
               </Link>
             </article>

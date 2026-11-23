@@ -1,157 +1,49 @@
-# Makan (مكان) — Next.js 16 + Tailwind CSS v4 + next-intl + Cairo & Alexandria
+# مكان لاندسكيب | Makan Landscape
 
-A production-ready Next.js application configured with **Tailwind CSS v4**, **next-intl v4** (type-safe internationalization), **Cairo** and **Alexandria** Arabic & Latin Google fonts, dynamic RTL/LTR support, and App Router best practices.
-
----
-
-## 🌟 Key Features
-
-1. **Next.js 16 (App Router)**:
-   - High-performance Turbopack engine.
-   - Async route parameters (`params: Promise<{ locale: string }>`).
-   - Static rendering optimization with `setRequestLocale` and `generateStaticParams`.
-   - Modern Next.js 16 `src/proxy.ts` request proxying (replaces legacy middleware).
-
-2. **Typography (Cairo & Alexandria via `next/font/google`)**:
-   - **Alexandria** (`--font-alexandria` / `font-alexandria`): Modern geometric display font designed for impactful headings, brand identities, badges, and numbers.
-   - **Cairo** (`--font-cairo` / `font-cairo`): Clean, highly readable typeface engineered for body copy, paragraphs, form controls, and UI buttons.
-   - **Zero Layout Shift (CLS)** with self-hosted Google Font assets preloaded for `arabic` and `latin` subsets.
-
-3. **Tailwind CSS v4 Integration**:
-   - Zero-configuration engine using `@import "tailwindcss";` and `@theme inline`.
-   - Custom utility classes: `font-cairo` and `font-alexandria`.
-   - Default body font configured to `var(--font-cairo)`.
-   - Dark/Light mode support with CSS theme variables.
-
-4. **Internationalization (next-intl v4)**:
-   - Supported locales: Arabic (`ar`, default) and English (`en`).
-   - Automatic locale detection, redirection, and cookie persistence (`NEXT_LOCALE`).
-   - Bidirectional layout: Automatically sets `<html lang="ar" dir="rtl">` for Arabic and `<html lang="en" dir="ltr">` for English.
-   - **100% Type-Safe Keys**: Autocompletion and compile-time verification for all translation keys via `src/types/global.d.ts`.
-   - Interactive `LanguageSwitcher` preserving pathname and search queries.
+> **نطوّر الأرض إلى وجهات تصنع قيمة**  
+> **Developing Land into Value-Creating Destinations**
 
 ---
 
-## 📁 Project Architecture
+## عن مكان (About Makan)
 
-```
-makan/
-├── messages/
-│   ├── ar.json                 # Arabic dictionary
-│   └── en.json                 # English dictionary
-├── src/
-│   ├── app/
-│   │   ├── [locale]/
-│   │   │   ├── layout.tsx      # Root locale layout (html lang & dir, font variables, next-intl provider)
-│   │   │   ├── page.tsx        # Localized landing page & typography showcase
-│   │   │   └── not-found.tsx   # Localized 404 page
-│   │   ├── favicon.ico
-│   │   ├── globals.css         # Tailwind v4 theme, fonts, and custom tokens
-│   │   └── not-found.tsx       # Root 404 fallback
-│   ├── components/
-│   │   ├── LanguageSwitcher.tsx# Interactive Arabic/English switcher
-│   │   ├── Navbar.tsx          # Sticky glassmorphism header
-│   │   ├── HeroSection.tsx     # Hero banner showcasing Alexandria & Cairo
-│   │   ├── FontShowcase.tsx    # Live interactive typography playground
-│   │   ├── FeatureGrid.tsx     # Architectural highlights
-│   │   └── Footer.tsx          # Footer with bilingual branding
-│   ├── i18n/
-│   │   ├── navigation.ts       # Type-safe Link, useRouter, usePathname, redirect
-│   │   ├── request.ts          # Server-side getRequestConfig
-│   │   └── routing.ts          # Supported locales and defaultLocale
-│   ├── lib/
-│   │   └── fonts.ts            # next/font/google loaders for Cairo & Alexandria
-│   ├── types/
-│   │   └── global.d.ts         # TypeScript IntlMessages augmentation
-│   └── proxy.ts                # Next.js 16 internationalized routing proxy
-├── next.config.ts              # Wrapped with createNextIntlPlugin
-├── package.json
-└── tsconfig.json
-```
+**مكان لاندسكيب** هي شركة متخصصة في تطوير وتخطيط وتصميم المساحات المفتوحة والمشاريع البيئية والمعمارية. نرافق ملاك الأراضي والمستثمرين والمطورين العقاريين في رحلة متكاملة تبدأ من دراسة وفهم طبيعة الأرض، مروراً بالتخطيط والتصميم والإشراف على التنفيذ، وصولاً إلى التشغيل، بهدف بناء وجهات تنبض بالحياة، ترفع من جودة المعيشة، وتصنع أثراً وقيمة اقتصادية ومجتمعية مستدامة.
+
+**Makan Landscape** is a specialized landscape planning, architecture, and destination development studio. We partner with land owners, developers, and public entities across every stage of the project lifecycle—from in-depth land insights and master planning to landscape design, execution supervision, and long-term operations. Our mission is to transform open spaces into vibrant, sustainable destinations that elevate quality of life and generate enduring value.
 
 ---
 
-## 🚀 Getting Started
+## ركائزنا وقيمنا (Our Core Pillars)
 
-### 1. Install Dependencies
-```bash
-npm install
-```
-
-### 2. Start the Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000). The app will automatically redirect to `/ar` (or `/en` depending on your browser preferences).
-
-### 3. Production Build
-```bash
-npm run build
-npm run start
-```
+- **وجهات مستدامة لأجيال قادمة (Sustainable Destinations):** حلول تصميمية وبيئية تحترم الطبيعة والموارد المحلية وتحافظ على استدامتها عبر الزمن.
+- **مجتمعات نابضة بالحياة (Vibrant Communities):** أماكن تفاعلية تعزز الروابط الإنسانية والصحة العامة وتخلق تجارب يومية ثرية لجميع أفراد المجتمع.
+- **قيمة طويلة الأمد (Enduring Value):** رؤى وتخطيط استثماري يعزز من العائد الاقتصادي للأرض ويضمن استمرارية نجاح المشروع.
 
 ---
 
-## 🔤 How to Use Cairo & Alexandria in Code
+## مجالات عملنا وخدماتنا (What We Do)
 
-### In JSX with Tailwind CSS:
-```tsx
-// Use Alexandria for headings and titles
-<h1 className="font-alexandria text-4xl font-bold">
-  عنوان رئيسي بخط الإسكندرية / Alexandria Heading
-</h1>
-
-// Use Cairo for body text and paragraphs (also body default)
-<p className="font-cairo text-base text-zinc-600">
-  نص فقرة عالي الوضوح بخط كايرو / High legibility body text with Cairo font
-</p>
-```
+1. **التخطيط العام والاستراتيجي (Master Planning):** دراسات شمولية للأراضي والمخططات لضمان أفضل استغلال للمساحات والموارد الطبيعية.
+2. **عمارة المشهد واللاندسكيب (Landscape Architecture):** تصميم حدائق، مسطحات مفتوحة، ومتنزهات تجمع بين الجمال والوظيفة والهوية المحلية.
+3. **التصميم الحضري والمساحات العامة (Urban Design & Public Realms):** ابتكار مساحات للمشاة، وميادين، وممرات حيوية تعزز أسلوب الحياة العصري.
+4. **تطوير الوجهات المتكاملة (Destination Development):** مشاريع سكنية، تجارية، وسياحية ذات طابع فريد متكامل الخدمات.
+5. **الإشراف على التنفيذ والتشغيل (Execution & Operations Support):** ضمان تطبيق أعلى معايير الجودة والحفاظ على حيوية المكان على المدى الطويل.
 
 ---
 
-## 🌐 How to Use Translations
+## أعمالنا ومشاريعنا (Our Portfolio)
 
-### 1. In Client Components (`'use client'`):
-```tsx
-'use client';
-import { useTranslations } from 'next-intl';
-
-export default function MyComponent() {
-  const t = useTranslations('Hero');
-  return <h1>{t('titlePrefix')}</h1>;
-}
-```
-
-### 2. In Server Components (Async Pages/Layouts):
-```tsx
-import { getTranslations } from 'next-intl/server';
-
-export default async function Page() {
-  const t = await getTranslations('Hero');
-  return <h1>{t('titlePrefix')}</h1>;
-}
-```
-
-### 3. Navigation with Localized Links:
-Always import `Link`, `useRouter`, and `usePathname` from `@/i18n/navigation` instead of `next/navigation`:
-```tsx
-import { Link } from '@/i18n/navigation';
-
-<Link href="/about">عن الموقع</Link>
-```
+تضم مسيرة مكان مشاريع متنوعة تغطي قطاعات متعددة:
+- **المجتمعات السكنية:** بيئات سكنية راقية ومساحات خضراء متناغمة تعزز الخصوصية والراحة.
+- **المساحات العامة والمتنزهات:** وجهات مفتوحة للمدن والمجتمعات ترفع من مؤشرات جودة الحياة.
+- **المشاريع السياحية والضيافة:** منتجعات واستراحات ووجهات ترفيهية تقدم تجارب استثنائية للزوار.
+- **المشاريع متعددة الاستخدامات:** مراكز أعمال ومساحات تجارية نابضة بالأنشطة والتفاعل.
 
 ---
 
-## 📝 Adding New Locales or Messages
+## تجربة المنصة (Website Experience)
 
-1. **Add keys to dictionaries**:
-   Edit `messages/ar.json` and `messages/en.json`.
-2. **Add locale to routing**:
-   If adding a third language (e.g. French `'fr'`), update `locales` in `src/i18n/routing.ts`:
-   ```ts
-   export const routing = defineRouting({
-     locales: ['ar', 'en', 'fr'],
-     defaultLocale: 'ar',
-     localePrefix: 'always'
-   });
-   ```
+تم تصميم المنصة لتوفير تجربة استعراض سلسة ومتكاملة:
+- **دعم كامل للغتين:** تجربة عربية وإنجليزية أصيلة ومكتملة.
+- **استعراض بصري شامل:** معرض تفاعلي للمشاريع، تفاصيل المخططات، والقصص الكامنة وراء كل وجهة.
+- **تواصل مباشر وسهل:** قنوات ميسرة لطلب الاستشارات والتواصل مع فريق العمل والخبراء.

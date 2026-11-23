@@ -184,7 +184,7 @@ export default function ProjectMasterplan({
         {/* 2 Navigation Buttons on the Left and the Right with Arrows (Visible when multiple masterplans) */}
         {total > 1 && (
           <>
-            {/* Left Button */}
+            {/* Left Button with Dark Green background and hover stretch */}
             <button
               type='button'
               onClick={(e) => {
@@ -197,12 +197,12 @@ export default function ProjectMasterplan({
               }}
               aria-label={isRtl ? 'Next masterplan' : 'Previous masterplan'}
               title={isRtl ? 'التالي' : 'Previous'}
-              className='absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-[2px] bg-white/90 hover:bg-[#10201D] text-[#10201D] hover:text-white border border-[#EAE1D0]/90 shadow-md backdrop-blur-sm transition-all duration-300 cursor-pointer'
+              className='group absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 sm:h-12 sm:w-12 hover:w-14 sm:hover:w-16 items-center justify-center rounded-none bg-[#082621] hover:bg-[#C29959] text-white border border-[#082621] hover:border-[#C29959] shadow-lg backdrop-blur-sm transition-all duration-300 cursor-pointer'
             >
-              <ArrowLeft className='h-5 w-5' />
+              <ArrowLeft className='h-5 w-5 transition-transform duration-300 group-hover:scale-115' />
             </button>
 
-            {/* Right Button */}
+            {/* Right Button with Dark Green background and hover stretch */}
             <button
               type='button'
               onClick={(e) => {
@@ -215,9 +215,9 @@ export default function ProjectMasterplan({
               }}
               aria-label={isRtl ? 'Previous masterplan' : 'Next masterplan'}
               title={isRtl ? 'السابق' : 'Next'}
-              className='absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-[2px] bg-white/90 hover:bg-[#10201D] text-[#10201D] hover:text-white border border-[#EAE1D0]/90 shadow-md backdrop-blur-sm transition-all duration-300 cursor-pointer'
+              className='group absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 sm:h-12 sm:w-12 hover:w-14 sm:hover:w-16 items-center justify-center rounded-none bg-[#082621] hover:bg-[#C29959] text-white border border-[#082621] hover:border-[#C29959] shadow-lg backdrop-blur-sm transition-all duration-300 cursor-pointer'
             >
-              <ArrowRight className='h-5 w-5' />
+              <ArrowRight className='h-5 w-5 transition-transform duration-300 group-hover:scale-115' />
             </button>
           </>
         )}

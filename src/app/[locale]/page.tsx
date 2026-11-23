@@ -86,8 +86,8 @@ export default async function HomePage({
   // Enable static rendering
   setRequestLocale(locale)
 
-  // Fetch up to 3 featured projects dynamically from the database
-  const featuredProjects = await getFeaturedProjects({ locale, limit: 3 })
+  // Fetch featured projects dynamically from the database
+  const featuredProjects = await getFeaturedProjects({ locale, limit: 6 })
 
   return (
     <div className='flex min-h-screen flex-col bg-white'>

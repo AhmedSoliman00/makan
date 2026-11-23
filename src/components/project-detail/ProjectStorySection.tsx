@@ -99,7 +99,7 @@ export default function ProjectStorySection({
                   <HighlightIcon icon={item.icon} />
                 </div>
                 <div>
-                  <h3 className='font-cairo text-base sm:text-[17px] font-semibold text-[#10201D] leading-snug'>
+                  <h3 className='font-alexandria text-base sm:text-[17px] font-medium text-[#10201D] leading-snug'>
                     {item.title}
                   </h3>
                   <p className='mt-1 font-cairo text-sm sm:text-[15px] text-[#6F746F] leading-relaxed'>
@@ -113,13 +113,13 @@ export default function ProjectStorySection({
           <div className='mt-8 pt-4'>
             <Link
               href='/contact'
-              className='group flex w-full items-center justify-center gap-3 bg-[#10201D] hover:bg-[#C29959] text-white py-4 px-7 font-cairo text-base font-semibold transition-all duration-300'
+              className='group flex w-full items-center justify-center gap-3 bg-[#10201D] hover:bg-[#C29959] text-white py-4 px-7 font-cairo text-base font-semibold rounded-none transition-all duration-300'
             >
               <span>{highlightsCtaText}</span>
               {isRtl ? (
-                <ArrowLeft className='h-4 w-4 transition-transform group-hover:-translate-x-1' />
+                <ArrowLeft className='h-4 w-4 transition-transform duration-300 group-hover:scale-115 group-hover:-translate-x-1' />
               ) : (
-                <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                <ArrowRight className='h-4 w-4 transition-transform duration-300 group-hover:scale-115 group-hover:translate-x-1' />
               )}
             </Link>
           </div>

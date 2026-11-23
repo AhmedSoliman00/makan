@@ -38,7 +38,7 @@ export default function AboutValues() {
       <div className='mx-auto max-w-7xl px-6 lg:px-12'>
         {/* Section Header */}
         <div className='text-center max-w-3xl mx-auto mb-16 sm:mb-20'>
-          <h2 className='font-cairo text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#10201D] tracking-tight leading-tight'>
+          <h2 className='font-alexandria text-3xl sm:text-4xl lg:text-[44px] font-normal text-[#10201D] tracking-tight leading-tight'>
             {t('title')}
           </h2>
           <p className='mt-3.5 font-cairo text-base sm:text-lg text-[#6F746F] leading-relaxed whitespace-pre-line'>
@@ -75,7 +75,7 @@ export default function AboutValues() {
                 </div>
 
                 {/* Value Title */}
-                <h3 className='font-cairo text-2xl sm:text-[28px] font-bold text-[#10201D] mt-6 tracking-tight'>
+                <h3 className='font-alexandria text-2xl sm:text-[28px] font-medium text-[#10201D] mt-6 tracking-tight'>
                   {item.title}
                 </h3>
 

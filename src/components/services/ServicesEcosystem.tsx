@@ -64,7 +64,7 @@ export default function ServicesEcosystem() {
           {t('title')}
         </h2>
 
-        <p className='mt-4 sm:mt-5 font-cairo text-sm sm:text-base md:text-lg text-[#6F746F] leading-relaxed max-w-2xl mx-auto'>
+        <p className='mt-4 sm:mt-6 font-cairo text-lg sm:text-xl lg:text-[22px] text-[#6F746F] leading-relaxed max-w-3xl mx-auto'>
           {t('description')}
         </p>
       </div>
@@ -138,12 +138,12 @@ export default function ServicesEcosystem() {
                     </h3>
 
                     {/* Subtitle / Focus */}
-                    <p className='font-cairo text-base sm:text-lg lg:text-xl font-medium text-[#10201D] mb-3 leading-snug'>
+                    <p className='font-cairo text-lg sm:text-xl lg:text-2xl font-medium text-[#10201D] mb-3.5 leading-snug'>
                       {subtitle}
                     </p>
 
                     {/* Body Story / Detail */}
-                    <p className='font-cairo text-sm sm:text-base text-[#6F746F] leading-relaxed max-w-lg mx-auto lg:mx-0'>
+                    <p className='font-cairo text-base sm:text-lg lg:text-[19px] text-[#6F746F] leading-relaxed max-w-xl mx-auto lg:mx-0'>
                       {description}
                     </p>
                   </div>

@@ -51,7 +51,7 @@ export default function ContactFormSection() {
           <div className='w-full lg:flex-1 lg:pe-12 xl:pe-16'>
             {/* Form Header */}
             <div className='mb-8 sm:mb-10'>
-              <h2 className='font-cairo text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#10201D] tracking-tight leading-tight'>
+              <h2 className='font-alexandria text-3xl sm:text-4xl lg:text-[44px] font-normal text-[#10201D] tracking-tight leading-tight'>
                 {t('formSection.title')}
               </h2>
               <p className='mt-3.5 max-w-2xl font-cairo text-base sm:text-[17px] text-[#6F746F] leading-relaxed'>
@@ -202,7 +202,7 @@ export default function ContactFormSection() {
           {/* Contact Details Column */}
           <div className='w-full lg:w-[380px] xl:w-[420px] lg:ps-12 xl:ps-16 shrink-0 space-y-10'>
             <div>
-              <h2 className='font-cairo text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#10201D] tracking-tight leading-tight'>
+              <h2 className='font-alexandria text-3xl sm:text-4xl lg:text-[44px] font-normal text-[#10201D] tracking-tight leading-tight'>
                 {t('infoSection.title')}
               </h2>
             </div>
@@ -283,13 +283,13 @@ export default function ContactFormSection() {
 
             {/* Social Links */}
             <div className='pt-4 border-t border-[#EAE4D9]/60'>
-              <h3 className='font-cairo font-bold text-lg text-[#C29959] mb-4'>
+              <h3 className='font-alexandria font-medium text-lg text-[#C29959] mb-4'>
                 {t('infoSection.socialTitle')}
               </h3>
               <div className='flex items-center gap-3'>
                 {/* LinkedIn */}
                 <a
-                  href='https://linkedin.com'
+                  href='https://www.linkedin.com/company/makan-landscape/'
                   target='_blank'
                   rel='noreferrer'
                   aria-label='LinkedIn'
@@ -300,7 +300,7 @@ export default function ContactFormSection() {
 
                 {/* Instagram */}
                 <a
-                  href='https://instagram.com'
+                  href='https://www.instagram.com/reel/DfAPOaiz0fH/?psln=N2VzOHVvaHAwbzF3'
                   target='_blank'
                   rel='noreferrer'
                   aria-label='Instagram'
@@ -311,22 +311,9 @@ export default function ContactFormSection() {
                   </svg>
                 </a>
 
-                {/* X */}
-                <a
-                  href='https://x.com'
-                  target='_blank'
-                  rel='noreferrer'
-                  aria-label='X'
-                  className='flex h-11 w-11 items-center justify-center rounded-full border border-[#D8CEBF] text-[#10201D] font-bold text-sm transition-all hover:border-[#10201D] hover:bg-[#10201D] hover:text-white'
-                >
-                  <svg className='h-3.5 w-3.5 fill-currentColor' viewBox='0 0 24 24'>
-                    <path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' />
-                  </svg>
-                </a>
-
                 {/* YouTube */}
                 <a
-                  href='https://youtube.com'
+                  href='https://www.youtube.com/@Makan_Landscape'
                   target='_blank'
                   rel='noreferrer'
                   aria-label='YouTube'

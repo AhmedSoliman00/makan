@@ -31,7 +31,7 @@ export default function ContactHero({
 
       {/* Hero Headline */}
       <div className='relative z-10 mx-auto px-6 max-w-5xl text-center'>
-        <h1 className='font-cairo text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold text-white text-center leading-[1.25] tracking-tight drop-shadow-md select-none'>
+        <h1 className='font-alexandria text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-medium text-white text-center leading-[1.25] tracking-tight drop-shadow-md select-none'>
           <span>{line1}</span>
           <br />
           <span>{line2}</span>

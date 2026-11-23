@@ -49,13 +49,13 @@ export default function HeroSection() {
         <div className='animate-hero-cta mt-8 md:mt-10 flex justify-center'>
           <a
             href='#projects'
-            className='group inline-flex items-center gap-3.5 rounded-[6px] bg-[#082621] px-8 py-3.5 text-base font-normal text-white shadow-md transition-all duration-300 hover:bg-[#041a17] hover:shadow-xl font-cairo active:scale-[0.98]'
+            className='group inline-flex items-center gap-3.5 rounded-none bg-[#082621] px-8 hover:px-11 py-3.5 text-base font-normal text-white shadow-md transition-all duration-300 hover:bg-[#041a17] hover:shadow-xl font-cairo active:scale-[0.98]'
           >
             <span>{t('cta')}</span>
             {isRtl ? (
-              <ArrowLeft className='h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1.5' />
+              <ArrowLeft className='h-4 w-4 transition-transform duration-300 group-hover:scale-115 group-hover:-translate-x-1.5' />
             ) : (
-              <ArrowRight className='h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5' />
+              <ArrowRight className='h-4 w-4 transition-transform duration-300 group-hover:scale-115 group-hover:translate-x-1.5' />
             )}
           </a>
         </div>

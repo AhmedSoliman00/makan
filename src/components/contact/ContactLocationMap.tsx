@@ -51,7 +51,7 @@ export default function ContactLocationMap() {
       <div className='relative z-20 mx-auto max-w-7xl px-6 lg:px-12 w-full py-12 lg:py-16'>
         <div className='w-full sm:max-w-[430px] bg-[#FFFDF9] border border-[#F2EDE3] shadow-[0_16px_36px_rgba(0,0,0,0.07)] p-7 sm:p-9 rounded-none'>
           {/* Card Header */}
-          <h3 className='font-cairo text-2xl sm:text-[26px] font-bold text-[#10201D] tracking-tight'>
+          <h3 className='font-alexandria text-2xl sm:text-[26px] font-medium text-[#10201D] tracking-tight'>
             {t('officeSection.title')}
           </h3>
           <p className='mt-2.5 font-cairo text-sm sm:text-[15px] text-[#6F746F] leading-relaxed'>

@@ -227,17 +227,17 @@ export default function ProjectGallery({
                 </span>
               </div>
 
-              {/* Navigation Arrows */}
-              <div className='flex items-center gap-2' dir='ltr'>
+              {/* Navigation Arrows with Dark Green background and hover stretch */}
+              <div className='flex items-center gap-2.5' dir='ltr'>
                 <button
                   type='button'
                   onClick={() => scrollByAmount(isRtl ? 'next' : 'prev')}
                   disabled={isRtl ? !canScrollNext : !canScrollPrev}
                   aria-label='Previous photo'
                   title='Previous'
-                  className='flex h-10 w-10 items-center justify-center rounded-[2px] border border-[#10201D]/20 bg-white text-[#10201D] transition-all hover:bg-[#10201D] hover:text-white disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-[#10201D]'
+                  className='group flex h-10 w-10 hover:w-13 items-center justify-center rounded-none bg-[#082621] hover:bg-[#C29959] text-white border border-[#082621] hover:border-[#C29959] transition-all duration-300 disabled:opacity-30 disabled:hover:w-10 disabled:hover:bg-[#082621] disabled:cursor-not-allowed cursor-pointer'
                 >
-                  <ArrowLeft className='h-4 w-4' />
+                  <ArrowLeft className='h-4 w-4 transition-transform duration-300 group-hover:scale-115' />
                 </button>
                 <button
                   type='button'
@@ -245,9 +245,9 @@ export default function ProjectGallery({
                   disabled={isRtl ? !canScrollPrev : !canScrollNext}
                   aria-label='Next photo'
                   title='Next'
-                  className='flex h-10 w-10 items-center justify-center rounded-[2px] border border-[#10201D]/20 bg-white text-[#10201D] transition-all hover:bg-[#10201D] hover:text-white disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-[#10201D]'
+                  className='group flex h-10 w-10 hover:w-13 items-center justify-center rounded-none bg-[#082621] hover:bg-[#C29959] text-white border border-[#082621] hover:border-[#C29959] transition-all duration-300 disabled:opacity-30 disabled:hover:w-10 disabled:hover:bg-[#082621] disabled:cursor-not-allowed cursor-pointer'
                 >
-                  <ArrowRight className='h-4 w-4' />
+                  <ArrowRight className='h-4 w-4 transition-transform duration-300 group-hover:scale-115' />
                 </button>
               </div>
             </div>

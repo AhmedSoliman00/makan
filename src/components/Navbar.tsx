@@ -49,6 +49,7 @@ export default function Navbar({
 
   // Navigation items matching Figma node 433:5613
   const navItems = [
+    { key: 'home', label: t('home'), href: '/' as const },
     { key: 'about', label: t('makan'), href: '/about' as const },
     { key: 'projects', label: t('projects'), href: '/projects' as const },
     { key: 'services', label: t('services'), href: '/services' as const },
@@ -123,7 +124,7 @@ export default function Navbar({
               type='button'
               onClick={toggleLanguage}
               disabled={isPending}
-              className='text-xs font-semibold text-[#10201D] px-2.5 py-1 border border-[#10201D]/20 rounded-md font-cairo'
+              className='text-xs font-semibold text-[#10201D] px-2.5 py-1 border border-[#10201D]/20 rounded-none font-cairo'
             >
               {t('langSwitch')}
             </button>
@@ -240,14 +241,14 @@ export default function Navbar({
             type='button'
             onClick={toggleLanguage}
             disabled={isPending}
-            className='text-xs font-semibold text-[#10201D] px-2.5 py-1 border border-[#10201D]/20 rounded-md font-cairo bg-white/40'
+            className='text-xs font-semibold text-[#10201D] px-2.5 py-1 border border-[#10201D]/20 rounded-none font-cairo bg-white/40'
           >
             {t('langSwitch')}
           </button>
           <button
             type='button'
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className='p-2 text-[#10201D] rounded-lg hover:bg-white/40 transition-colors'
+            className='p-2 text-[#10201D] rounded-none hover:bg-white/40 transition-colors'
             aria-label='Toggle mobile menu'
           >
             {mobileMenuOpen ? <X className='h-6 w-6' /> : <Menu className='h-6 w-6' />}

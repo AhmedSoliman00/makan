@@ -145,9 +145,9 @@ export default async function LocaleLayout({
       longitude: 46.6347,
     },
     sameAs: [
-      'https://instagram.com/makanlandscape',
-      'https://x.com/makanlandscape',
-      'https://linkedin.com/company/makanlandscape',
+      'https://www.instagram.com/reel/DfAPOaiz0fH/?psln=N2VzOHVvaHAwbzF3',
+      'https://www.linkedin.com/company/makan-landscape/',
+      'https://www.youtube.com/@Makan_Landscape',
     ],
   };
 

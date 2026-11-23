@@ -79,7 +79,7 @@ export default function ServicesPillars() {
                   <h3 className='font-alexandria text-lg sm:text-xl font-medium text-[#082621] mb-2 leading-snug'>
                     {title}
                   </h3>
-                  <p className='font-cairo text-sm text-[#6F746F] leading-relaxed max-w-xs mx-auto'>
+                  <p className='font-cairo text-base text-[#6F746F] leading-relaxed max-w-sm mx-auto'>
                     {description}
                   </p>
                 </div>
