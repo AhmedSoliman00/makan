@@ -1,0 +1,65 @@
+name: makan
+
+services:
+  makan-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: makan-web
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"
+      DATABASE_URL: "${DATABASE_URL:-file:/app/data/makan.db}"
+      UPLOAD_DIR: "${UPLOAD_DIR:-/app/public/uploads}"
+      ADMIN_SESSION_SECRET: "${ADMIN_SESSION_SECRET:?Set ADMIN_SESSION_SECRET in /srv/makan/.env}"
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - /srv/makan/data/db:/app/data
+      - /srv/makan/data/uploads:/app/public/uploads
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/ar').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  # One-off schema sync tool (used by /srv/makan/deploy.sh)
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    profiles: ["tools"]
+    environment:
+      DATABASE_URL: "${DATABASE_URL:-file:/app/data/makan.db}"
+    volumes:
+      - /srv/makan/data/db:/app/data
+    command:
+      - sh
+      - -c
+      - "npx prisma db push --skip-generate && chown -R 1001:1001 /app/data"
+    security_opt:
+      - no-new-privileges:true
+
+  # ONE-TIME initial seed only (WARNING: seed.ts clears existing projects & team members)
+  seed:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    profiles: ["tools"]
+    environment:
+      DATABASE_URL: "${DATABASE_URL:-file:/app/data/makan.db}"
+    volumes:
+      - /srv/makan/data/db:/app/data
+    command:
+      - sh
+      - -c
+      - "npx tsx prisma/seed.ts && chown -R 1001:1001 /app/data"
+    security_opt:
+      - no-new-privileges:true

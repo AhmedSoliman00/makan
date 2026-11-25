@@ -1,0 +1,28 @@
+# Dependencies & build output
+node_modules
+.next
+out
+build
+tsconfig.tsbuildinfo
+
+# Local secrets & runtime data (never bake into image)
+.env
+.env.*
+!.env.example
+prisma/*.db
+prisma/*.db-journal
+prisma/*.db-wal
+prisma/*.db-shm
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Infra & VCS
+.git
+.gitignore
+.vscode
+ansible
+deploy
+ecosystem.config.js
+README.md
+AGENTS.md
+
