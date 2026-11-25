@@ -18,10 +18,12 @@ COPY . .
 # Generate Prisma client
 RUN npx prisma generate
 
-# Build Next.js (uses output: 'standalone')
+# Build Next.js (uses output: 'standalone') with a temporary empty schema DB for SSG routes
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
-RUN npm run build
+RUN DATABASE_URL="file:/tmp/build.db" npx prisma db push --skip-generate && \
+    DATABASE_URL="file:/tmp/build.db" npm run build && \
+    rm -f /tmp/build.db
 
 # ────────── Stage 3: Runner ──────────
 FROM node:20-alpine AS runner
@@ -45,6 +47,9 @@ COPY --from=builder /app/public           ./public
 COPY --from=builder /app/node_modules/.prisma             ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma/client      ./node_modules/@prisma/client
 COPY --from=builder /app/prisma                           ./prisma
+
+RUN mkdir -p /app/data /app/public/uploads && \
+    chown -R nextjs:nodejs /app/data /app/public/uploads
 
 USER nextjs
 EXPOSE 3000
