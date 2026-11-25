@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import type { ProjectSimilar } from '@/lib/project-details'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { isDirectUploadSrc, normalizeImageSrc } from '@/lib/image'
 
 type ProjectSimilarWorksProps = {
   title: string
@@ -60,9 +61,10 @@ export default function ProjectSimilarWorks({
               >
                 <div className='relative h-[260px] sm:h-[280px] w-full overflow-hidden rounded-none bg-zinc-100'>
                   <Image
-                    src={similar.image}
+                    src={normalizeImageSrc(similar.image)}
                     alt={similar.title}
                     fill
+                    unoptimized={isDirectUploadSrc(similar.image)}
                     className='object-cover transition-transform duration-500 ease-out group-hover/img:scale-105'
                     sizes='(max-width: 768px) 100vw, 33vw'
                   />

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { isDirectUploadSrc, normalizeImageSrc } from '@/lib/image'
 
 type ProjectHeroProps = {
   title: string
@@ -19,10 +20,11 @@ export default function ProjectHero({
     <section className='relative w-full h-[520px] sm:h-[600px] lg:h-[660px] overflow-hidden bg-[#082621]'>
       {/* 1. Full-width Hero background photography */}
       <Image
-        src={heroImage}
+        src={normalizeImageSrc(heroImage)}
         alt={title}
         fill
         priority
+        unoptimized={isDirectUploadSrc(heroImage)}
         className='object-cover object-center'
         sizes='100vw'
       />

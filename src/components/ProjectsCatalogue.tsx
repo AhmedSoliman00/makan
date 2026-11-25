@@ -10,6 +10,7 @@ import {
   type ProjectFilterId,
 } from '@/lib/projects-catalogue'
 import { Link } from '@/i18n/navigation'
+import { isDirectUploadSrc, normalizeImageSrc } from '@/lib/image'
 
 function ProjectCard({
   categoryLabel,
@@ -40,9 +41,10 @@ function ProjectCard({
       >
         <div className='relative aspect-[16/11] sm:aspect-[4/3] w-full overflow-hidden rounded-none bg-zinc-100'>
           <Image
-            src={image}
+            src={normalizeImageSrc(image)}
             alt={title}
             fill
+            unoptimized={isDirectUploadSrc(image)}
             className='object-cover transition-transform duration-500 ease-out group-hover/img:scale-105'
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
           />
@@ -136,9 +138,10 @@ function ProjectListItem({
           aria-label={title}
         >
           <Image
-            src={image}
+            src={normalizeImageSrc(image)}
             alt={title}
             fill
+            unoptimized={isDirectUploadSrc(image)}
             className='object-cover transition-transform duration-500 ease-out group-hover/img:scale-105'
             sizes='(max-width: 768px) 100vw, 320px'
           />

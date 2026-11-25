@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import { useRef, useState, useEffect, MouseEvent as ReactMouseEvent } from 'react'
 import type { LocalizedProjectSummary } from '@/lib/data/projects'
+import { isDirectUploadSrc, normalizeImageSrc } from '@/lib/image'
 
 type SelectedWorksProps = {
   projects?: LocalizedProjectSummary[]
@@ -219,9 +220,10 @@ export default function SelectedWorks({
                 >
                   <div className='relative h-[250px] sm:h-[282px] w-full overflow-hidden rounded-none bg-zinc-100'>
                     <Image
-                      src={proj.image}
+                      src={normalizeImageSrc(proj.image)}
                       alt={proj.title}
                       fill
+                      unoptimized={isDirectUploadSrc(proj.image)}
                       className='object-cover transition-transform duration-500 ease-out group-hover/img:scale-105 pointer-events-none'
                       sizes='(max-width: 768px) 100vw, 430px'
                     />

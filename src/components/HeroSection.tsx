@@ -5,20 +5,28 @@ import Image from 'next/image'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 
+const HERO_BLUR_DATA_URL =
+  'data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAwBQCdASogABQAPtFao00oJSMiKA1RABoJQBYj2U5jBKJqOk3JJdN3o+dBzChIWATNCgD+01B48H0ENAVeXgW6V1SoSzDblKVOoKP8tt0O1feSXf2G3m6LgdTIbKY55YhOOfWK4U5NZxmceFTIJsT0RHkAAA=='
+
 export default function HeroSection() {
   const t = useTranslations('Hero')
   const locale = useLocale()
   const isRtl = locale === 'ar'
 
   return (
-    <section className='relative h-full min-h-[820px] lg:min-h-screen w-full flex flex-col justify-between overflow-hidden isolate select-none'>
-      {/* Background Image Container with Figma 2.79s Entrance Animation */}
-      <div className='absolute inset-0 z-0 overflow-hidden pointer-events-none'>
+    <section className='relative h-full min-h-[820px] lg:min-h-screen w-full flex flex-col justify-between overflow-hidden isolate select-none bg-[#DFD7C8]'>
+      {/* Background Image Container with instant blurred SSR preview */}
+      <div
+        className='absolute inset-0 z-0 overflow-hidden pointer-events-none bg-cover bg-center'
+        style={{ backgroundImage: `url(${HERO_BLUR_DATA_URL})` }}
+      >
         <Image
           src='/home/images/hero.webp'
           alt='Makan Landscape Architecture'
           fill
           priority
+          placeholder='blur'
+          blurDataURL={HERO_BLUR_DATA_URL}
           className='object-cover object-center animate-hero-entrance'
           sizes='100vw'
         />

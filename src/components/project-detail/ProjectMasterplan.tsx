@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { Maximize2, ArrowLeft, ArrowRight, Layers } from 'lucide-react'
+import { isDirectUploadSrc, normalizeImageSrc } from '@/lib/image'
 
 type ProjectMasterplanProps = {
   eyebrow: string
@@ -162,10 +163,11 @@ export default function ProjectMasterplan({
               className='snap-center shrink-0 w-full h-full relative group cursor-pointer flex items-center justify-center bg-[#FBF9F4]'
             >
               <Image
-                src={mpUrl}
+                src={normalizeImageSrc(mpUrl)}
                 alt={`${caption} - ${idx + 1}`}
                 fill
                 priority={idx === 0}
+                unoptimized={isDirectUploadSrc(mpUrl)}
                 className='object-contain object-center transition-transform duration-700 group-hover:scale-102 p-2 sm:p-4'
                 sizes='100vw'
               />

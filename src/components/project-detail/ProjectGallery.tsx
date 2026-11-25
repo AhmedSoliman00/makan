@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { Maximize2, ArrowLeft, ArrowRight, MoveHorizontal } from 'lucide-react'
+import { isDirectUploadSrc, normalizeImageSrc } from '@/lib/image'
 
 type ProjectGalleryProps = {
   eyebrow: string
@@ -155,9 +156,10 @@ export default function ProjectGallery({
                 className='md:col-span-7 group relative h-[300px] sm:h-[380px] w-full overflow-hidden rounded-none bg-zinc-100 cursor-pointer'
               >
                 <Image
-                  src={images[0]}
+                  src={normalizeImageSrc(images[0])}
                   alt={`${projectTitle} gallery 1`}
                   fill
+                  unoptimized={isDirectUploadSrc(images[0])}
                   className='object-cover transition-transform duration-700 group-hover:scale-105'
                   sizes='(max-width: 768px) 100vw, 60vw'
                 />
@@ -175,9 +177,10 @@ export default function ProjectGallery({
                 className='md:col-span-5 group relative h-[300px] sm:h-[380px] w-full overflow-hidden rounded-none bg-zinc-100 cursor-pointer'
               >
                 <Image
-                  src={images[1]}
+                  src={normalizeImageSrc(images[1])}
                   alt={`${projectTitle} gallery 2`}
                   fill
+                  unoptimized={isDirectUploadSrc(images[1])}
                   className='object-cover transition-transform duration-700 group-hover:scale-105'
                   sizes='(max-width: 768px) 100vw, 40vw'
                 />
@@ -197,9 +200,10 @@ export default function ProjectGallery({
               className='group relative h-[320px] sm:h-[420px] w-full overflow-hidden rounded-none bg-zinc-100 cursor-pointer'
             >
               <Image
-                src={images[2]}
+                src={normalizeImageSrc(images[2])}
                 alt={`${projectTitle} panoramic`}
                 fill
+                unoptimized={isDirectUploadSrc(images[2])}
                 className='object-cover transition-transform duration-700 group-hover:scale-105'
                 sizes='100vw'
               />

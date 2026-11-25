@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Info, X } from 'lucide-react'
+import { isDirectUploadSrc, normalizeImageSrc } from '@/lib/image'
 
 export type TeamMember = {
   id?: string
@@ -31,9 +32,10 @@ export default function PeopleTeamGrid({ members }: PeopleTeamGridProps) {
               {/* Borderless image container with exact aspect ratio */}
               <div className="relative w-full aspect-[386/496] overflow-hidden bg-[#FAF8F5] rounded-[4px]">
                 <Image
-                  src={member.image || '/home/people/team-member.webp'}
+                  src={normalizeImageSrc(member.image, '/home/people/team-member.webp')}
                   alt={member.name}
                   fill
+                  unoptimized={isDirectUploadSrc(member.image)}
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 386px"
                 />

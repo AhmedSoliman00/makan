@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import Image from 'next/image'
 import { X } from 'lucide-react'
+import { isDirectUploadSrc, normalizeImageSrc } from '@/lib/image'
 
 type ImageLightboxModalProps = {
   isOpen: boolean
@@ -66,9 +67,10 @@ export default function ImageLightboxModal({
       >
         <div className='relative h-[60vh] sm:h-[80vh] w-[90vw] sm:w-[85vw] max-w-[1400px]'>
           <Image
-            src={image.src}
+            src={normalizeImageSrc(image.src)}
             alt={image.alt}
             fill
+            unoptimized={isDirectUploadSrc(image.src)}
             className='object-contain'
             sizes='95vw'
             priority
