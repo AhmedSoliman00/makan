@@ -38,15 +38,11 @@ ENV HOSTNAME="0.0.0.0"
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser  --system --uid 1001 nextjs
 
-# Copy standalone output
+# Copy standalone output (already traces @prisma/client & .prisma binaries)
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static     ./.next/static
 COPY --from=builder /app/public           ./public
-
-# Prisma client binaries
-COPY --from=builder /app/node_modules/.prisma             ./node_modules/.prisma
-COPY --from=builder /app/node_modules/@prisma/client      ./node_modules/@prisma/client
-COPY --from=builder /app/prisma                           ./prisma
+COPY --from=builder /app/prisma           ./prisma
 
 RUN mkdir -p /app/data /app/public/uploads && \
     chown -R nextjs:nodejs /app/data /app/public/uploads
