@@ -9,6 +9,7 @@ import { getProjectBySlug as getDbProjectBySlug } from '@/lib/data/projects'
 import { getProjectBySlug as getStaticProjectBySlug, getProjectSlugs } from '@/lib/project-details'
 import { routing, type Locale } from '@/i18n/routing'
 import { prisma } from '@/lib/prisma'
+import { buildSocialMetadata } from '@/lib/og'
 
 export async function generateStaticParams() {
   const staticSlugs = getProjectSlugs().map((s) => s.slug)
@@ -68,26 +69,16 @@ export async function generateMetadata({
           en: `/en/projects/${slug}`,
         },
       },
-      openGraph: {
+      ...buildSocialMetadata({
         title: `${dbProject.title} | ${siteName}`,
         description: dbProject.summary,
         url: `/${locale}/projects/${slug}`,
+        locale,
         siteName,
-        locale: isRtl ? 'ar_SA' : 'en_US',
+        image: dbProject.heroImage,
+        alt: `${dbProject.title} - ${siteName}`,
         type: 'article',
-        images: [
-          {
-            url: dbProject.heroImage,
-            alt: `${dbProject.title} - ${siteName}`,
-          },
-        ],
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title: `${dbProject.title} | ${siteName}`,
-        description: dbProject.summary,
-        images: [dbProject.heroImage],
-      },
+      }),
     }
   }
 
@@ -107,26 +98,16 @@ export async function generateMetadata({
         en: `/en/projects/${slug}`,
       },
     },
-    openGraph: {
+    ...buildSocialMetadata({
       title: `${localized.title} | ${siteName}`,
       description: localized.summary,
       url: `/${locale}/projects/${slug}`,
+      locale,
       siteName,
-      locale: isRtl ? 'ar_SA' : 'en_US',
+      image: heroImage,
+      alt: `${localized.title} - ${siteName}`,
       type: 'article',
-      images: [
-        {
-          url: heroImage,
-          alt: `${localized.title} - ${siteName}`,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${localized.title} | ${siteName}`,
-      description: localized.summary,
-      images: [heroImage],
-    },
+    }),
   }
 }
 

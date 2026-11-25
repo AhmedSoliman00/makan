@@ -57,6 +57,46 @@ export default function Navbar({
     { key: 'contact', label: t('contact'), href: '/contact' as const },
   ]
 
+  const desktopNav = (langMarginClass: string) => (
+    <nav className='hidden md:flex items-center gap-7 font-cairo text-[16px] text-black'>
+      {navItems.map((item) => {
+        const isActive = resolvedActive === item.key
+        return (
+          <Link
+            key={item.key}
+            href={item.href}
+            className='group relative inline-flex items-center py-2.5'
+          >
+            <span className={isActive ? 'font-semibold text-black' : 'font-medium text-black'}>
+              {item.label}
+            </span>
+            <span
+              aria-hidden='true'
+              className={`pointer-events-none absolute inset-x-0 bottom-1 h-[2px] rounded-full bg-[#DEA348] transition-opacity duration-200 ${
+                isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+              }`}
+            />
+          </Link>
+        )
+      })}
+
+      {/* Language Switcher */}
+      <button
+        type='button'
+        onClick={toggleLanguage}
+        disabled={isPending}
+        className={`group relative ${langMarginClass} inline-flex items-center py-2.5 font-cairo text-[16px] font-medium text-black cursor-pointer`}
+        aria-label='Toggle language'
+      >
+        <span>{t('langSwitch')}</span>
+        <span
+          aria-hidden='true'
+          className='pointer-events-none absolute inset-x-0 bottom-1 h-[2px] rounded-full bg-black opacity-0 transition-opacity duration-200 group-hover:opacity-100'
+        />
+      </button>
+    </nav>
+  )
+
   if (isSolid) {
     return (
       <header className='relative z-50 w-full border-b border-[#E4DFD7]/60 bg-white'>
@@ -74,49 +114,7 @@ export default function Navbar({
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className='hidden md:flex items-center gap-7 font-cairo text-[16px] text-[#10201D]'>
-            {navItems.map((item) => {
-              const isActive = resolvedActive === item.key
-              return (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  className='group relative flex flex-col items-center justify-center py-2'
-                >
-                  <span
-                    className={`transition-colors duration-300 ${
-                      isActive
-                        ? 'font-medium text-[#10201D]'
-                        : 'font-normal text-[#10201D]/90 group-hover:text-[#DEA348]'
-                    }`}
-                  >
-                    {item.label}
-                  </span>
-                  <span
-                    className={`mt-1 h-[2px] w-full rounded-full transition-all duration-300 origin-center ${
-                      isActive
-                        ? 'bg-[#DEA348] opacity-100 scale-x-100'
-                        : 'bg-[#DEA348] opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'
-                    }`}
-                  />
-                </Link>
-              )
-            })}
-
-            {/* Language Switcher */}
-            <button
-              type='button'
-              onClick={toggleLanguage}
-              disabled={isPending}
-              className='group relative ms-2 flex flex-col items-center justify-center py-2 font-cairo text-[16px] font-medium text-[#10201D] transition-colors cursor-pointer'
-              aria-label='Toggle language'
-            >
-              <span className='group-hover:text-[#DEA348] transition-colors duration-300'>
-                {t('langSwitch')}
-              </span>
-              <span className='mt-1 h-[2px] w-full rounded-full bg-[#10201D] opacity-0 scale-x-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100 origin-center' />
-            </button>
-          </nav>
+          {desktopNav('ms-2')}
 
           {/* Mobile Buttons */}
           <div className='flex md:hidden items-center gap-3'>
@@ -124,14 +122,14 @@ export default function Navbar({
               type='button'
               onClick={toggleLanguage}
               disabled={isPending}
-              className='text-xs font-semibold text-[#10201D] px-2.5 py-1 border border-[#10201D]/20 rounded-none font-cairo'
+              className='text-xs font-semibold text-black px-2.5 py-1 border border-black/20 rounded-none font-cairo'
             >
               {t('langSwitch')}
             </button>
             <button
               type='button'
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className='p-2 text-[#10201D]'
+              className='p-2 text-black'
               aria-label='Toggle mobile menu'
             >
               {mobileMenuOpen ? <X className='h-6 w-6' /> : <Menu className='h-6 w-6' />}
@@ -142,7 +140,7 @@ export default function Navbar({
         {/* Mobile Drawer */}
         {mobileMenuOpen && (
           <div className='md:hidden bg-white/95 backdrop-blur-md border-b border-[#E4DFD7] px-6 py-6 shadow-xl'>
-            <nav className='flex flex-col gap-4 font-cairo text-base font-medium text-[#10201D]'>
+            <nav className='flex flex-col gap-4 font-cairo text-base font-medium text-black'>
               {navItems.map((item) => (
                 <Link
                   key={item.key}
@@ -189,51 +187,7 @@ export default function Navbar({
         </Link>
 
         {/* Desktop Navigation Links matching Figma 433:5615 */}
-        <nav className='hidden md:flex items-center gap-7 font-cairo text-[16px] text-[#10201D]'>
-          {navItems.map((item) => {
-            const isActive = resolvedActive === item.key
-            return (
-              <Link
-                key={item.key}
-                href={item.href}
-                className='group relative flex flex-col items-center justify-center py-2'
-              >
-                <span
-                  className={`transition-colors duration-300 ${
-                    isActive
-                      ? 'font-medium text-[#10201D]'
-                      : 'font-normal text-[#10201D]/90 group-hover:text-[#DEA348]'
-                  }`}
-                >
-                  {item.label}
-                </span>
-
-                {/* Underline indicator matching Figma underline rectangle */}
-                <span
-                  className={`mt-1 h-[2px] w-full rounded-full transition-all duration-300 origin-center ${
-                    isActive
-                      ? 'bg-[#DEA348] opacity-100 scale-x-100'
-                      : 'bg-[#DEA348] opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100'
-                  }`}
-                />
-              </Link>
-            )
-          })}
-
-          {/* Language Switcher Button matching Figma */}
-          <button
-            type='button'
-            onClick={toggleLanguage}
-            disabled={isPending}
-            className='group relative ms-1 flex flex-col items-center justify-center py-2 font-cairo text-[16px] font-medium text-[#10201D] transition-colors cursor-pointer'
-            aria-label='Toggle language'
-          >
-            <span className='group-hover:text-[#DEA348] transition-colors duration-300'>
-              {t('langSwitch')}
-            </span>
-            <span className='mt-1 h-[2px] w-full rounded-full bg-[#10201D] opacity-0 scale-x-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-100 origin-center' />
-          </button>
-        </nav>
+        {desktopNav('ms-1')}
 
         {/* Mobile Hamburger Controls */}
         <div className='flex md:hidden items-center gap-2'>
@@ -241,14 +195,14 @@ export default function Navbar({
             type='button'
             onClick={toggleLanguage}
             disabled={isPending}
-            className='text-xs font-semibold text-[#10201D] px-2.5 py-1 border border-[#10201D]/20 rounded-none font-cairo bg-white/40'
+            className='text-xs font-semibold text-black px-2.5 py-1 border border-black/20 rounded-none font-cairo bg-white/40'
           >
             {t('langSwitch')}
           </button>
           <button
             type='button'
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className='p-2 text-[#10201D] rounded-none hover:bg-white/40 transition-colors'
+            className='p-2 text-black rounded-none hover:bg-white/40 transition-colors'
             aria-label='Toggle mobile menu'
           >
             {mobileMenuOpen ? <X className='h-6 w-6' /> : <Menu className='h-6 w-6' />}
@@ -259,7 +213,7 @@ export default function Navbar({
       {/* Mobile Drawer Dropdown */}
       {mobileMenuOpen && (
         <div className='pointer-events-auto mt-3 w-full max-w-[1312px] rounded-2xl bg-white/95 backdrop-blur-md border border-white/40 shadow-xl p-6 transition-all duration-300'>
-          <nav className='flex flex-col gap-3 font-cairo text-base font-medium text-[#10201D]'>
+          <nav className='flex flex-col gap-3 font-cairo text-base font-medium text-black'>
             {navItems.map((item) => (
               <Link
                 key={item.key}

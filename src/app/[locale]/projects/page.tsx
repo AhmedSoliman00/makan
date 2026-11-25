@@ -7,6 +7,7 @@ import ProjectsCatalogue from '@/components/ProjectsCatalogue'
 import PreFooterCta from '@/components/PreFooterCta'
 import Footer from '@/components/Footer'
 import { getProjects } from '@/lib/data/projects'
+import { buildSocialMetadata } from '@/lib/og'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -40,28 +41,15 @@ export async function generateMetadata({
         en: '/en/projects',
       },
     },
-    openGraph: {
+    ...buildSocialMetadata({
       title: `${meta.title} | ${siteName}`,
       description: meta.description,
       url: `/${locale}/projects`,
+      locale,
       siteName,
-      locale: isRtl ? 'ar_SA' : 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: '/home/images/Mountain garden.webp',
-          width: 1200,
-          height: 630,
-          alt: `${meta.title} - ${siteName}`,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${meta.title} | ${siteName}`,
-      description: meta.description,
-      images: ['/home/images/Mountain garden.webp'],
-    },
+      image: '/home/images/Mountain garden.webp',
+      alt: `${meta.title} - ${siteName}`,
+    }),
   }
 }
 

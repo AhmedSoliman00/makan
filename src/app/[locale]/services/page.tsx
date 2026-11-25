@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing, type Locale } from '@/i18n/routing'
 import ServicesPageView from '@/components/services/ServicesPageView'
+import { buildSocialMetadata } from '@/lib/og'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -35,28 +36,15 @@ export async function generateMetadata({
         en: '/en/services',
       },
     },
-    openGraph: {
+    ...buildSocialMetadata({
       title: `${meta.title} | ${siteName}`,
       description: meta.description,
       url: `/${locale}/services`,
+      locale,
       siteName,
-      locale: isRtl ? 'ar_SA' : 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: '/home/services/Mountain garden-0.webp',
-          width: 1200,
-          height: 630,
-          alt: `${meta.title} - ${siteName}`,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${meta.title} | ${siteName}`,
-      description: meta.description,
-      images: ['/home/services/Mountain garden-0.webp'],
-    },
+      image: '/home/services/Mountain garden-0.webp',
+      alt: `${meta.title} - ${siteName}`,
+    }),
   }
 }
 

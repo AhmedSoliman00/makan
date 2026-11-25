@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
-        disallow: ['/admin/', '/api/', '/_next/'],
+        allow: ['/', '/api/og'],
+        disallow: ['/admin/', '/ar/admin/', '/en/admin/', '/api/', '/_next/'],
       },
     ],
     sitemap: 'https://makanlandscape.sa/sitemap.xml',

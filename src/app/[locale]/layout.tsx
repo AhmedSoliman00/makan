@@ -4,6 +4,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { routing, type Locale } from '@/i18n/routing';
 import { cairo, alexandria } from '@/lib/fonts';
+import { buildSocialMetadata, DEFAULT_OG_IMAGE } from '@/lib/og';
 import '../globals.css';
 
 export const viewport: Viewport = {
@@ -50,28 +51,16 @@ export async function generateMetadata({
         en: '/en',
       },
     },
-    openGraph: {
+    ...buildSocialMetadata({
       title: meta.title,
       description: meta.description,
       url: `/${locale}`,
+      locale,
       siteName: isRtl ? 'مكان لاندسكيب' : 'Makan Landscape',
-      images: [
-        {
-          url: '/home/images/hero.webp',
-          width: 1200,
-          height: 630,
-          alt: meta.title,
-        },
-      ],
-      locale: isRtl ? 'ar_SA' : 'en_US',
+      image: DEFAULT_OG_IMAGE,
+      alt: meta.title,
       type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: meta.title,
-      description: meta.description,
-      images: ['/home/images/hero.webp'],
-    },
+    }),
     icons: {
       icon: [
         { url: '/favicon.ico', sizes: 'any' },
