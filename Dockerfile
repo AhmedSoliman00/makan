@@ -3,9 +3,9 @@ FROM node:20-alpine AS deps
 RUN apk add --no-cache libc6-compat openssl
 WORKDIR /app
 
-# Install pnpm and copy lockfiles
+# Install pnpm matching local version and copy lockfiles
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN npm install -g pnpm && pnpm install --frozen-lockfile
+RUN npm install -g pnpm@10.24.0 && pnpm install --frozen-lockfile
 
 # ────────── Stage 2: Build ──────────
 FROM node:20-alpine AS builder
