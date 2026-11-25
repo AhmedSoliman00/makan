@@ -1,15 +1,16 @@
 import type { Metadata } from 'next'
 
-export const DEFAULT_OG_IMAGE = '/home/images/hero.webp'
+export const DEFAULT_OG_IMAGE = '/home/images/og-logo.jpg'
 
 /**
  * Normalizes a local or external image path into a WhatsApp/social-safe
- * 1200x630 JPEG URL served via `/api/og`.
+ * 1200x630 JPEG URL. Brand logo card is served directly; dynamic/WebP
+ * images are converted on demand via `/api/og`.
  */
 export function buildOgImageUrl(rawSrc?: string | null): string {
   const trimmed = rawSrc?.trim() ?? ''
   if (!trimmed || trimmed.startsWith('data:')) {
-    return `/api/og?src=${encodeURIComponent(DEFAULT_OG_IMAGE)}`
+    return DEFAULT_OG_IMAGE
   }
 
   if (trimmed.startsWith('https://') || trimmed.startsWith('http://')) {
@@ -17,11 +18,18 @@ export function buildOgImageUrl(rawSrc?: string | null): string {
   }
 
   const normalized = trimmed.startsWith('/') ? trimmed : `/${trimmed}`
+  if (normalized === DEFAULT_OG_IMAGE) {
+    return DEFAULT_OG_IMAGE
+  }
+
   const isAllowedLocal =
     normalized.startsWith('/home/') || normalized.startsWith('/uploads/')
 
-  const target = isAllowedLocal ? normalized : DEFAULT_OG_IMAGE
-  return `/api/og?src=${encodeURIComponent(target)}`
+  if (!isAllowedLocal) {
+    return DEFAULT_OG_IMAGE
+  }
+
+  return `/api/og?src=${encodeURIComponent(normalized)}`
 }
 
 type SocialMetadataInput = {
