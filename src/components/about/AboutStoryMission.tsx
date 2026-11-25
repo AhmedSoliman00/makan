@@ -20,7 +20,6 @@ export default function AboutStoryMission() {
                   alt='قصتنا | Makan Landscape'
                   fill
                   sizes='(max-width: 640px) calc(100vw - 2rem), (max-width: 1024px) 50vw, 420px'
-                  quality={90}
                   className='object-cover object-center transition-transform duration-700 hover:scale-105'
                 />
               </div>

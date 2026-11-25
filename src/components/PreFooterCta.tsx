@@ -22,9 +22,8 @@ export default function PreFooterCta() {
           src='/home/images/home-before-footer.webp'
           alt='Makan Landscape Garden Architecture'
           fill
-          priority
           className={`object-cover ${isRtl ? 'object-left' : 'object-right'}`}
-          sizes='(max-width: 1024px) 100vw, 1200px'
+          sizes='(max-width: 1024px) 100vw, 1036px'
         />
         {/* Editorial gradient fade: dissolves towards the text side */}
         <div

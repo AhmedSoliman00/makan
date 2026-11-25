@@ -64,7 +64,7 @@ export default function FeaturedVilla() {
                 alt="Mountain Garden Villa Patio"
                 fill
                 className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 90vw, 448px"
               />
             </div>
           </div>
