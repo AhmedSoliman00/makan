@@ -44,8 +44,8 @@ COPY --from=builder /app/.next/static     ./.next/static
 COPY --from=builder /app/public           ./public
 COPY --from=builder /app/prisma           ./prisma
 
-RUN mkdir -p /app/data /app/public/uploads && \
-    chown -R nextjs:nodejs /app/data /app/public/uploads
+RUN mkdir -p /app/data /app/public/uploads /app/.next/cache && \
+    chown -R nextjs:nodejs /app/data /app/public/uploads /app/.next
 
 USER nextjs
 EXPOSE 3000

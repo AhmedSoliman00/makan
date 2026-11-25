@@ -20,9 +20,9 @@ const nextConfig: NextConfig = {
     proxyClientMaxBodySize: '50mb',
   },
 
-  // Image optimization
+  // Image optimization (WebP-only avoids expensive CPU AVIF encoding on VPS)
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 2678400, // 31 days

@@ -19,6 +19,7 @@ services:
     volumes:
       - /srv/makan/data/db:/app/data
       - /srv/makan/data/uploads:/app/public/uploads
+      - /srv/makan/data/next-cache:/app/.next/cache
     security_opt:
       - no-new-privileges:true
     healthcheck:
